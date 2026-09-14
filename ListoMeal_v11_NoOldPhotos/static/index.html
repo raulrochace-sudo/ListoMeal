@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ListoMeal AI MVP</title>
+<style>
+:root{--cream:#f7f1e8;--card:#fffaf3;--orange:#f28c28;--green:#5f7f63;--dark:#2f2a25;--muted:#746d66;--line:#e6ddd2}
+*{box-sizing:border-box} body{margin:0;background:var(--cream);font-family:Arial,Helvetica,sans-serif;color:var(--dark)}
+.wrap{max-width:620px;margin:auto;padding:20px}.brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brandleft{display:flex;align-items:center;gap:10px}.logo{width:48px;height:48px;border-radius:15px;background:var(--orange);display:grid;place-items:center;color:white;font-weight:900;font-size:24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 12px;cursor:pointer}.chip.active{background:var(--green);color:white}
+h1{font-size:31px;margin:22px 0 4px}.sub{color:var(--muted)}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;margin:14px 0}
+label{font-weight:800;display:block;margin-bottom:8px} textarea,input{width:100%;padding:13px;border:1px solid var(--line);border-radius:14px;background:white;font-size:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.primary,.secondary{width:100%;border:0;border-radius:14px;padding:14px;font-size:16px;font-weight:800;cursor:pointer}
+.primary{background:var(--orange);color:white}.secondary{background:white;border:1px solid var(--line)}.hidden{display:none}
+.recipe{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;margin:14px 0;overflow:hidden}.recipe h3{font-size:22px;margin:0 0 6px}.recipe-photo{width:100%;height:220px;object-fit:cover;border-radius:16px;margin:0 0 14px 0;display:block;background:#efe7dc}.photo-loading{height:220px;border-radius:16px;margin:0 0 14px 0;background:#efe7dc;display:grid;place-items:center;color:var(--muted);font-weight:700;text-align:center;padding:20px}.fav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.fav-btn{border:1px solid var(--line);background:white;border-radius:999px;width:44px;height:44px;font-size:22px;cursor:pointer}.fav-btn.saved{background:#fff1ef;color:#c6483d;border-color:#efb5ae}
+.meta{color:var(--muted);font-size:14px;margin:6px 0}.label{font-weight:800;margin-top:10px}.step{padding:10px 0;border-top:1px solid var(--line)}
+.loading{text-align:center;padding:24px;color:var(--muted)}.error{background:#fff1ef;border:1px solid #efb5ae;padding:14px;border-radius:14px;color:#8b332d}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="font-size:12px;color:#746d66;text-align:right;margin-bottom:4px">Build v11</div>
+  <div class="brand">
+    <div class="brandleft"><div class="logo">L</div><div><strong>ListoMeal</strong><div class="sub" id="tagline">Dinner? Listo.</div></div></div>
+    <div class="chips">
+      <button class="chip" id="favoritesBtn">♡ Favorites</button>
+      <button class="chip" id="historyBtn">🕘 History</button>
+      <button class="chip" id="profileBtn">👨‍👩‍👧 Profile</button>
+      <button class="chip lang active" data-lang="en">English</button>
+      <button class="chip lang" data-lang="es">Español</button>
+    </div>
+  </div>
+
+  <section id="setup">
+    <h1 id="title">What do you have at home?</h1>
+    <div class="sub" id="subtitle">Tell ListoMeal what you already have.</div>
+
+    <div class="card">
+      <label id="ingredientsLabel">Ingredients</label>
+      <textarea id="ingredients" rows="4" placeholder="chicken, rice, cheese, broccoli"></textarea>
+      <div style="height:12px"></div>
+      <input id="scanInput" type="file" accept="image/*" capture="environment" style="display:none">
+      <button class="secondary" id="scanBtn">📷 SCAN FRIDGE / PANTRY</button>
+      <div id="scanStatus" class="sub" style="margin-top:10px;min-height:20px"></div>
+      <img id="scanPreview" class="hidden" style="width:100%;max-height:260px;object-fit:cover;border-radius:16px;margin-top:10px" alt="scan preview">
+    </div>
+
+    <div class="card">
+      <label id="timeLabel">How much time do you have?</label>
+      <div class="chips" id="times">
+        <button class="chip" data-value="10">10 min</button>
+        <button class="chip active" data-value="20">20 min</button>
+        <button class="chip" data-value="30">30 min</button>
+        <button class="chip" data-value="45">No rush</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <label id="methodLabel">How do you want to cook?</label>
+      <div class="chips" id="methods">
+        <button class="chip" data-value="stove">🔥 Stove</button>
+        <button class="chip" data-value="oven">♨️ Oven</button>
+        <button class="chip" data-value="air fryer">💨 Air Fryer</button>
+        <button class="chip" data-value="microwave">📡 Microwave</button>
+        <button class="chip active" data-value="easiest">✨ Easiest</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <label id="whoLabel">Who’s eating?</label>
+      <div class="row">
+        <div><div class="sub" id="adultsLabel">Adults</div><input id="adults" type="number" min="1" value="2"></div>
+        <div><div class="sub" id="kidsLabel">Kids</div><input id="kids" type="number" min="0" value="2"></div>
+      </div>
+      <div style="height:12px"></div>
+      <div class="sub" id="avoidLabel">Avoid / allergies / dislikes</div>
+      <input id="avoid" placeholder="peanuts, spicy food, mushrooms">
+    </div>
+
+    <div class="sub" id="learnNote" style="margin:10px 2px 14px">ListoMeal learns from your History ratings to improve future suggestions.</div>
+    <button class="primary" id="find">FIND MY MEALS →</button>
+  </section>
+
+
+
+  <section id="profile" class="hidden">
+    <h1 id="profileTitle">Family Profile</h1>
+    <div class="sub" id="profileSub">Save your household details so you don’t have to enter them every time.</div>
+
+    <div class="card">
+      <label id="profileNameLabel">Profile name</label>
+      <input id="profileName" placeholder="Rocha Family">
+
+      <div style="height:12px"></div>
+      <div class="row">
+        <div>
+          <div class="sub" id="profileAdultsLabel">Adults</div>
+          <input id="profileAdults" type="number" min="1" value="2">
+        </div>
+        <div>
+          <div class="sub" id="profileKidsLabel">Kids</div>
+          <input id="profileKids" type="number" min="0" value="2">
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+      <div class="sub" id="agesLabel">Kids' ages</div>
+      <input id="kidAges" placeholder="9, 2">
+
+      <div style="height:12px"></div>
+      <div class="sub" id="profileAvoidLabel">Allergies / avoid</div>
+      <input id="profileAvoid" placeholder="peanuts, shellfish">
+
+      <div style="height:12px"></div>
+      <div class="sub" id="dislikesLabel">Foods they don’t like</div>
+      <input id="profileDislikes" placeholder="mushrooms, spicy food">
+
+      <div style="height:12px"></div>
+      <div class="sub" id="dietLabel">Dietary preferences</div>
+      <input id="profileDiet" placeholder="none, vegetarian, low dairy">
+    </div>
+
+    <button class="primary" id="saveProfile">SAVE PROFILE</button>
+    <div id="profileSavedMsg" class="sub" style="margin-top:10px;min-height:20px"></div>
+    <div style="height:10px"></div>
+    <button class="secondary" id="profileBack">← Back</button>
+  </section>
+
+  <section id="history" class="hidden">
+    <h1 id="historyTitle">History</h1>
+    <div class="sub" id="historySub">Meals you cooked and how they went.</div>
+    <div id="historyList"></div>
+    <button class="secondary" id="historyBack">← Back</button>
+  </section>
+
+  <section id="favorites" class="hidden">
+    <h1 id="favoritesTitle">Favorites</h1>
+    <div class="sub" id="favoritesSub">Recipes you saved for later.</div>
+    <div id="favoritesList"></div>
+    <button class="secondary" id="favoritesBack">← Back</button>
+  </section>
+
+  <section id="loading" class="hidden"><div class="card loading" id="loadingText">ListoMeal is cooking up ideas… 🍳</div></section>
+  <section id="results" class="hidden">
+    <h1 id="resultTitle">Dinner? Listo. ✨</h1>
+    <div id="recipeList"></div>
+    <button class="secondary" id="back">← Change ingredients</button>
+  </section>
+
+  <section id="cook" class="hidden">
+    <div class="card">
+      <div class="sub" id="cookMeta"></div>
+      <img id="cookImage" class="recipe-photo" style="margin-top:10px;height:240px" src="" alt="">
+      <h1 id="cookTitle" style="margin-top:8px"></h1>
+      <div class="sub" id="cookSummary"></div>
+    </div>
+    <div class="card">
+      <div class="label" id="stepLabel">Step</div>
+      <div id="stepText" style="font-size:22px;line-height:1.45;margin-top:8px"></div>
+      <div id="timerArea" style="margin-top:16px"></div>
+      <div style="margin-top:16px"><button class="secondary" id="howHelp">I DON’T KNOW HOW</button></div>
+      <div id="helpBox" class="hidden" style="margin-top:12px;background:#fff6e8;border:1px solid var(--line);padding:12px;border-radius:12px"></div>
+    </div>
+    <div class="row">
+      <button class="secondary" id="prevCook">← Back</button>
+      <button class="primary" id="nextCook">Next →</button>
+    </div>
+  </section>
+
+  <section id="done" class="hidden">
+    <div class="card" style="text-align:center;padding:28px">
+      <div style="font-size:48px">🎉</div>
+      <h1 id="doneTitle">Meal listo!</h1>
+      <div class="sub" id="doneSub">How did it go?</div>
+      <div class="chips" id="feedback" style="justify-content:center;margin-top:14px">
+        <button class="chip" data-value="loved">😍 Loved it</button>
+        <button class="chip" data-value="good">🙂 Good</button>
+        <button class="chip" data-value="meh">😐 Meh</button>
+        <button class="chip" data-value="nope">🤢 Nope</button>
+      </div>
+      <div id="feedbackMsg" class="sub" style="margin-top:12px;min-height:20px"></div>
+      <div style="height:14px"></div>
+      <button class="primary" id="anotherMeal">MAKE ANOTHER MEAL</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+let language='en', time=20, method='easiest';
+const $=id=>document.getElementById(id);
+
+document.querySelectorAll('.lang').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.lang').forEach(x=>x.classList.remove('active')); b.classList.add('active');
+  language=b.dataset.lang; translate();
+applyProfileToSetup();
+});
+document.querySelectorAll('#times .chip').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#times .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');time=+b.dataset.value;
+});
+document.querySelectorAll('#methods .chip').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#methods .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');method=b.dataset.value;
+});
+
+function translate(){
+ const es=language==='es';
+ $('tagline').textContent=es?'¿Cena? Listo.':'Dinner? Listo.';
+ $('title').textContent=es?'¿Qué tienes en casa?':'What do you have at home?';
+ $('subtitle').textContent=es?'Dile a ListoMeal qué tienes y buscamos una buena cena.':'Tell ListoMeal what you already have.';
+ $('ingredientsLabel').textContent=es?'Ingredientes':'Ingredients';
+ $('ingredients').placeholder=es?'pollo, arroz, queso, brócoli':'chicken, rice, cheese, broccoli';
+ $('scanBtn').textContent=es?'📷 ESCANEAR REFRI / DESPENSA':'📷 SCAN FRIDGE / PANTRY';
+ $('timeLabel').textContent=es?'¿Cuánto tiempo tienes?':'How much time do you have?';
+ $('methodLabel').textContent=es?'¿Cómo quieres cocinar?':'How do you want to cook?';
+ $('whoLabel').textContent=es?'¿Quién va a comer?':'Who’s eating?';
+ $('adultsLabel').textContent=es?'Adultos':'Adults'; $('kidsLabel').textContent=es?'Niños':'Kids';
+ $('avoidLabel').textContent=es?'Evitar / alergias / cosas que no les gustan':'Avoid / allergies / dislikes';
+ $('find').textContent=es?'ENCUENTRA MIS COMIDAS →':'FIND MY MEALS →';
+ $('learnNote').textContent=es?'ListoMeal aprende de tus calificaciones del Historial para mejorar futuras sugerencias.':'ListoMeal learns from your History ratings to improve future suggestions.';
+ $('back').textContent=es?'← Cambiar ingredientes':'← Change ingredients';
+ $('loadingText').textContent=es?'ListoMeal está preparando ideas… 🍳':'ListoMeal is cooking up ideas… 🍳';
+ $('resultTitle').textContent=es?'¿Cena? Listo. ✨':'Dinner? Listo. ✨';
+ $('favoritesBtn').textContent=es?'♡ Favoritos':'♡ Favorites';
+ $('historyBtn').textContent=es?'🕘 Historial':'🕘 History';
+ $('profileBtn').textContent=es?'👨‍👩‍👧 Perfil':'👨‍👩‍👧 Profile';
+ $('profileTitle').textContent=es?'Perfil familiar':'Family Profile';
+ $('profileSub').textContent=es?'Guarda los datos de tu familia para no escribirlos cada vez.':'Save your household details so you don’t have to enter them every time.';
+ $('profileNameLabel').textContent=es?'Nombre del perfil':'Profile name';
+ $('profileAdultsLabel').textContent=es?'Adultos':'Adults';
+ $('profileKidsLabel').textContent=es?'Niños':'Kids';
+ $('agesLabel').textContent=es?'Edades de los niños':"Kids' ages";
+ $('profileAvoidLabel').textContent=es?'Alergias / evitar':'Allergies / avoid';
+ $('dislikesLabel').textContent=es?'Comidas que no les gustan':"Foods they don’t like";
+ $('dietLabel').textContent=es?'Preferencias alimentarias':'Dietary preferences';
+ $('saveProfile').textContent=es?'GUARDAR PERFIL':'SAVE PROFILE';
+ $('profileBack').textContent=es?'← Regresar':'← Back';
+}
+function show(id){['setup','profile','favorites','history','loading','results','cook','done'].forEach(x=>$(x).classList.add('hidden'));$(id).classList.remove('hidden');window.scrollTo(0,0)}
+
+
+$('scanBtn').onclick=()=>$('scanInput').click();
+
+$('scanInput').onchange=async()=>{
+  const file=$('scanInput').files[0];
+  if(!file) return;
+
+  $('scanStatus').textContent = language==='es' ? 'Analizando la foto…' : 'Analyzing photo…';
+  $('scanPreview').src = URL.createObjectURL(file);
+  $('scanPreview').classList.remove('hidden');
+
+  try{
+    const base64 = await fileToDataURL(file);
+    const r = await fetch('/api/scan',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({image_data:base64, language})
+    });
+    const data = await r.json();
+    if(!r.ok) throw new Error(data.error||'Scan failed');
+
+    const found=(data.ingredients||[]).map(x=>x.name||x).filter(Boolean);
+    $('ingredients').value = found.join(', ');
+    $('scanStatus').textContent = language==='es'
+      ? `Detecté ${found.length} ingredientes. Revísalos y corrige lo que haga falta.`
+      : `I found ${found.length} ingredients. Review and edit anything I missed.`;
+  }catch(e){
+    $('scanStatus').textContent = (language==='es'?'No pude analizar la foto: ':'Could not scan photo: ') + e.message;
+  }
+};
+
+function fileToDataURL(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(reader.result);
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+$('find').onclick=async()=>{
+ const ingredients=$('ingredients').value.split(/,|\n/).map(x=>x.trim()).filter(Boolean);
+ if(!ingredients.length){alert(language==='es'?'Escribe algunos ingredientes primero.':'Add a few ingredients first.');return}
+ show('loading');
+ try{
+  const r=await fetch('/api/recipes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+    ingredients, language, time_minutes:time, method,
+    adults:+$('adults').value||1,kids:+$('kids').value||0,avoid:$('avoid').value.trim(),
+    taste_profile:getTasteProfile(),
+    family_profile:getFamilyProfile()
+  })});
+  const data=await r.json();
+  if(!r.ok) throw new Error(data.error||'Unknown error');
+  render(data.recipes);
+  show('results');
+ }catch(e){
+  $('recipeList').innerHTML=`<div class="error">${e.message}</div>`;
+  show('results');
+ }
+};
+$('back').onclick=()=>show('setup');
+$('favoritesBtn').onclick=()=>{renderFavorites();show('favorites');};
+$('favoritesBack').onclick=()=>show('setup');
+$('historyBtn').onclick=()=>{renderHistory();show('history');};
+$('historyBack').onclick=()=>show('setup');
+$('profileBtn').onclick=()=>{loadProfileForm();show('profile');};
+$('profileBack').onclick=()=>show('setup');
+
+
+
+
+
+async function loadRecipePhoto(recipe, imgId, loadingId){
+  const img=$(imgId);
+  const loading=loadingId ? $(loadingId) : null;
+  if(!img) return;
+
+  if(recipe._imageData){
+    img.src=recipe._imageData;
+    img.alt=recipe.title || '';
+    img.classList.remove('hidden');
+    if(loading) loading.classList.add('hidden');
+    return;
+  }
+
+  try{
+    const r=await fetch('/api/recipe-image',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        title: recipe.title,
+        summary: recipe.summary,
+        ingredients: recipe.uses_from_home || []
+      })
+    });
+    const data=await r.json();
+    if(!r.ok) throw new Error(data.error || 'Image failed');
+    recipe._imageData=data.image_data;
+    img.src=data.image_data;
+    img.alt=recipe.title || '';
+    img.classList.remove('hidden');
+    if(loading) loading.classList.add('hidden');
+  }catch(e){
+    if(loading){
+      loading.textContent = language==='es' ? 'Foto no disponible — la receta sí está lista.' : 'Photo unavailable — the recipe is still ready.';
+    }
+  }
+}
+
+function addRecipeToFavorites(recipe){
+  if(!recipe) return;
+  let favs = getFavorites();
+  const key = recipeKey(recipe);
+  if(!favs.some(x=>recipeKey(x)===key)) {
+    const cleanRecipe={...recipe};
+    delete cleanRecipe._imageData;
+    favs.push(cleanRecipe);
+    saveFavorites(favs);
+  }
+}
+
+function getFavorites(){
+  try{return JSON.parse(localStorage.getItem('listomeal_favorites')||'[]');}
+  catch(e){return [];}
+}
+function saveFavorites(favs){
+  localStorage.setItem('listomeal_favorites', JSON.stringify(favs));
+}
+function recipeKey(r){
+  return `${r.title}|${r.method}|${r.time_minutes}`;
+}
+function isFavorite(r){
+  return getFavorites().some(x=>recipeKey(x)===recipeKey(r));
+}
+function toggleFavorite(idx){
+  const r = currentRecipes[idx];
+  let favs = getFavorites();
+  const key = recipeKey(r);
+  const pos = favs.findIndex(x=>recipeKey(x)===key);
+  if(pos>=0) favs.splice(pos,1);
+  else {
+    const cleanRecipe={...r};
+    delete cleanRecipe._imageData;
+    favs.push(cleanRecipe);
+  }
+  saveFavorites(favs);
+  render(currentRecipes);
+}
+function renderFavorites(){
+  const favs = getFavorites();
+  $('favoritesTitle').textContent = language==='es' ? 'Favoritos' : 'Favorites';
+  $('favoritesSub').textContent = language==='es' ? 'Recetas que guardaste para después.' : 'Recipes you saved for later.';
+  $('favoritesBack').textContent = language==='es' ? '← Regresar' : '← Back';
+
+  if(!favs.length){
+    $('favoritesList').innerHTML = `<div class="card"><div class="sub">${language==='es'?'Todavía no has guardado recetas.':'You haven’t saved any recipes yet.'}</div></div>`;
+    return;
+  }
+
+  $('favoritesList').innerHTML = favs.map((r,idx)=>`
+    <div class="recipe">
+      <div class="photo-loading" id="favLoad${idx}">🍽️ ${language==='es'?'Preparando foto…':'Creating photo…'}</div>
+      <img class="recipe-photo hidden" id="favImg${idx}" src="" alt="${esc(r.title)}">
+      <div class="fav-row">
+        <h3>${esc(r.title)}</h3>
+        <button class="fav-btn saved" onclick="removeFavoriteByIndex(${idx})">♥</button>
+      </div>
+      <div class="sub">${esc(r.summary||'')}</div>
+      <div class="meta">${r.time_minutes} min • ${esc(r.method)} • ${esc(r.difficulty||'Easy')}</div>
+      <div style="height:12px"></div>
+      <button class="primary" onclick="startFavorite(${idx})">${language==='es'?'COCINAR ESTO →':'COOK THIS →'}</button>
+    </div>`).join('');
+
+  setTimeout(()=>{ favs.forEach((r,idx)=>loadRecipePhoto(r, `favImg${idx}`, `favLoad${idx}`)); }, 0);
+}
+function removeFavoriteByIndex(idx){
+  let favs=getFavorites();
+  favs.splice(idx,1);
+  saveFavorites(favs);
+  renderFavorites();
+}
+function startFavorite(idx){
+  const favs=getFavorites();
+  currentRecipe=favs[idx];
+  currentStep=0;
+  renderCookStep();
+  show('cook');
+}
+
+
+
+
+function getFamilyProfile(){
+  try{return JSON.parse(localStorage.getItem('listomeal_family_profile')||'{}');}
+  catch(e){return {};}
+}
+function saveFamilyProfile(profile){
+  localStorage.setItem('listomeal_family_profile', JSON.stringify(profile));
+}
+function loadProfileForm(){
+  const p=getFamilyProfile();
+  $('profileName').value=p.name||'';
+  $('profileAdults').value=p.adults||2;
+  $('profileKids').value=p.kids||0;
+  $('kidAges').value=(p.kid_ages||[]).join(', ');
+  $('profileAvoid').value=p.avoid||'';
+  $('profileDislikes').value=p.dislikes||'';
+  $('profileDiet').value=p.diet||'';
+}
+function applyProfileToSetup(){
+  const p=getFamilyProfile();
+  if(p.adults) $('adults').value=p.adults;
+  if(Number.isFinite(Number(p.kids))) $('kids').value=p.kids;
+  const combined=[p.avoid,p.dislikes].filter(Boolean).join(', ');
+  if(combined) $('avoid').value=combined;
+}
+
+function getTasteProfile(){
+  const items=getHistory();
+  const liked=[];
+  const disliked=[];
+  for(const item of items.slice(0,20)){
+    if(!item || !item.recipe) continue;
+    const entry={
+      title:item.recipe.title||'',
+      rating:item.rating||'',
+      method:item.recipe.method||'',
+      ingredients:item.recipe.uses_from_home||[]
+    };
+    if(item.rating==='loved' || item.rating==='good') liked.push(entry);
+    if(item.rating==='meh' || item.rating==='nope') disliked.push(entry);
+  }
+  return {liked, disliked};
+}
+
+function getHistory(){
+  try{return JSON.parse(localStorage.getItem('listomeal_history')||'[]');}
+  catch(e){return [];}
+}
+function saveHistory(items){
+  localStorage.setItem('listomeal_history', JSON.stringify(items));
+}
+function addHistory(recipe, rating){
+  if(!recipe) return;
+  let items=getHistory();
+  const key=recipeKey(recipe);
+  if(items.length && recipeKey(items[0].recipe)===key && (Date.now()-new Date(items[0].cooked_at).getTime())<10*60*1000){
+    items[0].rating=rating;
+    items[0].cooked_at=new Date().toISOString();
+  }else{
+    items.unshift({recipe,rating,cooked_at:new Date().toISOString()});
+  }
+  saveHistory(items.slice(0,50));
+}
+function ratingLabel(r){
+  const map={
+    loved: language==='es'?'😍 Nos encantó':'😍 Loved it',
+    good: language==='es'?'🙂 Buena':'🙂 Good',
+    meh: language==='es'?'😐 Regular':'😐 Meh',
+    nope: language==='es'?'🤢 No repetir':'🤢 Nope'
+  };
+  return map[r]||r;
+}
+function renderHistory(){
+  const items=getHistory();
+  $('historyTitle').textContent=language==='es'?'Historial':'History';
+  $('historySub').textContent=language==='es'?'Comidas que cocinaste y cómo salieron.':'Meals you cooked and how they went.';
+  $('historyBack').textContent=language==='es'?'← Regresar':'← Back';
+
+  if(!items.length){
+    $('historyList').innerHTML=`<div class="card"><div class="sub">${language==='es'?'Todavía no hay comidas en tu historial.':'No meals in your history yet.'}</div></div>`;
+    return;
+  }
+
+  $('historyList').innerHTML=items.map((item,idx)=>{
+    const r=item.recipe;
+    const d=new Date(item.cooked_at);
+    return `
+      <div class="recipe">
+        <div class="photo-loading" id="histLoad${idx}">🍽️ ${language==='es'?'Preparando foto…':'Creating photo…'}</div>
+        <img class="recipe-photo hidden" id="histImg${idx}" src="" alt="${esc(r.title)}">
+        <h3>${esc(r.title)}</h3>
+        <div class="meta">${d.toLocaleString()}</div>
+        <div class="meta">${r.time_minutes} min • ${esc(r.method)} • ${esc(r.difficulty||'Easy')}</div>
+        <div class="label">${ratingLabel(item.rating)}</div>
+        <div style="height:12px"></div>
+        <button class="primary" onclick="cookHistory(${idx})">${language==='es'?'COCINAR OTRA VEZ →':'COOK AGAIN →'}</button>
+      </div>`;
+  }).join('');
+
+  setTimeout(()=>{ items.forEach((item,idx)=>loadRecipePhoto(item.recipe, `histImg${idx}`, `histLoad${idx}`)); }, 0);
+}
+function cookHistory(idx){
+  const items=getHistory();
+  currentRecipe=items[idx].recipe;
+  currentStep=0;
+  renderCookStep();
+  show('cook');
+}
+
+let currentRecipes = [];
+let currentRecipe = null;
+let currentStep = 0;
+
+function render(recipes){
+ currentRecipes = recipes;
+ $('recipeList').innerHTML=recipes.map((r,idx)=>`
+  <div class="recipe">
+   <div class="photo-loading" id="recipeLoad${idx}">🍽️ ${language==='es'?'Preparando foto de esta receta…':'Creating a photo of this recipe…'}</div>
+   <img class="recipe-photo hidden" id="recipeImg${idx}" src="" alt="${esc(r.title)}">
+   <div class="fav-row">
+    <h3>${esc(r.title)}</h3>
+    <button class="fav-btn ${isFavorite(r)?'saved':''}" onclick="toggleFavorite(${idx});event.stopPropagation()">${isFavorite(r)?'♥':'♡'}</button>
+   </div>
+   <div class="sub">${esc(r.summary)}</div>
+   <div class="meta">${r.time_minutes} min • ${esc(r.method)} • ${esc(r.difficulty)}</div>
+   <div class="label">${language==='es'?'De lo que tienes':'From what you have'}</div>
+   <div>${r.uses_from_home.map(esc).join(' • ')}</div>
+   <div class="label">${language==='es'?'Básicos de despensa':'Pantry basics'}</div>
+   <div>${r.pantry_basics.length?r.pantry_basics.map(esc).join(' • '):(language==='es'?'Ninguno':'None')}</div>
+   <div class="label">${language==='es'?'Opcional':'Optional'}</div>
+   <div>${r.optional.length?r.optional.map(esc).join(' • '):(language==='es'?'Nada':'None')}</div>
+   <div style="height:12px"></div>
+   <button class="primary" onclick="startCook(${idx})">${language==='es'?'COCINAR ESTO →':'COOK THIS →'}</button>
+  </div>`).join('');
+
+ setTimeout(()=>{ currentRecipes.forEach((r,idx)=>loadRecipePhoto(r, `recipeImg${idx}`, `recipeLoad${idx}`)); }, 0);
+}
+
+function startCook(idx){
+  currentRecipe = currentRecipes[idx];
+  currentStep = 0;
+  renderCookStep();
+  show('cook');
+}
+
+function renderCookStep(){
+  $('cookImage').alt = currentRecipe.title;
+  if(currentRecipe._imageData){
+    $('cookImage').src = currentRecipe._imageData;
+    $('cookImage').classList.remove('hidden');
+  }else{
+    $('cookImage').classList.add('hidden');
+    loadRecipePhoto(currentRecipe, 'cookImage', null);
+  }
+  $('cookTitle').textContent = currentRecipe.title;
+  $('cookSummary').textContent = currentRecipe.summary;
+  $('cookMeta').textContent = `${currentRecipe.time_minutes} min • ${currentRecipe.method} • ${currentRecipe.difficulty}`;
+  $('stepLabel').textContent = language==='es' ? `Paso ${currentStep+1} de ${currentRecipe.steps.length}` : `Step ${currentStep+1} of ${currentRecipe.steps.length}`;
+  $('stepText').textContent = currentRecipe.steps[currentStep];
+  $('prevCook').disabled = currentStep===0;
+  $('nextCook').textContent = currentStep===currentRecipe.steps.length-1 ? (language==='es'?'TERMINAR ✓':'FINISH ✓') : (language==='es'?'Siguiente →':'Next →');
+  $('helpBox').classList.add('hidden');
+  $('helpBox').textContent = '';
+  buildTimerFromStep(currentRecipe.steps[currentStep]);
+}
+
+function buildTimerFromStep(step){
+  const m = step.match(/(\d+)\s*(?:-|to)?\s*(\d+)?\s*(minute|minutos|minuto|min)/i);
+  const area = $('timerArea');
+  area.innerHTML = '';
+  if(!m) return;
+  const mins = Number(m[1]);
+  const btn = document.createElement('button');
+  btn.className='secondary';
+  btn.textContent = language==='es' ? `⏱ Iniciar temporizador ${mins} min` : `⏱ Start ${mins} min timer`;
+  btn.onclick = ()=>startTimer(mins*60, btn);
+  area.appendChild(btn);
+}
+
+function startTimer(seconds, btn){
+  let remaining = seconds;
+  btn.disabled = true;
+  const tick = ()=>{
+    const mm = Math.floor(remaining/60), ss = remaining%60;
+    btn.textContent = `⏱ ${mm}:${String(ss).padStart(2,'0')}`;
+    if(remaining<=0){
+      btn.textContent = language==='es' ? '⏰ ¡Tiempo!' : '⏰ Time!';
+      btn.disabled = false;
+      return;
+    }
+    remaining--;
+    setTimeout(tick,1000);
+  };
+  tick();
+}
+
+$('prevCook').onclick=()=>{ if(currentStep>0){currentStep--;renderCookStep();} };
+$('nextCook').onclick=()=>{
+  if(currentStep<currentRecipe.steps.length-1){currentStep++;renderCookStep();}
+  else{
+    $('doneTitle').textContent = language==='es' ? '¡Comida lista!' : 'Meal listo!';
+    $('doneSub').textContent = language==='es' ? '¿Cómo salió?' : 'How did it go?';
+    $('anotherMeal').textContent = language==='es' ? 'HACER OTRA COMIDA' : 'MAKE ANOTHER MEAL';
+    show('done');
+  }
+};
+
+$('howHelp').onclick=()=>{
+  const step = currentRecipe.steps[currentStep];
+  $('helpBox').textContent = language==='es'
+    ? `Haz este paso con calma: ${step}`
+    : `Take this step slowly: ${step}`;
+  $('helpBox').classList.remove('hidden');
+};
+
+document.querySelectorAll('#feedback .chip').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('#feedback .chip').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+  const msg={
+    loved: language==='es'?'¡Buenísima! La marcamos como favorita de esta sesión.':'Nice! We’ll remember it as a winner for this session.',
+    good: language==='es'?'Anotado: buena opción.':'Got it: solid option.',
+    meh: language==='es'?'Anotado: quizá no repetir.':'Got it: probably not a repeat.',
+    nope: language==='es'?'Anotado: mejor evitarla.':'Got it: skip this one next time.'
+  };
+  $('feedbackMsg').textContent=msg[btn.dataset.value];
+  addHistory(currentRecipe, btn.dataset.value);
+  if(btn.dataset.value==='loved'){
+    addRecipeToFavorites(currentRecipe);
+    $('feedbackMsg').textContent += language==='es' ? ' También se guardó en Favoritos. ♥' : ' Also saved to Favorites. ♥';
+  }
+});
+
+$('anotherMeal').onclick=()=>show('setup');
+
+$('saveProfile').onclick=()=>{
+  const ages=$('kidAges').value.split(',').map(x=>x.trim()).filter(Boolean);
+  const p={
+    name:$('profileName').value.trim(),
+    adults:+$('profileAdults').value||1,
+    kids:+$('profileKids').value||0,
+    kid_ages:ages,
+    avoid:$('profileAvoid').value.trim(),
+    dislikes:$('profileDislikes').value.trim(),
+    diet:$('profileDiet').value.trim()
+  };
+  saveFamilyProfile(p);
+  applyProfileToSetup();
+  $('profileSavedMsg').textContent=language==='es'?'Perfil guardado.':'Profile saved.';
+};
+
+
+function esc(x){const d=document.createElement('div');d.textContent=String(x??'');return d.innerHTML}
+translate();
+applyProfileToSetup();
+</script>
+</body>
+</html>
