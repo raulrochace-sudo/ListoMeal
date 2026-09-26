@@ -7,6 +7,7 @@ import re
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 from flask import Flask, jsonify, request, send_from_directory
@@ -77,6 +78,9 @@ def photo():
             db.execute("BEGIN IMMEDIATE")
             if image.is_file():
                 return jsonify(found=True, imageUrl=url, cached=True)
+            # A previous failed/interrupted offline attempt can leave a quota
+            # reservation; no image exists, so allow this recipe to be retried.
+            db.execute("DELETE FROM requests WHERE id=?", (digest,))
             month = datetime.now(timezone.utc).strftime("%Y-%m")
             count = db.execute("SELECT count(*) FROM requests WHERE month=?", (month,)).fetchone()[0]
             if count >= cap:
@@ -101,7 +105,20 @@ def photo():
         temporary.write_bytes(raw)
         temporary.replace(image)
         return jsonify(found=True, imageUrl=url, cached=False)
+    except HTTPError as exc:
+        if directory:
+            with sqlite3.connect(directory / "quota.sqlite") as db:
+                db.execute("DELETE FROM requests WHERE id=?", (digest,))
+        if exc.code == 401:
+            return jsonify(found=False, reason="The OpenAI API rejected this key (401). Create a new key in the funded account."), 401
+        if exc.code == 429:
+            return jsonify(found=False, reason="Rate limit or billing limit (429). Check API billing and retry later."), 429
+        app.logger.error("Recipe image API failed with HTTP %s", exc.code)
+        return jsonify(found=False, reason=f"Image API returned HTTP {exc.code}"), 502
     except Exception:
+        if directory and (directory / "quota.sqlite").exists():
+            with sqlite3.connect(directory / "quota.sqlite") as db:
+                db.execute("DELETE FROM requests WHERE id=?", (digest,))
         app.logger.exception("Recipe image generation failed")
         return jsonify(found=False)
 

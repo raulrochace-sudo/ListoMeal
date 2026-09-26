@@ -71,6 +71,8 @@ def main():
                 created += 1
                 print(f"Generated {created}: {item['id']} {item['title']}")
     print(f"Finished: {created} new, {already_saved} cached, {failures} failed")
+    if failures:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
