@@ -6,6 +6,7 @@ const api = { post: async (path: string, body: unknown) => {
 } };
 import { getLocalMeals } from './localRecipes';
 import type { Nutrition } from './nutrition';
+import { FamilyFinish } from './FamilyFinish';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import { createWorker } from 'tesseract.js';
@@ -27,7 +28,6 @@ import {
   Share2,
   Shuffle,
   Sparkles,
-  Star,
   UserRound,
   Volume2,
   VolumeX,
@@ -179,8 +179,11 @@ function ingredientFromImageNet(className: string, lang: Lang) {
   return imageNetFoodLabels.find(item => item.keys.some(key => normalized.includes(key)))?.[lang];
 }
 function ingredientsFromOcr(text: string, lang: Lang) {
-  const normalized = text.toLowerCase();
-  return ocrFoodLabels.filter(item => item.keys.some(key => normalized.includes(key))).map(item => item[lang]);
+  const normalized = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return ocrFoodLabels.filter(item => item.keys.some(key => {
+    const word = key.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(^|[^a-z])${word}([^a-z]|$)`).test(normalized);
+  })).map(item => item[lang]);
 }
 function getOcrWorker() {
   if (!ocrWorkerPromise) ocrWorkerPromise = createWorker('eng');
@@ -212,7 +215,7 @@ const copy = {
   en: {
     tagline: 'Dinner? Listo.', subtitle: 'Turn what you already have into a family meal.', type: 'Type It', pick: 'Pick It', scan: 'Scan It',
     ingredients: 'What do you have?', placeholder: 'chicken, rice, broccoli, tortillas…', time: 'How much time?', method: 'How are you cooking?',
-    generate: 'Give me 3 meals', scanning: 'Scanning your food…', generating: 'Cooking up ideas…', coming: 'Illustrative food photo', cook: 'Cook With Me',
+    generate: 'Find meals', scanning: 'Scanning your food…', generating: 'Cooking up ideas…', coming: 'Illustrative food photo', cook: 'Cook With Me',
     favorite: 'Favorite', noFav: 'No favorites yet. Tap the heart on a meal you want to make again.', noHistory: 'No cooking history yet.', profile: 'Family Profile',
     save: 'Save profile', adults: 'Adults', kids: 'Kids', ages: 'Kids’ ages', avoid: 'Allergies / avoid', dislikes: 'Dislikes', diet: 'Dietary needs',
     results: 'Tonight’s ideas', change: 'Change ingredients', pantry: 'Pantry basics', optional: 'Optional extras', home: 'Cook', history: 'History', favorites: 'Favorites',
@@ -224,7 +227,7 @@ const copy = {
   },
   es: {
     tagline: '¿Cena? Listo.', subtitle: 'Convierte lo que ya tienes en una comida para la familia.', type: 'Escribir', pick: 'Elegir', scan: 'Escanear', ingredients: '¿Qué tienes?',
-    placeholder: 'pollo, arroz, brócoli, tortillas…', time: '¿Cuánto tiempo tienes?', method: '¿Cómo vas a cocinar?', generate: 'Dame 3 comidas', scanning: 'Escaneando tu comida…', generating: 'Preparando ideas…',
+    placeholder: 'pollo, arroz, brócoli, tortillas…', time: '¿Cuánto tiempo tienes?', method: '¿Cómo vas a cocinar?', generate: 'Buscar recetas', scanning: 'Escaneando tu comida…', generating: 'Preparando ideas…',
     coming: 'Foto ilustrativa de comida', cook: 'Cocinar conmigo', favorite: 'Favorito', noFav: 'Todavía no hay favoritos. Toca el corazón de una comida que quieras repetir.', noHistory: 'Todavía no hay historial.',
     profile: 'Perfil familiar', save: 'Guardar perfil', adults: 'Adultos', kids: 'Niños', ages: 'Edades de los niños', avoid: 'Alergias / evitar', dislikes: 'No les gusta', diet: 'Necesidades de dieta',
     results: 'Ideas para hoy', change: 'Cambiar ingredientes', pantry: 'Básicos de despensa', optional: 'Extras opcionales', home: 'Cocinar', history: 'Historial', favorites: 'Favoritos', next: 'Siguiente paso', back: 'Atrás', done: 'Terminar', rate: '¿Qué tal quedó?',
@@ -300,6 +303,7 @@ function App() {
   const [errorMsg, setErrorMsg] = useState('');
   const [favorites, setFavorites] = useState<Recipe[]>(() => readLocal('listomeal-favorites', [] as Recipe[]));
   const [history, setHistory] = useState<HistoryItem[]>(() => readLocal('listomeal-history', [] as HistoryItem[]));
+  const [recentSuggestions, setRecentSuggestions] = useState<string[]>(() => readLocal('listomeal-recent-ideas', [] as string[]));
   const [profile, setProfile] = useState<Profile>(() => readLocal('listomeal-profile', starterProfile));
   const [cookRecipe, setCookRecipe] = useState<Recipe | null>(null);
   const [cookStep, setCookStep] = useState(0);
@@ -319,6 +323,7 @@ function App() {
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
   useEffect(() => localStorage.setItem('listomeal-favorites', JSON.stringify(favorites)), [favorites]);
   useEffect(() => localStorage.setItem('listomeal-history', JSON.stringify(history)), [history]);
+  useEffect(() => localStorage.setItem('listomeal-recent-ideas', JSON.stringify(recentSuggestions)), [recentSuggestions]);
   useEffect(() => localStorage.setItem('listomeal-music', JSON.stringify(musicOn)), [musicOn]);
   useEffect(() => {
     const audio = audioRef.current; if (!audio) return;
@@ -338,22 +343,23 @@ function App() {
       return;
     }
     setLoading(true); setErrorMsg('');
-    const next = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: history.slice(0, 8).map(h => h.recipe.title) }) as Recipe[];
-    setRecipes(next); if (!next.length) setErrorMsg(lang === 'en' ? 'No meals match this goal. Try another goal or change ingredients.' : 'No hay recetas para ese objetivo. Prueba otro objetivo o cambia los ingredientes.'); setLoading(false); window.scrollTo({ top: 0, behavior: 'smooth' });
+    const next = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: [...recentSuggestions, ...history.slice(0, 8).map(h => h.recipe.title)] }) as Recipe[];
+    setRecipes(next); setRecentSuggestions(prev => [...next.map(r => r.title), ...prev].slice(0, 36)); if (!next.length) setErrorMsg(lang === 'en' ? 'No meals match this goal. Try another goal or change ingredients.' : 'No hay recetas para ese objetivo. Prueba otro objetivo o cambia los ingredientes.'); setLoading(false); window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function surpriseMe() {
     setErrorMsg(''); setLoading(true);
-    const next = getLocalMeals({ lang, ingredients: [], time, method, profile, nutritionGoal, recentTitles: history.slice(0, 8).map(h => h.recipe.title) }) as Recipe[];
-    setRecipes(next); setLoading(false); setTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' });
+    const next = getLocalMeals({ lang, ingredients: [], time, method, profile, nutritionGoal, recentTitles: [...recentSuggestions, ...history.slice(0, 8).map(h => h.recipe.title)] }) as Recipe[];
+    setRecipes(next); setRecentSuggestions(prev => [...next.map(r => r.title), ...prev].slice(0, 36)); setLoading(false); setTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function swapRecipe(index: number) {
-    const exclude = [...recipes.map(r => r.title), ...history.slice(0, 8).map(h => h.recipe.title)];
-    const pool = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: exclude }) as Recipe[];
+    const exclude = [...recipes.map(r => r.title), ...recentSuggestions, ...history.slice(0, 8).map(h => h.recipe.title)];
+    const pool = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: exclude, limit: 25 }) as Recipe[];
     const replacement = pool.find(r => !recipes.some(existing => existing.id === r.id));
     if (!replacement) { flash(lang === 'en' ? 'No other match right now' : 'No hay otra opción por ahora'); return; }
     setRecipes(prev => prev.map((r, i) => (i === index ? replacement : r)));
+    setRecentSuggestions(prev => [replacement.title, ...prev].slice(0, 36));
     flash(lang === 'en' ? 'Swapped for a new idea' : 'Cambiado por una idea nueva');
   }
 
@@ -392,7 +398,21 @@ function App() {
       const detected = predictions.filter(prediction => prediction.score >= 0.32).map(prediction => localScanFoods[prediction.class]?.[lang]).filter((item): item is string => Boolean(item));
       const scanAreas: Array<HTMLImageElement | HTMLCanvasElement> = [photo, ...makeScanCrops(photo)];
       const classifiedGroups = await Promise.all(scanAreas.map(area => classifier.classify(area, 10)));
-      const classified = classifiedGroups.flat().filter(prediction => prediction.probability >= 0.045).map(prediction => ingredientFromImageNet(prediction.className, lang)).filter((item): item is string => Boolean(item));
+      // ImageNet labels are broad. Require one strong match or corroboration
+      // from two different regions before adding a food automatically.
+      const votes = new Map<string, number>();
+      const classified = classifiedGroups.flatMap((group, index) => {
+        const areaFoods = new Map<string, number>();
+        for (const prediction of group) {
+          const food = ingredientFromImageNet(prediction.className, lang);
+          if (food && prediction.probability >= 0.06) areaFoods.set(food, Math.max(areaFoods.get(food) || 0, prediction.probability));
+        }
+        return [...areaFoods].flatMap(([food, probability]) => {
+          votes.set(food, (votes.get(food) || 0) + 1);
+          return probability >= 0.20 || (index === 0 && probability >= 0.12) ? [food] : [];
+        });
+      });
+      classified.push(...[...votes].filter(([, count]) => count >= 2).map(([food]) => food));
       let labelMatches: string[] = [];
       try { const worker = await getOcrWorker(); const result = await worker.recognize(photo); labelMatches = ingredientsFromOcr(result.data.text, lang); } catch { labelMatches = []; }
       const found = Array.from(new Set([...detected, ...classified, ...labelMatches])).slice(0, 16);
@@ -438,7 +458,7 @@ function App() {
             <h2 className="text-3xl font-black leading-tight">{lang === 'en' ? 'Dinner gets easier in 3 steps.' : 'La cena se hace fácil en 3 pasos.'}</h2>
             <div className="mt-5 space-y-3 text-sm font-semibold text-slate-700">
               <div className="rounded-2xl bg-orange-50 p-4">📸 {lang === 'en' ? 'Scan your fridge, pick ingredients, or type what you have.' : 'Escanea tu refri, elige ingredientes o escribe lo que tienes.'}</div>
-              <div className="rounded-2xl bg-amber-50 p-4">🍽️ {lang === 'en' ? 'Get 3 matches from 500 local recipes.' : 'Recibe 3 opciones entre 500 recetas locales.'}</div>
+              <div className="rounded-2xl bg-amber-50 p-4">🍽️ {lang === 'en' ? 'Explore 200 distinct family recipes.' : 'Explora 200 recetas familiares diferentes.'}</div>
               <div className="rounded-2xl bg-emerald-50 p-4">👨‍🍳 {lang === 'en' ? 'Use Cook With Me for simple step-by-step cooking.' : 'Usa Cocinar conmigo para seguir pasos sencillos.'}</div>
             </div>
             <p className="mt-4 text-xs text-slate-500">{lang === 'en' ? 'Your recipe matching and Deep Scan run locally, so the core experience does not use AI credits.' : 'Las recetas y Deep Scan funcionan localmente, así que la experiencia principal no usa créditos de IA.'}</p>
@@ -474,7 +494,7 @@ function App() {
                 <button className={`mode-btn ${mode === 'scan' ? 'active' : ''}`} onClick={() => setMode('scan')}><Camera size={17} />{t.scan}</button>
               </div>
               {mode === 'type' && <div><label className="label">{t.ingredients}</label><textarea className="field min-h-28" value={typed} onChange={e => setTyped(e.target.value)} placeholder={t.placeholder} /></div>}
-              {mode === 'pick' && <div><label className="label">{t.ingredients}</label><div className="flex flex-wrap gap-2">{commonIngredients.map(item => { const label = lang === 'en' ? item.en : item.es; return <button key={item.key} onClick={() => setPicked(prev => prev.includes(label) ? prev.filter(x => x !== label) : [...prev, label])} className={`chip ${picked.includes(label) ? 'selected' : ''}`}>{picked.includes(label) ? <Minus size={14} /> : <Plus size={14} />} {label}</button>; })}</div>{allIngredients.length > 0 && <div className="mt-4 rounded-2xl bg-emerald-50 p-3 text-sm font-semibold text-emerald-900">{allIngredients.join(' • ')}</div>}{scanCount > 0 && <div className="mt-4 rounded-2xl border border-orange-200 bg-orange-50 p-4"><p className="mb-3 text-sm font-bold text-orange-900">{lang === 'es' ? '¿Tienes más ingredientes? Toma otra foto del refri o la despensa; sumaremos lo que encontremos a esta lista.' : 'Have more ingredients? Take another photo of your fridge or pantry; we will add what we find to this list.'}</p><label className="primary-btn inline-flex cursor-pointer"><Camera size={18}/>{scanLoading ? t.scanning : lang === 'es' ? 'Tomar otra foto' : 'Take another photo'}<input className="hidden" type="file" accept="image/*" capture="environment" disabled={scanLoading} onChange={e => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void scanPhoto(f); }} /></label><p className="mt-2 text-xs text-slate-600">{lang === 'es' ? 'Puedes corregir la lista antes de generar recetas.' : 'You can correct the list before generating recipes.'}</p></div>}</div>}
+              {mode === 'pick' && <div><label className="label">{t.ingredients}</label><div className="flex flex-wrap gap-2">{commonIngredients.map(item => { const label = lang === 'en' ? item.en : item.es; return <button key={item.key} onClick={() => setPicked(prev => prev.includes(label) ? prev.filter(x => x !== label) : [...prev, label])} className={`chip ${picked.includes(label) ? 'selected' : ''}`}>{picked.includes(label) ? <Minus size={14} /> : <Plus size={14} />} {label}</button>; })}</div>{scanCount > 0 && picked.length > 0 && <div className="mt-4 rounded-2xl bg-emerald-50 p-3"><p className="mb-2 text-sm font-bold text-emerald-900">{lang === 'es' ? 'Revisa lo detectado; toca un ingrediente incorrecto para quitarlo:' : 'Review detected foods; tap any incorrect item to remove it:'}</p><div className="flex flex-wrap gap-2">{picked.map(food => <button type="button" key={food} className="chip selected" onClick={() => setPicked(prev => prev.filter(item => item !== food))}>{food} <X size={13} /></button>)}</div></div>}{scanCount === 0 && allIngredients.length > 0 && <div className="mt-4 rounded-2xl bg-emerald-50 p-3 text-sm font-semibold text-emerald-900">{allIngredients.join(' • ')}</div>}{scanCount > 0 && <div className="mt-4 rounded-2xl border border-orange-200 bg-orange-50 p-4"><p className="mb-3 text-sm font-bold text-orange-900">{lang === 'es' ? '¿Tienes más ingredientes? Toma otra foto del refri o la despensa; sumaremos lo que encontremos a esta lista.' : 'Have more ingredients? Take another photo of your fridge or pantry; we will add what we find to this list.'}</p><label className="primary-btn inline-flex cursor-pointer"><Camera size={18}/>{scanLoading ? t.scanning : lang === 'es' ? 'Tomar otra foto' : 'Take another photo'}<input className="hidden" type="file" accept="image/*" capture="environment" disabled={scanLoading} onChange={e => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void scanPhoto(f); }} /></label><p className="mt-2 text-xs text-slate-600">{lang === 'es' ? 'Puedes corregir la lista antes de generar recetas.' : 'You can correct the list before generating recipes.'}</p></div>}</div>}
               {mode === 'scan' && <div className="rounded-3xl border-2 border-dashed border-orange-200 bg-orange-50/60 p-7 text-center"><Camera className="mx-auto mb-3 text-orange-500" size={42} /><p className="mx-auto mb-4 max-w-md text-sm text-slate-600">{t.scanHelp}</p><label className="primary-btn inline-flex cursor-pointer"><Camera size={18} />{scanLoading ? t.scanning : t.scanButton}<input className="hidden" type="file" accept="image/*" capture="environment" disabled={scanLoading} onChange={e => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void scanPhoto(f); }} /></label></div>}
               <div className="mt-6 space-y-5">
                 <div><label className="label"><Clock3 size={16} />{t.time}</label><div className="grid grid-cols-4 gap-2">{['10','20','30','60'].map(v => <button key={v} className={`choice ${time === v ? 'selected' : ''}`} onClick={() => setTime(v)}>{v === '60' ? (lang === 'en' ? 'No rush' : 'Sin prisa') : `${v}m`}</button>)}</div></div>
@@ -541,7 +561,7 @@ function CookModal({ recipe, step, setStep, onClose, onRate, onShare, have, t, l
   }, [step, mode, finished]);
   function playTransitionSound(isFinal:boolean){try{const AudioContextClass=window.AudioContext||(window as unknown as {webkitAudioContext?:typeof AudioContext}).webkitAudioContext;if(!AudioContextClass)return;const context=new AudioContextClass();const gain=context.createGain();gain.connect(context.destination);gain.gain.setValueAtTime(.0001,context.currentTime);gain.gain.exponentialRampToValueAtTime(.1,context.currentTime+.01);gain.gain.exponentialRampToValueAtTime(.0001,context.currentTime+(isFinal?.34:.2));const first=context.createOscillator();first.type='sine';first.frequency.setValueAtTime(isFinal?660:720,context.currentTime);first.connect(gain);first.start(context.currentTime);first.stop(context.currentTime+(isFinal?.22:.16));if(isFinal){const second=context.createOscillator();second.type='sine';second.frequency.setValueAtTime(880,context.currentTime+.12);second.connect(gain);second.start(context.currentTime+.12);second.stop(context.currentTime+.34);}window.setTimeout(()=>void context.close(),450);}catch{}}
   function goNext(){if(transitioning)return;playTransitionSound(step===recipe.steps.length-1);setTransitioning(true);window.setTimeout(()=>{setStep(step+1);setTransitioning(false);},750);}
-  return <div className="fixed inset-0 z-40 bg-black/45 p-3 backdrop-blur-sm"><div className="relative mx-auto flex h-full max-w-xl flex-col overflow-hidden rounded-[2rem] bg-[#fffaf2] shadow-2xl"><div className="flex items-start justify-between border-b border-orange-100 bg-white p-5"><div><div className="text-xs font-bold uppercase tracking-widest text-orange-500">{t.cook}</div><h2 className="mt-1 text-xl font-black">{recipe.title}</h2></div><button className="icon-btn" onClick={onClose}><X size={20}/></button></div>{speechSupported && <div className="flex gap-2 border-b border-orange-100 bg-white px-5 pb-4"><button className={`mode-btn flex-1 ${mode==='read'?'active':''}`} onClick={()=>{setMode('read');window.speechSynthesis.cancel();}}><BookOpen size={16}/>{lang==='en'?'Read':'Leer'}</button><button className={`mode-btn flex-1 ${mode==='listen'?'active':''}`} onClick={()=>setMode('listen')}><Volume2 size={16}/>{lang==='en'?'Listen':'Escuchar'}</button></div>}<div className="flex-1 overflow-y-auto p-5">{step===0&&<div className="mb-5 rounded-3xl bg-white p-4 shadow-sm"><h3 className="font-black">{lang==='en'?'Before you start':'Antes de empezar'}</h3><div className="mt-3 flex items-center justify-between gap-2"><p className="label !mb-0">{t.shopping}</p><button onClick={copyShoppingList} className="inline-flex items-center gap-1 rounded-full border border-orange-100 bg-orange-50 px-2.5 py-1 text-[11px] font-extrabold text-orange-600">{t.copyList}</button></div>{owned.length>0&&<p className="mt-2 text-xs font-bold text-emerald-700">{t.have}: {owned.join(', ')}</p>}{toBuy.length>0?<p className="mt-1 text-sm font-semibold text-slate-700">{t.needToBuy}: {toBuy.join(', ')}</p>:<p className="mt-1 text-sm font-semibold text-emerald-700">{lang==='en'?'You have everything you need!':'¡Ya tienes todo lo que necesitas!'}</p>}{recipe.pantryBasics.length>0&&<><p className="label mt-3">{t.pantry}</p><p className="text-sm">{recipe.pantryBasics.join(' • ')}</p></>}</div>}{!finished?<div className="rounded-[2rem] bg-white p-6 shadow-sm"><div className="mb-3 flex items-center justify-between gap-2"><div className="text-sm font-bold text-orange-500">{lang==='en'?'Step':'Paso'} {step+1} / {recipe.steps.length}</div>{mode==='listen'&&speechSupported&&<button aria-label={lang==='en'?'Replay':'Repetir'} onClick={()=>speak(currentSpokenText(),lang)} className="icon-btn"><Volume2 size={16}/></button>}</div><p className="text-xl font-bold leading-8">{recipe.steps[step]}</p></div>:<div className="rounded-[2rem] bg-white p-6 text-center shadow-sm"><Star className="mx-auto mb-3 text-orange-500" size={44}/><h3 className="text-2xl font-black">{lang==='en'?'Dinner is listo!':'¡La cena está lista!'}</h3><p className="mt-2 text-slate-600">{t.rate}</p><div className="mt-5 grid grid-cols-2 gap-2"><button className="rating" onClick={()=>onRate('loved')}>♥ {lang==='en'?'Loved it':'Me encantó'}</button><button className="rating" onClick={()=>onRate('good')}>👍 {lang==='en'?'Good':'Bien'}</button><button className="rating" onClick={()=>onRate('meh')}>😐 Meh</button><button className="rating" onClick={()=>onRate('nope')}>👎 Nope</button></div><button onClick={onShare} className="primary-btn mt-4 w-full justify-center"><Share2 size={16}/>{lang==='en'?'Share your win':'Comparte tu logro'}</button></div>}</div><div className="flex gap-2 border-t border-orange-100 bg-white p-4"><button className="secondary-btn flex-1 justify-center" disabled={step===0||transitioning} onClick={()=>setStep(Math.max(0,step-1))}>{t.back}</button>{!finished&&<button className="primary-btn flex-1 justify-center" disabled={transitioning} onClick={goNext}>{step===recipe.steps.length-1?t.done:t.next}</button>}</div>{transitioning&&<div className="absolute inset-0 z-50 grid place-items-center bg-[#fffaf2]/95 p-6 backdrop-blur-sm"><div className="text-center"><img src="/resources/yum-mascot.png" alt="ListoMeal cartoon child enjoying food" className="mx-auto max-h-[62vh] w-auto max-w-full animate-pulse rounded-[2rem] object-contain drop-shadow-xl"/><div className="mt-3 text-lg font-black text-orange-600">{lang==='en'?'Mmm… almost there!':'¡Mmm… ya casi!'}</div></div></div>}</div></div>;
+  return <div className="fixed inset-0 z-40 bg-black/45 p-3 backdrop-blur-sm"><div className="relative mx-auto flex h-full max-w-xl flex-col overflow-hidden rounded-[2rem] bg-[#fffaf2] shadow-2xl"><div className="flex items-start justify-between border-b border-orange-100 bg-white p-5"><div><div className="text-xs font-bold uppercase tracking-widest text-orange-500">{t.cook}</div><h2 className="mt-1 text-xl font-black">{recipe.title}</h2></div><button className="icon-btn" onClick={onClose}><X size={20}/></button></div>{speechSupported && <div className="flex gap-2 border-b border-orange-100 bg-white px-5 pb-4"><button className={`mode-btn flex-1 ${mode==='read'?'active':''}`} onClick={()=>{setMode('read');window.speechSynthesis.cancel();}}><BookOpen size={16}/>{lang==='en'?'Read':'Leer'}</button><button className={`mode-btn flex-1 ${mode==='listen'?'active':''}`} onClick={()=>setMode('listen')}><Volume2 size={16}/>{lang==='en'?'Listen':'Escuchar'}</button></div>}<div className="flex-1 overflow-y-auto p-5">{step===0&&<div className="mb-5 rounded-3xl bg-white p-4 shadow-sm"><h3 className="font-black">{lang==='en'?'Before you start':'Antes de empezar'}</h3><div className="mt-3 flex items-center justify-between gap-2"><p className="label !mb-0">{t.shopping}</p><button onClick={copyShoppingList} className="inline-flex items-center gap-1 rounded-full border border-orange-100 bg-orange-50 px-2.5 py-1 text-[11px] font-extrabold text-orange-600">{t.copyList}</button></div>{owned.length>0&&<p className="mt-2 text-xs font-bold text-emerald-700">{t.have}: {owned.join(', ')}</p>}{toBuy.length>0?<p className="mt-1 text-sm font-semibold text-slate-700">{t.needToBuy}: {toBuy.join(', ')}</p>:<p className="mt-1 text-sm font-semibold text-emerald-700">{lang==='en'?'You have everything you need!':'¡Ya tienes todo lo que necesitas!'}</p>}{recipe.pantryBasics.length>0&&<><p className="label mt-3">{t.pantry}</p><p className="text-sm">{recipe.pantryBasics.join(' • ')}</p></>}</div>}{!finished?<div className="rounded-[2rem] bg-white p-6 shadow-sm"><div className="mb-3 flex items-center justify-between gap-2"><div className="text-sm font-bold text-orange-500">{lang==='en'?'Step':'Paso'} {step+1} / {recipe.steps.length}</div>{mode==='listen'&&speechSupported&&<button aria-label={lang==='en'?'Replay':'Repetir'} onClick={()=>speak(currentSpokenText(),lang)} className="icon-btn"><Volume2 size={16}/></button>}</div><p className="text-xl font-bold leading-8">{recipe.steps[step]}</p></div>:<div className="rounded-[2rem] bg-white p-6 text-center shadow-sm"><FamilyFinish lang={lang}/><h3 className="text-2xl font-black">{lang==='en'?'Dinner is listo!':'¡La cena está lista!'}</h3><p className="mt-2 text-slate-600">{t.rate}</p><div className="mt-5 grid grid-cols-2 gap-2"><button className="rating" onClick={()=>onRate('loved')}>♥ {lang==='en'?'Loved it':'Me encantó'}</button><button className="rating" onClick={()=>onRate('good')}>👍 {lang==='en'?'Good':'Bien'}</button><button className="rating" onClick={()=>onRate('meh')}>😐 Meh</button><button className="rating" onClick={()=>onRate('nope')}>👎 Nope</button></div><button onClick={onShare} className="primary-btn mt-4 w-full justify-center"><Share2 size={16}/>{lang==='en'?'Share your win':'Comparte tu logro'}</button></div>}</div><div className="flex gap-2 border-t border-orange-100 bg-white p-4"><button className="secondary-btn flex-1 justify-center" disabled={step===0||transitioning} onClick={()=>setStep(Math.max(0,step-1))}>{t.back}</button>{!finished&&<button className="primary-btn flex-1 justify-center" disabled={transitioning} onClick={goNext}>{step===recipe.steps.length-1?t.done:t.next}</button>}</div>{transitioning&&<div className="absolute inset-0 z-50 grid place-items-center bg-[#fffaf2]/95 p-6 backdrop-blur-sm"><div className="text-center"><img src="/resources/yum-mascot.png" alt="ListoMeal cartoon child enjoying food" className="mx-auto max-h-[62vh] w-auto max-w-full animate-pulse rounded-[2rem] object-contain drop-shadow-xl"/><div className="mt-3 text-lg font-black text-orange-600">{lang==='en'?'Mmm… almost there!':'¡Mmm… ya casi!'}</div></div></div>}</div></div>;
 }
 
 function RecipePhoto({ recipe, fallback }: { recipe:Recipe; fallback:string }) {

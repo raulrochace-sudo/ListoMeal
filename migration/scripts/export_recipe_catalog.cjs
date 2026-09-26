@@ -7,10 +7,19 @@ const transpile = (filename) => ts.transpileModule(fs.readFileSync(path.join(__d
 }).outputText;
 const nutrition = {};
 new Function('exports', transpile('nutrition.ts'))(nutrition);
+const curated = {};
+new Function('exports', transpile('curatedCatalog.ts'))(curated);
+const expanded = {};
+new Function('exports', transpile('expandedCatalog.ts'))(expanded);
 const exportsObject = {};
-new Function('exports', 'require', `${transpile('localRecipes.ts')}\nexports.getCompleteCatalog = library;`)(exportsObject, () => nutrition);
-const en = exportsObject.getCompleteCatalog('en');
-const es = exportsObject.getCompleteCatalog('es');
+new Function('exports', 'require', transpile('localRecipes.ts'))(exportsObject, name => {
+  if (name === './nutrition') return nutrition;
+  if (name === './curatedCatalog') return curated;
+  if (name === './expandedCatalog') return expanded;
+  throw new Error(`Unexpected module: ${name}`);
+});
+const en = exportsObject.library('en');
+const es = exportsObject.library('es');
 if (en.length !== es.length || en.some((recipe, i) => recipe.id !== es[i].id)) {
   throw new Error('English and Spanish catalogs do not have matching IDs');
 }

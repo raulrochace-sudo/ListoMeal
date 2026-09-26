@@ -1,3 +1,4 @@
+param([ValidateRange(1,200)][int]$MaxNew = 3)
 $ErrorActionPreference = 'Stop'
 Set-Location (Split-Path -Parent $PSScriptRoot)
 python -m pip install -r requirements.txt Pillow
@@ -8,7 +9,7 @@ try {
     $env:OPENAI_API_KEY = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptr)
     $env:RECIPE_IMAGE_MONTHLY_LIMIT = '470'
     $env:RECIPE_IMAGE_QUALITY = 'medium'
-    python scripts/batch_recipe_photos.py --execute --max-new 470
+    python scripts/batch_recipe_photos.py --execute --max-new $MaxNew
     if ($LASTEXITCODE -ne 0) { throw 'Photo generation stopped. See the error above.' }
 } finally {
     Remove-Item Env:OPENAI_API_KEY -ErrorAction SilentlyContinue

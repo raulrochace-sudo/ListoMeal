@@ -106,11 +106,23 @@ def photo():
         temporary.replace(image)
         return jsonify(found=True, imageUrl=url, cached=False)
     except HTTPError as exc:
+        # Expose only the API's machine-readable error code. Its message can
+        # contain part of the secret key, so never print or return that text.
+        try:
+            api_error = json.loads(exc.read().decode("utf-8"))
+            error_code = api_error.get("error", {}).get("code") or api_error.get("error", {}).get("type")
+            error_code = error_code if isinstance(error_code, str) and re.fullmatch(r"[a-zA-Z0-9_]{1,80}", error_code) else "unknown"
+            error_message = api_error.get("error", {}).get("message")
+            error_message = error_message if isinstance(error_message, str) else "No message provided"
+            error_message = re.sub(r"(?i)sk-[^\s\"',:;]+", "[KEY REDACTED]", error_message.replace(key, "[KEY REDACTED]"))[:320]
+        except (ValueError, UnicodeDecodeError, AttributeError):
+            error_code = "unknown"
+            error_message = "No message provided"
         if directory:
             with sqlite3.connect(directory / "quota.sqlite") as db:
                 db.execute("DELETE FROM requests WHERE id=?", (digest,))
         if exc.code == 401:
-            return jsonify(found=False, reason="The OpenAI API rejected this key (401). Create a new key in the funded account."), 401
+            return jsonify(found=False, reason=f"OpenAI returned 401, error code: {error_code}. Details: {error_message}"), 401
         if exc.code == 429:
             return jsonify(found=False, reason="Rate limit or billing limit (429). Check API billing and retry later."), 429
         app.logger.error("Recipe image API failed with HTTP %s", exc.code)

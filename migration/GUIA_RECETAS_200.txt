@@ -1,0 +1,18 @@
+LISTOMEAL — 200 RECETAS (26 de septiembre de 2026)
+
+Este paquete amplía el catálogo de 46 a 200 recetas con nombres, ingredientes y preparación específicos en español e inglés. Conserva los identificadores de las 46 recetas anteriores para reutilizar las fotos que sí correspondan. Las imágenes de recetas antiguas que ya no aparecen en el catálogo se quedan en tu computadora; no las borres. Las calorías son ESTIMACIONES para planear comidas, no valores nutricionales medidos.
+
+PASOS PARA PUBLICAR
+1. Si está abierto el generador de fotos anterior, detenlo con Ctrl+C.
+2. Abre este ZIP. En tu carpeta local de ListoMeal, entra a migration (ahí está server.py). Copia del ZIP las carpetas src, catalog y scripts dentro de migration; elige combinar carpetas y reemplazar archivos. Copia también server.py, .gitignore y la carpeta public del ZIP. No borres ni reemplaces la carpeta public/recipe-images con una carpeta vacía: ahí viven las fotos ya pagadas.
+3. En GitHub Desktop, revisa los cambios, haz Commit to main y Push origin. En Render, espera el despliegue del nuevo commit. Si no aparece, revisa que se haya publicado el commit más reciente.
+4. Abre ListoMeal, prueba varias listas de ingredientes (pollo, lentejas, camarones) y revisa las instrucciones de las recetas propuestas.
+
+FOTOS: LAS RECETAS NUEVAS NO INCLUYEN 154 FOTOS NUEVAS.
+Cuando tengas tiempo, abre PowerShell en migration y corre:
+   powershell -ExecutionPolicy Bypass -File .\scripts\generate_photos_windows.ps1
+El comando pide tu clave OpenAI de forma privada y crea COMO MÁXIMO TRES imágenes nuevas de las recetas sin foto. Revisa esas tres fotos y el saldo antes de continuar. Cuando quieras generar más, usa por ejemplo:
+   powershell -ExecutionPolicy Bypass -File .\scripts\generate_photos_windows.ps1 -MaxNew 10
+Este segundo comando permite hasta 10 imágenes nuevas por corrida, salta las fotos ya existentes y puede consumir saldo. Se puede usar -MaxNew hasta 200, pero no recomiendo ejecutarlo de golpe sin revisar costo y calidad. Después de generar fotos, vuelve a GitHub Desktop y haz Commit + Push para publicarlas. No incluyas la clave API en GitHub.
+
+Cuando solo tienes un ingrediente o activas una dieta, ListoMeal puede mostrar menos de tres recetas porque evita rellenar resultados con platos que no corresponden. Los métodos y tiempos de cocción son orientativos; usa un termómetro para verificar carnes y pescado.
