@@ -219,8 +219,8 @@ const copy = {
     favorite: 'Favorite', noFav: 'No favorites yet. Tap the heart on a meal you want to make again.', noHistory: 'No cooking history yet.', profile: 'Family Profile',
     save: 'Save profile', adults: 'Adults', kids: 'Kids', ages: 'Kids’ ages', avoid: 'Allergies / avoid', dislikes: 'Dislikes', diet: 'Dietary needs',
     results: 'Tonight’s ideas', change: 'Change ingredients', pantry: 'Pantry basics', optional: 'Optional extras', home: 'Cook', history: 'History', favorites: 'Favorites',
-    next: 'Next step', back: 'Back', done: 'Done', rate: 'How was it?', scanHelp: 'Scan your fridge, pantry, or groceries. Make sure the food and package labels are clearly visible. Deep Scan runs on your device; the first scan may take longer and uses no AI credits.',
-    scanButton: 'Scan', visible: 'I found', scanError: 'I couldn’t read that photo. Try another one or type the ingredients.', error: 'Something went wrong. Please try again.', saved: 'Saved', profileSaved: 'Family profile saved.',
+    next: 'Next step', back: 'Back', done: 'Done', rate: 'How was it?', scanHelp: 'Point your camera at your fridge or pantry. Make sure the food and package labels are clearly visible. Your first scan may take a moment.',
+    scanButton: 'Scan fridge or pantry with your camera', visible: 'I found', scanError: 'I couldn’t read that photo. Try another one or type the ingredients.', error: 'Something went wrong. Please try again.', saved: 'Saved', profileSaved: 'Family profile saved.',
     noPhoto: 'Generated images are illustrations of the recipe, not photos of a prepared dish.', newRecipe: 'Start New Recipe',
     surprise: 'Surprise me', tryAnother: 'Try another', share: 'Share', shopping: 'Shopping list', have: 'You have', needToBuy: 'Pick up', copyList: 'Copy list', listCopied: 'List copied',
     nutritionLabel: 'Nutrition goal', lowCarb: 'Lower carb', highProtein: 'Higher protein', kcal: 'kcal', proteinShort: 'protein', carbsShort: 'carbs', estimateNote: 'Approx. per adult serving; actual amounts depend on portions and ingredients.',
@@ -231,7 +231,7 @@ const copy = {
     coming: 'Foto ilustrativa de comida', cook: 'Cocinar conmigo', favorite: 'Favorito', noFav: 'Todavía no hay favoritos. Toca el corazón de una comida que quieras repetir.', noHistory: 'Todavía no hay historial.',
     profile: 'Perfil familiar', save: 'Guardar perfil', adults: 'Adultos', kids: 'Niños', ages: 'Edades de los niños', avoid: 'Alergias / evitar', dislikes: 'No les gusta', diet: 'Necesidades de dieta',
     results: 'Ideas para hoy', change: 'Cambiar ingredientes', pantry: 'Básicos de despensa', optional: 'Extras opcionales', home: 'Cocinar', history: 'Historial', favorites: 'Favoritos', next: 'Siguiente paso', back: 'Atrás', done: 'Terminar', rate: '¿Qué tal quedó?',
-    scanHelp: 'Escanea tu refri, despensa o compras. Procura que los alimentos y las etiquetas se vean claramente. Deep Scan funciona en tu dispositivo; el primer escaneo puede tardar más y no usa créditos de IA.', scanButton: 'Escanear', visible: 'Encontré',
+    scanHelp: 'Apunta la cámara hacia tu refri o despensa. Procura que los alimentos y las etiquetas se vean claramente. El primer escaneo puede tardar un momento.', scanButton: 'Escanear refri o despensa con la cámara', visible: 'Encontré',
     scanError: 'No pude leer esa foto. Intenta otra o escribe los ingredientes.', error: 'Algo salió mal. Intenta de nuevo.', saved: 'Guardado', profileSaved: 'Perfil familiar guardado.', noPhoto: 'Las imágenes generadas ilustran la receta; no son fotos del platillo preparado.', newRecipe: 'Comenzar receta nueva',
     surprise: 'Sorpréndeme', tryAnother: 'Cambiar esta', share: 'Compartir', shopping: 'Lista de compras', have: 'Ya tienes', needToBuy: 'Falta comprar', copyList: 'Copiar lista', listCopied: 'Lista copiada',
     nutritionLabel: 'Objetivo nutricional', lowCarb: 'Menos carbohidratos', highProtein: 'Más proteína', kcal: 'kcal', proteinShort: 'proteína', carbsShort: 'carbohidratos', estimateNote: 'Aprox. por porción de adulto; los valores cambian según cantidades e ingredientes.',
@@ -461,7 +461,6 @@ function App() {
               <div className="rounded-2xl bg-amber-50 p-4">🍽️ {lang === 'en' ? 'Explore 200 distinct family recipes.' : 'Explora 200 recetas familiares diferentes.'}</div>
               <div className="rounded-2xl bg-emerald-50 p-4">👨‍🍳 {lang === 'en' ? 'Use Cook With Me for simple step-by-step cooking.' : 'Usa Cocinar conmigo para seguir pasos sencillos.'}</div>
             </div>
-            <p className="mt-4 text-xs text-slate-500">{lang === 'en' ? 'Your recipe matching and Deep Scan run locally, so the core experience does not use AI credits.' : 'Las recetas y Deep Scan funcionan localmente, así que la experiencia principal no usa créditos de IA.'}</p>
             <button className="primary-btn mt-6 w-full justify-center py-4" onClick={() => { localStorage.setItem('listomeal-welcome-done', JSON.stringify(true)); setShowWelcome(false); }}>{lang === 'en' ? 'Start cooking' : 'Empezar a cocinar'}</button>
           </div>
         </div>
