@@ -89,8 +89,12 @@ def photo():
             if db.execute("SELECT changes()").fetchone()[0] == 0:
                 return jsonify(found=False)
             db.commit()
-        prompt = ("Realistic editorial food photograph illustrating this specific cooked recipe. "
-                  "Show its named ingredients and method, no unrelated main dish, no people, words, logos or watermarks. "
+        prompt = ("Create exactly one photorealistic editorial food photograph of the finished dish, "
+                  "as one appetizing serving on a plate or in a bowl. Make the cooked main ingredients "
+                  "clearly visible and appropriate for the named recipe. This is a single camera shot, "
+                  "not a cooking tutorial. No collage, grid, split screen, multiple panels, before-and-after "
+                  "sequence, inset photos, or steps. No raw ingredients or utensils as the main subject. "
+                  "No unrelated dishes, text, people, logos, or watermarks. Warm natural food photography lighting. "
                   f"Recipe: {title}. Description: {summary}. Method: {method}. Ingredients: {', '.join(ingredients)}.")
         body = json.dumps({"model": "gpt-image-1.5", "prompt": prompt, "size": "1024x1024",
                            "quality": os.getenv("RECIPE_IMAGE_QUALITY", "medium"), "n": 1}).encode()
