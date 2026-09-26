@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Generate meals, navigate Cook With Me backward, and start over",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "first-run onboarding",
+      "ingredient entry",
+      "local 500-recipe meal matching",
+      "zero-credit recipe generation",
+      "recipe results",
+      "family hero photo",
+      "premium home hero",
+      "benefit highlights",
+      "prominent scan card",
+      "appliance cooking-method cards",
+      "Cook With Me step-by-step flow",
+      "Next-step audio cue",
+      "visible Back navigation",
+      "Start New Recipe"
+    ],
+    "description": "Verifies a new user can clear the short onboarding and complete the primary ListoMeal flow with local recipe matching, guided cooking, and a clean reset.",
+    "steps": [
+      "If the first-run welcome is shown, review the three steps and click Start cooking",
+      "Confirm the homepage shows the family hero, benefit highlights, and prominent Scan Your Fridge or Pantry card, then type chicken, rice, broccoli, onion",
+      "Choose 20 minutes and select Air Fryer from the appliance cooking-method cards, then click Give me 3 meals",
+      "Open Cook With Me on the first meal, advance to the next step, then use Back",
+      "Close Cook With Me and click Start New Recipe below the meal cards"
+    ],
+    "expected": "Three recipe cards are shown, Cook With Me can move forward and back to the prior step, and Start New Recipe clears the old results and returns to fresh ingredient entry."
+  },
+  {
+    "name": "Save family preferences and use them later",
+    "viewport": "mobile",
+    "covers": [
+      "family profile",
+      "local persistence",
+      "allergy and dislike preferences",
+      "mobile form behavior"
+    ],
+    "description": "Verifies a family can store preferences without needing an account.",
+    "steps": [
+      "Open Family Profile",
+      "Set adults to 2, kids to 2, allergies/avoid to peanuts, and dislikes to mushrooms",
+      "Save the profile and refresh the page, then return to Family Profile"
+    ],
+    "expected": "The saved family counts and peanut/mushroom preferences remain visible after refresh."
+  },
+  {
+    "name": "Favorite, rate, and send tester feedback",
+    "viewport": "desktop",
+    "covers": [
+      "favorites",
+      "history",
+      "meal rating",
+      "Loved it auto-favorite",
+      "POST /api/feedback database storage",
+      "tester feedback modal"
+    ],
+    "description": "Verifies a generated meal can be kept, rated, and followed by durable tester feedback submission.",
+    "steps": [
+      "Generate meals from eggs, potatoes, cheese, and tortillas",
+      "Open Cook With Me on the first meal, finish it, and choose Loved it",
+      "Open the Feedback button, choose thumbs up, select an optional reason, type a short comment, and send it",
+      "Open Favorites and History"
+    ],
+    "expected": "A thank-you confirmation appears after feedback is stored, and the rated recipe remains in History and Favorites."
+  },
+  {
+    "name": "Deep Scan common foods and package labels locally",
+    "viewport": "mobile",
+    "covers": [
+      "Scan It camera/photo flow",
+      "on-device object detection",
+      "3x3 multi-area image classification",
+      "on-device package-label OCR",
+      "common fridge and pantry food recognition",
+      "zero-credit local scan",
+      "manual ingredient fallback"
+    ],
+    "description": "Verifies Deep Scan combines local vision models with package-label reading to recognize more common foods without using the AI backend.",
+    "steps": [
+      "Open Scan It and confirm the help text describes Deep Scan, on-device label reading, and no AI-credit use",
+      "Choose a bright close photo containing a supported visible food or a clearly readable package label such as milk, eggs, cheese, chicken, tortillas, rice, beans, or pasta",
+      "Review the detected ingredients in Pick It"
+    ],
+    "expected": "A supported visible food or readable package label is converted into an editable ingredient selection without calling the AI backend."
+  },
+  {
+    "name": "Recipe photo lookup failure keeps meal cards usable",
+    "viewport": "mobile",
+    "covers": [
+      "POST /api/photo Pexels photo lookup",
+      "recipe photo fallback",
+      "external photo API failure handling"
+    ],
+    "description": "Verifies that a photo-service failure never prevents users from reading or cooking a generated recipe.",
+    "qa_faults": [
+      {
+        "method": "POST",
+        "path": "/api/photo",
+        "status": 500,
+        "body_json": { "error": "simulated_photo_failure" }
+      }
+    ],
+    "steps": [
+      "Type pasta, tomatoes, cheese and onion",
+      "Generate three meals",
+      "Open Cook With Me on a meal card even though its photo lookup failed"
+    ],
+    "expected": "The recipe card shows the branded photo fallback and Cook With Me still opens normally."
+  }
+]

@@ -1,0 +1,8017 @@
+[
+  {
+    "id": "local-1",
+    "title": "Chicken Taco Skillet",
+    "titleEs": "Sartén de tacos de pollo",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-2",
+    "title": "Chicken Rice Bowl",
+    "titleEs": "Tazón con arroz de pollo",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-3",
+    "title": "Chicken Pasta Toss",
+    "titleEs": "Pasta rápida de pollo",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-4",
+    "title": "Chicken Quesadilla",
+    "titleEs": "Quesadilla de pollo",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-5",
+    "title": "Chicken Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de pollo",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Chicken",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-6",
+    "title": "Chicken Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de pollo",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Chicken",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-7",
+    "title": "Chicken Loaded Nachos",
+    "titleEs": "Nachos cargados de pollo",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Chicken",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-8",
+    "title": "Chicken Burrito Bowl",
+    "titleEs": "Tazón burrito de pollo",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-9",
+    "title": "Chicken One-Pot Rice",
+    "titleEs": "Arroz de una olla de pollo",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-10",
+    "title": "Chicken Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de pollo",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-11",
+    "title": "Chicken Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de pollo",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-12",
+    "title": "Chicken Creamy Skillet",
+    "titleEs": "Sartén cremoso de pollo",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-13",
+    "title": "Chicken Baked Casserole",
+    "titleEs": "Cazuela al horno de pollo",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Chicken",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-14",
+    "title": "Chicken Flatbread Melt",
+    "titleEs": "Pan plano gratinado de pollo",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Chicken",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-15",
+    "title": "Chicken Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de pollo",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Chicken",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-16",
+    "title": "Chicken Fajita Skillet",
+    "titleEs": "Fajitas en sartén de pollo",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-17",
+    "title": "Chicken Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de pollo",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Chicken",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-18",
+    "title": "Ground Beef Taco Skillet",
+    "titleEs": "Sartén de tacos de carne molida",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-19",
+    "title": "Ground Beef Rice Bowl",
+    "titleEs": "Tazón con arroz de carne molida",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-20",
+    "title": "Ground Beef Pasta Toss",
+    "titleEs": "Pasta rápida de carne molida",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-21",
+    "title": "Ground Beef Quesadilla",
+    "titleEs": "Quesadilla de carne molida",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-22",
+    "title": "Ground Beef Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de carne molida",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Ground Beef",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-23",
+    "title": "Ground Beef Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de carne molida",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Ground Beef",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-24",
+    "title": "Ground Beef Loaded Nachos",
+    "titleEs": "Nachos cargados de carne molida",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Ground Beef",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-25",
+    "title": "Ground Beef Burrito Bowl",
+    "titleEs": "Tazón burrito de carne molida",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-26",
+    "title": "Ground Beef One-Pot Rice",
+    "titleEs": "Arroz de una olla de carne molida",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-27",
+    "title": "Ground Beef Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de carne molida",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-28",
+    "title": "Ground Beef Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de carne molida",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-29",
+    "title": "Ground Beef Creamy Skillet",
+    "titleEs": "Sartén cremoso de carne molida",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-30",
+    "title": "Ground Beef Baked Casserole",
+    "titleEs": "Cazuela al horno de carne molida",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Ground Beef",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-31",
+    "title": "Ground Beef Flatbread Melt",
+    "titleEs": "Pan plano gratinado de carne molida",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Ground Beef",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-32",
+    "title": "Ground Beef Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de carne molida",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Ground Beef",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-33",
+    "title": "Ground Beef Fajita Skillet",
+    "titleEs": "Fajitas en sartén de carne molida",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-34",
+    "title": "Ground Beef Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de carne molida",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Ground Beef",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-35",
+    "title": "Steak Taco Skillet",
+    "titleEs": "Sartén de tacos de bistec",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-36",
+    "title": "Steak Rice Bowl",
+    "titleEs": "Tazón con arroz de bistec",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-37",
+    "title": "Steak Pasta Toss",
+    "titleEs": "Pasta rápida de bistec",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-38",
+    "title": "Steak Quesadilla",
+    "titleEs": "Quesadilla de bistec",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-39",
+    "title": "Steak Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de bistec",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Steak",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-40",
+    "title": "Steak Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de bistec",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Steak",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-41",
+    "title": "Steak Loaded Nachos",
+    "titleEs": "Nachos cargados de bistec",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Steak",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-42",
+    "title": "Steak Burrito Bowl",
+    "titleEs": "Tazón burrito de bistec",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-43",
+    "title": "Steak One-Pot Rice",
+    "titleEs": "Arroz de una olla de bistec",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-44",
+    "title": "Steak Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de bistec",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-45",
+    "title": "Steak Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de bistec",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-46",
+    "title": "Steak Creamy Skillet",
+    "titleEs": "Sartén cremoso de bistec",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-47",
+    "title": "Steak Baked Casserole",
+    "titleEs": "Cazuela al horno de bistec",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Steak",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-48",
+    "title": "Steak Flatbread Melt",
+    "titleEs": "Pan plano gratinado de bistec",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Steak",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-49",
+    "title": "Steak Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de bistec",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Steak",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-50",
+    "title": "Steak Fajita Skillet",
+    "titleEs": "Fajitas en sartén de bistec",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-51",
+    "title": "Steak Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de bistec",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Steak",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-52",
+    "title": "Pork Taco Skillet",
+    "titleEs": "Sartén de tacos de cerdo",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-53",
+    "title": "Pork Rice Bowl",
+    "titleEs": "Tazón con arroz de cerdo",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-54",
+    "title": "Pork Pasta Toss",
+    "titleEs": "Pasta rápida de cerdo",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-55",
+    "title": "Pork Quesadilla",
+    "titleEs": "Quesadilla de cerdo",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-56",
+    "title": "Pork Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de cerdo",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Pork",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-57",
+    "title": "Pork Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de cerdo",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Pork",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-58",
+    "title": "Pork Loaded Nachos",
+    "titleEs": "Nachos cargados de cerdo",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Pork",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-59",
+    "title": "Pork Burrito Bowl",
+    "titleEs": "Tazón burrito de cerdo",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-60",
+    "title": "Pork One-Pot Rice",
+    "titleEs": "Arroz de una olla de cerdo",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-61",
+    "title": "Pork Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de cerdo",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-62",
+    "title": "Pork Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de cerdo",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-63",
+    "title": "Pork Creamy Skillet",
+    "titleEs": "Sartén cremoso de cerdo",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-64",
+    "title": "Pork Baked Casserole",
+    "titleEs": "Cazuela al horno de cerdo",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Pork",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-65",
+    "title": "Pork Flatbread Melt",
+    "titleEs": "Pan plano gratinado de cerdo",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Pork",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-66",
+    "title": "Pork Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de cerdo",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Pork",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-67",
+    "title": "Pork Fajita Skillet",
+    "titleEs": "Fajitas en sartén de cerdo",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-68",
+    "title": "Pork Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de cerdo",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Pork",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-69",
+    "title": "Turkey Taco Skillet",
+    "titleEs": "Sartén de tacos de pavo",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-70",
+    "title": "Turkey Rice Bowl",
+    "titleEs": "Tazón con arroz de pavo",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-71",
+    "title": "Turkey Pasta Toss",
+    "titleEs": "Pasta rápida de pavo",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-72",
+    "title": "Turkey Quesadilla",
+    "titleEs": "Quesadilla de pavo",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-73",
+    "title": "Turkey Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de pavo",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Turkey",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-74",
+    "title": "Turkey Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de pavo",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Turkey",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-75",
+    "title": "Turkey Loaded Nachos",
+    "titleEs": "Nachos cargados de pavo",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Turkey",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-76",
+    "title": "Turkey Burrito Bowl",
+    "titleEs": "Tazón burrito de pavo",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-77",
+    "title": "Turkey One-Pot Rice",
+    "titleEs": "Arroz de una olla de pavo",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-78",
+    "title": "Turkey Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de pavo",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-79",
+    "title": "Turkey Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de pavo",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-80",
+    "title": "Turkey Creamy Skillet",
+    "titleEs": "Sartén cremoso de pavo",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-81",
+    "title": "Turkey Baked Casserole",
+    "titleEs": "Cazuela al horno de pavo",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Turkey",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-82",
+    "title": "Turkey Flatbread Melt",
+    "titleEs": "Pan plano gratinado de pavo",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Turkey",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-83",
+    "title": "Turkey Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de pavo",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Turkey",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-84",
+    "title": "Turkey Fajita Skillet",
+    "titleEs": "Fajitas en sartén de pavo",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-85",
+    "title": "Turkey Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de pavo",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Turkey",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-86",
+    "title": "Salmon Taco Skillet",
+    "titleEs": "Sartén de tacos de salmón",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-87",
+    "title": "Salmon Rice Bowl",
+    "titleEs": "Tazón con arroz de salmón",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-88",
+    "title": "Salmon Pasta Toss",
+    "titleEs": "Pasta rápida de salmón",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-89",
+    "title": "Salmon Quesadilla",
+    "titleEs": "Quesadilla de salmón",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-90",
+    "title": "Salmon Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de salmón",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Salmon",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-91",
+    "title": "Salmon Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de salmón",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Salmon",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-92",
+    "title": "Salmon Loaded Nachos",
+    "titleEs": "Nachos cargados de salmón",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Salmon",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-93",
+    "title": "Salmon Burrito Bowl",
+    "titleEs": "Tazón burrito de salmón",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-94",
+    "title": "Salmon One-Pot Rice",
+    "titleEs": "Arroz de una olla de salmón",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-95",
+    "title": "Salmon Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de salmón",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-96",
+    "title": "Salmon Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de salmón",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-97",
+    "title": "Salmon Creamy Skillet",
+    "titleEs": "Sartén cremoso de salmón",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-98",
+    "title": "Salmon Baked Casserole",
+    "titleEs": "Cazuela al horno de salmón",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Salmon",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-99",
+    "title": "Salmon Flatbread Melt",
+    "titleEs": "Pan plano gratinado de salmón",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Salmon",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-100",
+    "title": "Salmon Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de salmón",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Salmon",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-101",
+    "title": "Salmon Fajita Skillet",
+    "titleEs": "Fajitas en sartén de salmón",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-102",
+    "title": "Salmon Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de salmón",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Salmon",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-103",
+    "title": "Shrimp Taco Skillet",
+    "titleEs": "Sartén de tacos de camarones",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-104",
+    "title": "Shrimp Rice Bowl",
+    "titleEs": "Tazón con arroz de camarones",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-105",
+    "title": "Shrimp Pasta Toss",
+    "titleEs": "Pasta rápida de camarones",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-106",
+    "title": "Shrimp Quesadilla",
+    "titleEs": "Quesadilla de camarones",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-107",
+    "title": "Shrimp Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de camarones",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Shrimp",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-108",
+    "title": "Shrimp Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de camarones",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Shrimp",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-109",
+    "title": "Shrimp Loaded Nachos",
+    "titleEs": "Nachos cargados de camarones",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Shrimp",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-110",
+    "title": "Shrimp Burrito Bowl",
+    "titleEs": "Tazón burrito de camarones",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-111",
+    "title": "Shrimp One-Pot Rice",
+    "titleEs": "Arroz de una olla de camarones",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-112",
+    "title": "Shrimp Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de camarones",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-113",
+    "title": "Shrimp Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de camarones",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-114",
+    "title": "Shrimp Creamy Skillet",
+    "titleEs": "Sartén cremoso de camarones",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-115",
+    "title": "Shrimp Baked Casserole",
+    "titleEs": "Cazuela al horno de camarones",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Shrimp",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-116",
+    "title": "Shrimp Flatbread Melt",
+    "titleEs": "Pan plano gratinado de camarones",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Shrimp",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-117",
+    "title": "Shrimp Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de camarones",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Shrimp",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-118",
+    "title": "Shrimp Fajita Skillet",
+    "titleEs": "Fajitas en sartén de camarones",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-119",
+    "title": "Shrimp Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de camarones",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Shrimp",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-120",
+    "title": "Tuna Taco Skillet",
+    "titleEs": "Sartén de tacos de atún",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-121",
+    "title": "Tuna Rice Bowl",
+    "titleEs": "Tazón con arroz de atún",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-122",
+    "title": "Tuna Pasta Toss",
+    "titleEs": "Pasta rápida de atún",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-123",
+    "title": "Tuna Quesadilla",
+    "titleEs": "Quesadilla de atún",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-124",
+    "title": "Tuna Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de atún",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Tuna",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-125",
+    "title": "Tuna Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de atún",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Tuna",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-126",
+    "title": "Tuna Loaded Nachos",
+    "titleEs": "Nachos cargados de atún",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Tuna",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-127",
+    "title": "Tuna Burrito Bowl",
+    "titleEs": "Tazón burrito de atún",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-128",
+    "title": "Tuna One-Pot Rice",
+    "titleEs": "Arroz de una olla de atún",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-129",
+    "title": "Tuna Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de atún",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-130",
+    "title": "Tuna Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de atún",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-131",
+    "title": "Tuna Creamy Skillet",
+    "titleEs": "Sartén cremoso de atún",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-132",
+    "title": "Tuna Baked Casserole",
+    "titleEs": "Cazuela al horno de atún",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Tuna",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-133",
+    "title": "Tuna Flatbread Melt",
+    "titleEs": "Pan plano gratinado de atún",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Tuna",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-134",
+    "title": "Tuna Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de atún",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Tuna",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-135",
+    "title": "Tuna Fajita Skillet",
+    "titleEs": "Fajitas en sartén de atún",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-136",
+    "title": "Tuna Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de atún",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Tuna",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-137",
+    "title": "Sausage Taco Skillet",
+    "titleEs": "Sartén de tacos de salchicha",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-138",
+    "title": "Sausage Rice Bowl",
+    "titleEs": "Tazón con arroz de salchicha",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-139",
+    "title": "Sausage Pasta Toss",
+    "titleEs": "Pasta rápida de salchicha",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-140",
+    "title": "Sausage Quesadilla",
+    "titleEs": "Quesadilla de salchicha",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-141",
+    "title": "Sausage Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de salchicha",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Sausage",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-142",
+    "title": "Sausage Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de salchicha",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Sausage",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-143",
+    "title": "Sausage Loaded Nachos",
+    "titleEs": "Nachos cargados de salchicha",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Sausage",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-144",
+    "title": "Sausage Burrito Bowl",
+    "titleEs": "Tazón burrito de salchicha",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-145",
+    "title": "Sausage One-Pot Rice",
+    "titleEs": "Arroz de una olla de salchicha",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-146",
+    "title": "Sausage Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de salchicha",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-147",
+    "title": "Sausage Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de salchicha",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-148",
+    "title": "Sausage Creamy Skillet",
+    "titleEs": "Sartén cremoso de salchicha",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-149",
+    "title": "Sausage Baked Casserole",
+    "titleEs": "Cazuela al horno de salchicha",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Sausage",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-150",
+    "title": "Sausage Flatbread Melt",
+    "titleEs": "Pan plano gratinado de salchicha",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Sausage",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-151",
+    "title": "Sausage Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de salchicha",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Sausage",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-152",
+    "title": "Sausage Fajita Skillet",
+    "titleEs": "Fajitas en sartén de salchicha",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-153",
+    "title": "Sausage Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de salchicha",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Sausage",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-154",
+    "title": "Ham Taco Skillet",
+    "titleEs": "Sartén de tacos de jamón",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-155",
+    "title": "Ham Rice Bowl",
+    "titleEs": "Tazón con arroz de jamón",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-156",
+    "title": "Ham Pasta Toss",
+    "titleEs": "Pasta rápida de jamón",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-157",
+    "title": "Ham Quesadilla",
+    "titleEs": "Quesadilla de jamón",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-158",
+    "title": "Ham Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de jamón",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Ham",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-159",
+    "title": "Ham Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de jamón",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Ham",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-160",
+    "title": "Ham Loaded Nachos",
+    "titleEs": "Nachos cargados de jamón",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Ham",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-161",
+    "title": "Ham Burrito Bowl",
+    "titleEs": "Tazón burrito de jamón",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-162",
+    "title": "Ham One-Pot Rice",
+    "titleEs": "Arroz de una olla de jamón",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-163",
+    "title": "Ham Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de jamón",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-164",
+    "title": "Ham Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de jamón",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-165",
+    "title": "Ham Creamy Skillet",
+    "titleEs": "Sartén cremoso de jamón",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-166",
+    "title": "Ham Baked Casserole",
+    "titleEs": "Cazuela al horno de jamón",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Ham",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-167",
+    "title": "Ham Flatbread Melt",
+    "titleEs": "Pan plano gratinado de jamón",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Ham",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-168",
+    "title": "Ham Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de jamón",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Ham",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-169",
+    "title": "Ham Fajita Skillet",
+    "titleEs": "Fajitas en sartén de jamón",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-170",
+    "title": "Ham Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de jamón",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Ham",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-171",
+    "title": "Black Bean Taco Skillet",
+    "titleEs": "Sartén de tacos de frijol negro",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-172",
+    "title": "Black Bean Rice Bowl",
+    "titleEs": "Tazón con arroz de frijol negro",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-173",
+    "title": "Black Bean Pasta Toss",
+    "titleEs": "Pasta rápida de frijol negro",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-174",
+    "title": "Black Bean Quesadilla",
+    "titleEs": "Quesadilla de frijol negro",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-175",
+    "title": "Black Bean Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de frijol negro",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Black Bean",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-176",
+    "title": "Black Bean Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de frijol negro",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Black Bean",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-177",
+    "title": "Black Bean Loaded Nachos",
+    "titleEs": "Nachos cargados de frijol negro",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Black Bean",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-178",
+    "title": "Black Bean Burrito Bowl",
+    "titleEs": "Tazón burrito de frijol negro",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-179",
+    "title": "Black Bean One-Pot Rice",
+    "titleEs": "Arroz de una olla de frijol negro",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-180",
+    "title": "Black Bean Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de frijol negro",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-181",
+    "title": "Black Bean Wrap",
+    "titleEs": "Wrap de frijol negro",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Black Bean",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-182",
+    "title": "Black Bean Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de frijol negro",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-183",
+    "title": "Black Bean Creamy Skillet",
+    "titleEs": "Sartén cremoso de frijol negro",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-184",
+    "title": "Black Bean Baked Casserole",
+    "titleEs": "Cazuela al horno de frijol negro",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Black Bean",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-185",
+    "title": "Black Bean Flatbread Melt",
+    "titleEs": "Pan plano gratinado de frijol negro",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Black Bean",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-186",
+    "title": "Black Bean Microwave Bowl",
+    "titleEs": "Tazón al microondas de frijol negro",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Black Bean",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-187",
+    "title": "Black Bean Loaded Potato",
+    "titleEs": "Papa cargada de frijol negro",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Black Bean",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-188",
+    "title": "Black Bean Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de frijol negro",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Black Bean",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-189",
+    "title": "Black Bean Fajita Skillet",
+    "titleEs": "Fajitas en sartén de frijol negro",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-190",
+    "title": "Black Bean Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de frijol negro",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Black Bean",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-191",
+    "title": "Pinto Bean Taco Skillet",
+    "titleEs": "Sartén de tacos de frijol pinto",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-192",
+    "title": "Pinto Bean Rice Bowl",
+    "titleEs": "Tazón con arroz de frijol pinto",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-193",
+    "title": "Pinto Bean Pasta Toss",
+    "titleEs": "Pasta rápida de frijol pinto",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-194",
+    "title": "Pinto Bean Quesadilla",
+    "titleEs": "Quesadilla de frijol pinto",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-195",
+    "title": "Pinto Bean Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de frijol pinto",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Pinto Bean",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-196",
+    "title": "Pinto Bean Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de frijol pinto",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Pinto Bean",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-197",
+    "title": "Pinto Bean Loaded Nachos",
+    "titleEs": "Nachos cargados de frijol pinto",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Pinto Bean",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-198",
+    "title": "Pinto Bean Burrito Bowl",
+    "titleEs": "Tazón burrito de frijol pinto",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-199",
+    "title": "Pinto Bean One-Pot Rice",
+    "titleEs": "Arroz de una olla de frijol pinto",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-200",
+    "title": "Pinto Bean Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de frijol pinto",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-201",
+    "title": "Pinto Bean Wrap",
+    "titleEs": "Wrap de frijol pinto",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Pinto Bean",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-202",
+    "title": "Pinto Bean Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de frijol pinto",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-203",
+    "title": "Pinto Bean Creamy Skillet",
+    "titleEs": "Sartén cremoso de frijol pinto",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-204",
+    "title": "Pinto Bean Baked Casserole",
+    "titleEs": "Cazuela al horno de frijol pinto",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Pinto Bean",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-205",
+    "title": "Pinto Bean Flatbread Melt",
+    "titleEs": "Pan plano gratinado de frijol pinto",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Pinto Bean",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-206",
+    "title": "Pinto Bean Microwave Bowl",
+    "titleEs": "Tazón al microondas de frijol pinto",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Pinto Bean",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-207",
+    "title": "Pinto Bean Loaded Potato",
+    "titleEs": "Papa cargada de frijol pinto",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Pinto Bean",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-208",
+    "title": "Pinto Bean Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de frijol pinto",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Pinto Bean",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-209",
+    "title": "Pinto Bean Fajita Skillet",
+    "titleEs": "Fajitas en sartén de frijol pinto",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-210",
+    "title": "Pinto Bean Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de frijol pinto",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Pinto Bean",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-211",
+    "title": "Chickpea Taco Skillet",
+    "titleEs": "Sartén de tacos de garbanzo",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-212",
+    "title": "Chickpea Rice Bowl",
+    "titleEs": "Tazón con arroz de garbanzo",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-213",
+    "title": "Chickpea Pasta Toss",
+    "titleEs": "Pasta rápida de garbanzo",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-214",
+    "title": "Chickpea Quesadilla",
+    "titleEs": "Quesadilla de garbanzo",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-215",
+    "title": "Chickpea Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de garbanzo",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Chickpea",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-216",
+    "title": "Chickpea Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de garbanzo",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Chickpea",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-217",
+    "title": "Chickpea Loaded Nachos",
+    "titleEs": "Nachos cargados de garbanzo",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Chickpea",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-218",
+    "title": "Chickpea Burrito Bowl",
+    "titleEs": "Tazón burrito de garbanzo",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-219",
+    "title": "Chickpea One-Pot Rice",
+    "titleEs": "Arroz de una olla de garbanzo",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-220",
+    "title": "Chickpea Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de garbanzo",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-221",
+    "title": "Chickpea Wrap",
+    "titleEs": "Wrap de garbanzo",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Chickpea",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-222",
+    "title": "Chickpea Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de garbanzo",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-223",
+    "title": "Chickpea Creamy Skillet",
+    "titleEs": "Sartén cremoso de garbanzo",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-224",
+    "title": "Chickpea Baked Casserole",
+    "titleEs": "Cazuela al horno de garbanzo",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Chickpea",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-225",
+    "title": "Chickpea Flatbread Melt",
+    "titleEs": "Pan plano gratinado de garbanzo",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Chickpea",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-226",
+    "title": "Chickpea Microwave Bowl",
+    "titleEs": "Tazón al microondas de garbanzo",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Chickpea",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-227",
+    "title": "Chickpea Loaded Potato",
+    "titleEs": "Papa cargada de garbanzo",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Chickpea",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-228",
+    "title": "Chickpea Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de garbanzo",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Chickpea",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-229",
+    "title": "Chickpea Fajita Skillet",
+    "titleEs": "Fajitas en sartén de garbanzo",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-230",
+    "title": "Chickpea Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de garbanzo",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Chickpea",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-231",
+    "title": "Lentil Taco Skillet",
+    "titleEs": "Sartén de tacos de lenteja",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-232",
+    "title": "Lentil Rice Bowl",
+    "titleEs": "Tazón con arroz de lenteja",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-233",
+    "title": "Lentil Pasta Toss",
+    "titleEs": "Pasta rápida de lenteja",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-234",
+    "title": "Lentil Quesadilla",
+    "titleEs": "Quesadilla de lenteja",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-235",
+    "title": "Lentil Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de lenteja",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Lentil",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-236",
+    "title": "Lentil Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de lenteja",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Lentil",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-237",
+    "title": "Lentil Loaded Nachos",
+    "titleEs": "Nachos cargados de lenteja",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Lentil",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-238",
+    "title": "Lentil Burrito Bowl",
+    "titleEs": "Tazón burrito de lenteja",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-239",
+    "title": "Lentil One-Pot Rice",
+    "titleEs": "Arroz de una olla de lenteja",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-240",
+    "title": "Lentil Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de lenteja",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-241",
+    "title": "Lentil Wrap",
+    "titleEs": "Wrap de lenteja",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Lentil",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-242",
+    "title": "Lentil Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de lenteja",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-243",
+    "title": "Lentil Creamy Skillet",
+    "titleEs": "Sartén cremoso de lenteja",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-244",
+    "title": "Lentil Baked Casserole",
+    "titleEs": "Cazuela al horno de lenteja",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Lentil",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-245",
+    "title": "Lentil Flatbread Melt",
+    "titleEs": "Pan plano gratinado de lenteja",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Lentil",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-246",
+    "title": "Lentil Microwave Bowl",
+    "titleEs": "Tazón al microondas de lenteja",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Lentil",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-247",
+    "title": "Lentil Loaded Potato",
+    "titleEs": "Papa cargada de lenteja",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Lentil",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-248",
+    "title": "Lentil Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de lenteja",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Lentil",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-249",
+    "title": "Lentil Fajita Skillet",
+    "titleEs": "Fajitas en sartén de lenteja",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-250",
+    "title": "Lentil Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de lenteja",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Lentil",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-251",
+    "title": "Tofu Taco Skillet",
+    "titleEs": "Sartén de tacos de tofu",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-252",
+    "title": "Tofu Rice Bowl",
+    "titleEs": "Tazón con arroz de tofu",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-253",
+    "title": "Tofu Pasta Toss",
+    "titleEs": "Pasta rápida de tofu",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-254",
+    "title": "Tofu Quesadilla",
+    "titleEs": "Quesadilla de tofu",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-255",
+    "title": "Tofu Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de tofu",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Tofu",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-256",
+    "title": "Tofu Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de tofu",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Tofu",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-257",
+    "title": "Tofu Loaded Nachos",
+    "titleEs": "Nachos cargados de tofu",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Tofu",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-258",
+    "title": "Tofu Burrito Bowl",
+    "titleEs": "Tazón burrito de tofu",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-259",
+    "title": "Tofu One-Pot Rice",
+    "titleEs": "Arroz de una olla de tofu",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-260",
+    "title": "Tofu Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de tofu",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-261",
+    "title": "Tofu Wrap",
+    "titleEs": "Wrap de tofu",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Tofu",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-262",
+    "title": "Tofu Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de tofu",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-263",
+    "title": "Tofu Creamy Skillet",
+    "titleEs": "Sartén cremoso de tofu",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-264",
+    "title": "Tofu Baked Casserole",
+    "titleEs": "Cazuela al horno de tofu",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Tofu",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-265",
+    "title": "Tofu Flatbread Melt",
+    "titleEs": "Pan plano gratinado de tofu",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Tofu",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-266",
+    "title": "Tofu Microwave Bowl",
+    "titleEs": "Tazón al microondas de tofu",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Tofu",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-267",
+    "title": "Tofu Loaded Potato",
+    "titleEs": "Papa cargada de tofu",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Tofu",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-268",
+    "title": "Tofu Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de tofu",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Tofu",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-269",
+    "title": "Tofu Fajita Skillet",
+    "titleEs": "Fajitas en sartén de tofu",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-270",
+    "title": "Tofu Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de tofu",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Tofu",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-271",
+    "title": "Mushroom Taco Skillet",
+    "titleEs": "Sartén de tacos de champiñón",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-272",
+    "title": "Mushroom Rice Bowl",
+    "titleEs": "Tazón con arroz de champiñón",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-273",
+    "title": "Mushroom Pasta Toss",
+    "titleEs": "Pasta rápida de champiñón",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-274",
+    "title": "Mushroom Quesadilla",
+    "titleEs": "Quesadilla de champiñón",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-275",
+    "title": "Mushroom Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de champiñón",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Mushroom",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-276",
+    "title": "Mushroom Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de champiñón",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Mushroom",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-277",
+    "title": "Mushroom Loaded Nachos",
+    "titleEs": "Nachos cargados de champiñón",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Mushroom",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-278",
+    "title": "Mushroom Burrito Bowl",
+    "titleEs": "Tazón burrito de champiñón",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-279",
+    "title": "Mushroom One-Pot Rice",
+    "titleEs": "Arroz de una olla de champiñón",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-280",
+    "title": "Mushroom Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de champiñón",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-281",
+    "title": "Mushroom Wrap",
+    "titleEs": "Wrap de champiñón",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Mushroom",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-282",
+    "title": "Mushroom Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de champiñón",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-283",
+    "title": "Mushroom Creamy Skillet",
+    "titleEs": "Sartén cremoso de champiñón",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-284",
+    "title": "Mushroom Baked Casserole",
+    "titleEs": "Cazuela al horno de champiñón",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Mushroom",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-285",
+    "title": "Mushroom Flatbread Melt",
+    "titleEs": "Pan plano gratinado de champiñón",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Mushroom",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-286",
+    "title": "Mushroom Microwave Bowl",
+    "titleEs": "Tazón al microondas de champiñón",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Mushroom",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-287",
+    "title": "Mushroom Loaded Potato",
+    "titleEs": "Papa cargada de champiñón",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Mushroom",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-288",
+    "title": "Mushroom Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de champiñón",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Mushroom",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-289",
+    "title": "Mushroom Fajita Skillet",
+    "titleEs": "Fajitas en sartén de champiñón",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-290",
+    "title": "Mushroom Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de champiñón",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Mushroom",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-291",
+    "title": "Potato Taco Skillet",
+    "titleEs": "Sartén de tacos de papa",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-292",
+    "title": "Potato Rice Bowl",
+    "titleEs": "Tazón con arroz de papa",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-293",
+    "title": "Potato Pasta Toss",
+    "titleEs": "Pasta rápida de papa",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-294",
+    "title": "Potato Quesadilla",
+    "titleEs": "Quesadilla de papa",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-295",
+    "title": "Potato Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de papa",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-296",
+    "title": "Potato Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de papa",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Potato",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-297",
+    "title": "Potato Loaded Nachos",
+    "titleEs": "Nachos cargados de papa",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-298",
+    "title": "Potato Burrito Bowl",
+    "titleEs": "Tazón burrito de papa",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-299",
+    "title": "Potato One-Pot Rice",
+    "titleEs": "Arroz de una olla de papa",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-300",
+    "title": "Potato Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de papa",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-301",
+    "title": "Potato Wrap",
+    "titleEs": "Wrap de papa",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Potato",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-302",
+    "title": "Potato Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de papa",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-303",
+    "title": "Potato Creamy Skillet",
+    "titleEs": "Sartén cremoso de papa",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-304",
+    "title": "Potato Baked Casserole",
+    "titleEs": "Cazuela al horno de papa",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-305",
+    "title": "Potato Flatbread Melt",
+    "titleEs": "Pan plano gratinado de papa",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-306",
+    "title": "Potato Microwave Bowl",
+    "titleEs": "Tazón al microondas de papa",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Potato",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-307",
+    "title": "Potato Loaded Potato",
+    "titleEs": "Papa cargada de papa",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Potato",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-308",
+    "title": "Potato Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de papa",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-309",
+    "title": "Potato Fajita Skillet",
+    "titleEs": "Fajitas en sartén de papa",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-310",
+    "title": "Potato Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de papa",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-311",
+    "title": "Sweet Potato Taco Skillet",
+    "titleEs": "Sartén de tacos de camote",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-312",
+    "title": "Sweet Potato Rice Bowl",
+    "titleEs": "Tazón con arroz de camote",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-313",
+    "title": "Sweet Potato Pasta Toss",
+    "titleEs": "Pasta rápida de camote",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-314",
+    "title": "Sweet Potato Quesadilla",
+    "titleEs": "Quesadilla de camote",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-315",
+    "title": "Sweet Potato Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de camote",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Sweet Potato",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-316",
+    "title": "Sweet Potato Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de camote",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Sweet Potato",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-317",
+    "title": "Sweet Potato Loaded Nachos",
+    "titleEs": "Nachos cargados de camote",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Sweet Potato",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-318",
+    "title": "Sweet Potato Burrito Bowl",
+    "titleEs": "Tazón burrito de camote",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-319",
+    "title": "Sweet Potato One-Pot Rice",
+    "titleEs": "Arroz de una olla de camote",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-320",
+    "title": "Sweet Potato Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de camote",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-321",
+    "title": "Sweet Potato Wrap",
+    "titleEs": "Wrap de camote",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Sweet Potato",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-322",
+    "title": "Sweet Potato Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de camote",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-323",
+    "title": "Sweet Potato Creamy Skillet",
+    "titleEs": "Sartén cremoso de camote",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-324",
+    "title": "Sweet Potato Baked Casserole",
+    "titleEs": "Cazuela al horno de camote",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Sweet Potato",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-325",
+    "title": "Sweet Potato Flatbread Melt",
+    "titleEs": "Pan plano gratinado de camote",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Sweet Potato",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-326",
+    "title": "Sweet Potato Microwave Bowl",
+    "titleEs": "Tazón al microondas de camote",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Sweet Potato",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-327",
+    "title": "Sweet Potato Loaded Potato",
+    "titleEs": "Papa cargada de camote",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Sweet Potato",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-328",
+    "title": "Sweet Potato Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de camote",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Sweet Potato",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-329",
+    "title": "Sweet Potato Fajita Skillet",
+    "titleEs": "Fajitas en sartén de camote",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-330",
+    "title": "Sweet Potato Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de camote",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Sweet Potato",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-331",
+    "title": "Broccoli Taco Skillet",
+    "titleEs": "Sartén de tacos de brócoli",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-332",
+    "title": "Broccoli Rice Bowl",
+    "titleEs": "Tazón con arroz de brócoli",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-333",
+    "title": "Broccoli Pasta Toss",
+    "titleEs": "Pasta rápida de brócoli",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-334",
+    "title": "Broccoli Quesadilla",
+    "titleEs": "Quesadilla de brócoli",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-335",
+    "title": "Broccoli Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de brócoli",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Broccoli",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-336",
+    "title": "Broccoli Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de brócoli",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Broccoli",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-337",
+    "title": "Broccoli Loaded Nachos",
+    "titleEs": "Nachos cargados de brócoli",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Broccoli",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-338",
+    "title": "Broccoli Burrito Bowl",
+    "titleEs": "Tazón burrito de brócoli",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-339",
+    "title": "Broccoli One-Pot Rice",
+    "titleEs": "Arroz de una olla de brócoli",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-340",
+    "title": "Broccoli Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de brócoli",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-341",
+    "title": "Broccoli Wrap",
+    "titleEs": "Wrap de brócoli",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Broccoli",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-342",
+    "title": "Broccoli Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de brócoli",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-343",
+    "title": "Broccoli Creamy Skillet",
+    "titleEs": "Sartén cremoso de brócoli",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-344",
+    "title": "Broccoli Baked Casserole",
+    "titleEs": "Cazuela al horno de brócoli",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Broccoli",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-345",
+    "title": "Broccoli Flatbread Melt",
+    "titleEs": "Pan plano gratinado de brócoli",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Broccoli",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-346",
+    "title": "Broccoli Microwave Bowl",
+    "titleEs": "Tazón al microondas de brócoli",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Broccoli",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-347",
+    "title": "Broccoli Loaded Potato",
+    "titleEs": "Papa cargada de brócoli",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Broccoli",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-348",
+    "title": "Broccoli Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de brócoli",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Broccoli",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-349",
+    "title": "Broccoli Fajita Skillet",
+    "titleEs": "Fajitas en sartén de brócoli",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-350",
+    "title": "Broccoli Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de brócoli",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Broccoli",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-351",
+    "title": "Cauliflower Taco Skillet",
+    "titleEs": "Sartén de tacos de coliflor",
+    "summary": "A fast taco-style skillet for an easy family dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "tortillas",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-352",
+    "title": "Cauliflower Rice Bowl",
+    "titleEs": "Tazón con arroz de coliflor",
+    "summary": "A simple bowl built around rice and what you already have.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-353",
+    "title": "Cauliflower Pasta Toss",
+    "titleEs": "Pasta rápida de coliflor",
+    "summary": "Quick pasta with a flexible, pantry-friendly sauce.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "pasta",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-354",
+    "title": "Cauliflower Quesadilla",
+    "titleEs": "Quesadilla de coliflor",
+    "summary": "Crispy quesadillas with a filling the whole family can customize.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-355",
+    "title": "Cauliflower Sheet-Pan Dinner",
+    "titleEs": "Cena en charola de coliflor",
+    "summary": "A low-mess oven dinner with simple roasted sides.",
+    "method": "Oven",
+    "ingredients": [
+      "Cauliflower",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-356",
+    "title": "Cauliflower Air Fryer Bites",
+    "titleEs": "Bocados en air fryer de coliflor",
+    "summary": "Crispy air-fryer bites with very little prep.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Cauliflower",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "local-357",
+    "title": "Cauliflower Loaded Nachos",
+    "titleEs": "Nachos cargados de coliflor",
+    "summary": "A shareable tray of loaded nachos made for busy nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Cauliflower",
+      "tortilla chips",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-358",
+    "title": "Cauliflower Burrito Bowl",
+    "titleEs": "Tazón burrito de coliflor",
+    "summary": "A build-your-own burrito bowl with familiar ingredients.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "rice",
+      "beans",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-359",
+    "title": "Cauliflower One-Pot Rice",
+    "titleEs": "Arroz de una olla de coliflor",
+    "summary": "A cozy one-pot rice meal with minimal cleanup.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "rice",
+      "tomatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-360",
+    "title": "Cauliflower Veggie Stir-Fry",
+    "titleEs": "Salteado con verduras de coliflor",
+    "summary": "A colorful stir-fry that works with almost any vegetables.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-361",
+    "title": "Cauliflower Wrap",
+    "titleEs": "Wrap de coliflor",
+    "summary": "A quick handheld meal for lunches or no-fuss dinners.",
+    "method": "Easiest",
+    "ingredients": [
+      "Cauliflower",
+      "tortillas",
+      "lettuce",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-362",
+    "title": "Cauliflower Mexican-Style Soup",
+    "titleEs": "Sopa estilo mexicana de coliflor",
+    "summary": "A warm, flexible soup with familiar Mexican-inspired flavors.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "tomatoes",
+      "corn",
+      "beans"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper",
+      "cumin",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-363",
+    "title": "Cauliflower Creamy Skillet",
+    "titleEs": "Sartén cremoso de coliflor",
+    "summary": "A creamy skillet dinner that comes together fast.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-364",
+    "title": "Cauliflower Baked Casserole",
+    "titleEs": "Cazuela al horno de coliflor",
+    "summary": "A family-style baked casserole with pantry staples.",
+    "method": "Oven",
+    "ingredients": [
+      "Cauliflower",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-365",
+    "title": "Cauliflower Flatbread Melt",
+    "titleEs": "Pan plano gratinado de coliflor",
+    "summary": "A pizza-like melt that is fast and easy to customize.",
+    "method": "Oven",
+    "ingredients": [
+      "Cauliflower",
+      "flatbread",
+      "cheese",
+      "tomatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-366",
+    "title": "Cauliflower Microwave Bowl",
+    "titleEs": "Tazón al microondas de coliflor",
+    "summary": "A super-fast microwave bowl for the busiest days.",
+    "method": "Microwave",
+    "ingredients": [
+      "Cauliflower",
+      "rice",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-367",
+    "title": "Cauliflower Loaded Potato",
+    "titleEs": "Papa cargada de coliflor",
+    "summary": "A filling loaded potato that turns leftovers into dinner.",
+    "method": "Microwave",
+    "ingredients": [
+      "Cauliflower",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-368",
+    "title": "Cauliflower Crispy Tostadas",
+    "titleEs": "Tostadas crujientes de coliflor",
+    "summary": "Crunchy tostadas with easy mix-and-match toppings.",
+    "method": "Oven",
+    "ingredients": [
+      "Cauliflower",
+      "tostadas",
+      "beans",
+      "lettuce"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-369",
+    "title": "Cauliflower Fajita Skillet",
+    "titleEs": "Fajitas en sartén de coliflor",
+    "summary": "Fast fajitas with peppers and onions in one pan.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "local-370",
+    "title": "Cauliflower Salsa Verde Plate",
+    "titleEs": "Platillo en salsa verde de coliflor",
+    "summary": "A simple salsa verde dinner with big flavor and little fuss.",
+    "method": "Stove",
+    "ingredients": [
+      "Cauliflower",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-371",
+    "title": "Egg Breakfast Tacos",
+    "titleEs": "Tacos de desayuno de huevo",
+    "summary": "Fast breakfast tacos that also work for dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-372",
+    "title": "Egg Breakfast Burrito",
+    "titleEs": "Burrito de desayuno de huevo",
+    "summary": "A filling breakfast burrito with simple pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "tortillas",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-373",
+    "title": "Egg Egg Rice Bowl",
+    "titleEs": "Tazón de arroz con huevo de huevo",
+    "summary": "A quick rice bowl topped with eggs and easy extras.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-374",
+    "title": "Egg Breakfast Quesadilla",
+    "titleEs": "Quesadilla de desayuno de huevo",
+    "summary": "Crispy breakfast quesadillas ready in minutes.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-375",
+    "title": "Egg Egg Toast Melt",
+    "titleEs": "Pan tostado con huevo de huevo",
+    "summary": "A warm egg-and-cheese toast melt for any time of day.",
+    "method": "Oven",
+    "ingredients": [
+      "Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-376",
+    "title": "Egg Microwave Egg Bowl",
+    "titleEs": "Tazón de huevo al microondas de huevo",
+    "summary": "A fast microwave egg bowl with almost no cleanup.",
+    "method": "Microwave",
+    "ingredients": [
+      "Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-377",
+    "title": "Egg Egg Potato Skillet",
+    "titleEs": "Sartén de papa con huevo de huevo",
+    "summary": "A hearty potato-and-egg skillet for breakfast or dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-378",
+    "title": "Egg Breakfast Nachos",
+    "titleEs": "Nachos de desayuno de huevo",
+    "summary": "Fun breakfast nachos that kids can help assemble.",
+    "method": "Oven",
+    "ingredients": [
+      "Egg",
+      "tortilla chips",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-379",
+    "title": "Egg Egg Fried Rice",
+    "titleEs": "Arroz frito con huevo de huevo",
+    "summary": "A quick fried-rice meal that is perfect for leftover rice.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-380",
+    "title": "Egg Breakfast Pizza",
+    "titleEs": "Pizza de desayuno de huevo",
+    "summary": "A fun flatbread breakfast pizza for the whole family.",
+    "method": "Oven",
+    "ingredients": [
+      "Egg",
+      "flatbread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-381",
+    "title": "Egg Egg Bean Bowl",
+    "titleEs": "Tazón de huevo con frijoles de huevo",
+    "summary": "A protein-packed bowl made from simple staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "beans",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-382",
+    "title": "Egg Egg Fajita Wrap",
+    "titleEs": "Wrap de fajita con huevo de huevo",
+    "summary": "Eggs, peppers and onions wrapped into an easy meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-383",
+    "title": "Egg Egg Pasta",
+    "titleEs": "Pasta con huevo de huevo",
+    "summary": "A simple savory egg pasta for a quick family meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "pasta"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-384",
+    "title": "Egg Baked Egg Cups",
+    "titleEs": "Huevitos al horno de huevo",
+    "summary": "Easy baked egg cups that are great for make-ahead meals.",
+    "method": "Oven",
+    "ingredients": [
+      "Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-385",
+    "title": "Egg Air Fryer Egg Toast",
+    "titleEs": "Pan con huevo en air fryer de huevo",
+    "summary": "Crispy air-fryer egg toast in about ten minutes.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-386",
+    "title": "Egg Egg Tostadas",
+    "titleEs": "Tostadas con huevo de huevo",
+    "summary": "Crunchy tostadas topped with eggs and pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "tostadas",
+      "beans"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-387",
+    "title": "Egg Egg Salsa Verde",
+    "titleEs": "Huevo en salsa verde de huevo",
+    "summary": "Eggs simmered in salsa verde for a quick Mexican-style meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-388",
+    "title": "Egg Egg Veggie Stir-Fry",
+    "titleEs": "Salteado de huevo con verduras de huevo",
+    "summary": "A fast veggie stir-fry finished with scrambled egg.",
+    "method": "Stove",
+    "ingredients": [
+      "Egg",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-389",
+    "title": "Egg Egg Loaded Potato",
+    "titleEs": "Papa cargada con huevo de huevo",
+    "summary": "A loaded potato topped with eggs for extra staying power.",
+    "method": "Microwave",
+    "ingredients": [
+      "Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-390",
+    "title": "Egg Egg Casserole",
+    "titleEs": "Cazuela de huevo de huevo",
+    "summary": "A simple baked egg casserole for breakfast-for-dinner nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-391",
+    "title": "Cheesy Egg Breakfast Tacos",
+    "titleEs": "Tacos de desayuno de huevo con queso",
+    "summary": "Fast breakfast tacos that also work for dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-392",
+    "title": "Cheesy Egg Breakfast Burrito",
+    "titleEs": "Burrito de desayuno de huevo con queso",
+    "summary": "A filling breakfast burrito with simple pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "tortillas",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-393",
+    "title": "Cheesy Egg Egg Rice Bowl",
+    "titleEs": "Tazón de arroz con huevo de huevo con queso",
+    "summary": "A quick rice bowl topped with eggs and easy extras.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-394",
+    "title": "Cheesy Egg Breakfast Quesadilla",
+    "titleEs": "Quesadilla de desayuno de huevo con queso",
+    "summary": "Crispy breakfast quesadillas ready in minutes.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-395",
+    "title": "Cheesy Egg Egg Toast Melt",
+    "titleEs": "Pan tostado con huevo de huevo con queso",
+    "summary": "A warm egg-and-cheese toast melt for any time of day.",
+    "method": "Oven",
+    "ingredients": [
+      "Cheesy Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-396",
+    "title": "Cheesy Egg Microwave Egg Bowl",
+    "titleEs": "Tazón de huevo al microondas de huevo con queso",
+    "summary": "A fast microwave egg bowl with almost no cleanup.",
+    "method": "Microwave",
+    "ingredients": [
+      "Cheesy Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-397",
+    "title": "Cheesy Egg Egg Potato Skillet",
+    "titleEs": "Sartén de papa con huevo de huevo con queso",
+    "summary": "A hearty potato-and-egg skillet for breakfast or dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-398",
+    "title": "Cheesy Egg Breakfast Nachos",
+    "titleEs": "Nachos de desayuno de huevo con queso",
+    "summary": "Fun breakfast nachos that kids can help assemble.",
+    "method": "Oven",
+    "ingredients": [
+      "Cheesy Egg",
+      "tortilla chips",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-399",
+    "title": "Cheesy Egg Egg Fried Rice",
+    "titleEs": "Arroz frito con huevo de huevo con queso",
+    "summary": "A quick fried-rice meal that is perfect for leftover rice.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-400",
+    "title": "Cheesy Egg Breakfast Pizza",
+    "titleEs": "Pizza de desayuno de huevo con queso",
+    "summary": "A fun flatbread breakfast pizza for the whole family.",
+    "method": "Oven",
+    "ingredients": [
+      "Cheesy Egg",
+      "flatbread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-401",
+    "title": "Cheesy Egg Egg Bean Bowl",
+    "titleEs": "Tazón de huevo con frijoles de huevo con queso",
+    "summary": "A protein-packed bowl made from simple staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "beans",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-402",
+    "title": "Cheesy Egg Egg Fajita Wrap",
+    "titleEs": "Wrap de fajita con huevo de huevo con queso",
+    "summary": "Eggs, peppers and onions wrapped into an easy meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-403",
+    "title": "Cheesy Egg Egg Pasta",
+    "titleEs": "Pasta con huevo de huevo con queso",
+    "summary": "A simple savory egg pasta for a quick family meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "pasta"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-404",
+    "title": "Cheesy Egg Baked Egg Cups",
+    "titleEs": "Huevitos al horno de huevo con queso",
+    "summary": "Easy baked egg cups that are great for make-ahead meals.",
+    "method": "Oven",
+    "ingredients": [
+      "Cheesy Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-405",
+    "title": "Cheesy Egg Air Fryer Egg Toast",
+    "titleEs": "Pan con huevo en air fryer de huevo con queso",
+    "summary": "Crispy air-fryer egg toast in about ten minutes.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Cheesy Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-406",
+    "title": "Cheesy Egg Egg Tostadas",
+    "titleEs": "Tostadas con huevo de huevo con queso",
+    "summary": "Crunchy tostadas topped with eggs and pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "tostadas",
+      "beans"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-407",
+    "title": "Cheesy Egg Egg Salsa Verde",
+    "titleEs": "Huevo en salsa verde de huevo con queso",
+    "summary": "Eggs simmered in salsa verde for a quick Mexican-style meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-408",
+    "title": "Cheesy Egg Egg Veggie Stir-Fry",
+    "titleEs": "Salteado de huevo con verduras de huevo con queso",
+    "summary": "A fast veggie stir-fry finished with scrambled egg.",
+    "method": "Stove",
+    "ingredients": [
+      "Cheesy Egg",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-409",
+    "title": "Cheesy Egg Egg Loaded Potato",
+    "titleEs": "Papa cargada con huevo de huevo con queso",
+    "summary": "A loaded potato topped with eggs for extra staying power.",
+    "method": "Microwave",
+    "ingredients": [
+      "Cheesy Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-410",
+    "title": "Cheesy Egg Egg Casserole",
+    "titleEs": "Cazuela de huevo de huevo con queso",
+    "summary": "A simple baked egg casserole for breakfast-for-dinner nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Cheesy Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-411",
+    "title": "Potato Egg Breakfast Tacos",
+    "titleEs": "Tacos de desayuno de papa con huevo",
+    "summary": "Fast breakfast tacos that also work for dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-412",
+    "title": "Potato Egg Breakfast Burrito",
+    "titleEs": "Burrito de desayuno de papa con huevo",
+    "summary": "A filling breakfast burrito with simple pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "tortillas",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-413",
+    "title": "Potato Egg Egg Rice Bowl",
+    "titleEs": "Tazón de arroz con huevo de papa con huevo",
+    "summary": "A quick rice bowl topped with eggs and easy extras.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-414",
+    "title": "Potato Egg Breakfast Quesadilla",
+    "titleEs": "Quesadilla de desayuno de papa con huevo",
+    "summary": "Crispy breakfast quesadillas ready in minutes.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-415",
+    "title": "Potato Egg Egg Toast Melt",
+    "titleEs": "Pan tostado con huevo de papa con huevo",
+    "summary": "A warm egg-and-cheese toast melt for any time of day.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-416",
+    "title": "Potato Egg Microwave Egg Bowl",
+    "titleEs": "Tazón de huevo al microondas de papa con huevo",
+    "summary": "A fast microwave egg bowl with almost no cleanup.",
+    "method": "Microwave",
+    "ingredients": [
+      "Potato Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-417",
+    "title": "Potato Egg Egg Potato Skillet",
+    "titleEs": "Sartén de papa con huevo de papa con huevo",
+    "summary": "A hearty potato-and-egg skillet for breakfast or dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-418",
+    "title": "Potato Egg Breakfast Nachos",
+    "titleEs": "Nachos de desayuno de papa con huevo",
+    "summary": "Fun breakfast nachos that kids can help assemble.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato Egg",
+      "tortilla chips",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-419",
+    "title": "Potato Egg Egg Fried Rice",
+    "titleEs": "Arroz frito con huevo de papa con huevo",
+    "summary": "A quick fried-rice meal that is perfect for leftover rice.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-420",
+    "title": "Potato Egg Breakfast Pizza",
+    "titleEs": "Pizza de desayuno de papa con huevo",
+    "summary": "A fun flatbread breakfast pizza for the whole family.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato Egg",
+      "flatbread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-421",
+    "title": "Potato Egg Egg Bean Bowl",
+    "titleEs": "Tazón de huevo con frijoles de papa con huevo",
+    "summary": "A protein-packed bowl made from simple staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "beans",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-422",
+    "title": "Potato Egg Egg Fajita Wrap",
+    "titleEs": "Wrap de fajita con huevo de papa con huevo",
+    "summary": "Eggs, peppers and onions wrapped into an easy meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-423",
+    "title": "Potato Egg Egg Pasta",
+    "titleEs": "Pasta con huevo de papa con huevo",
+    "summary": "A simple savory egg pasta for a quick family meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "pasta"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-424",
+    "title": "Potato Egg Baked Egg Cups",
+    "titleEs": "Huevitos al horno de papa con huevo",
+    "summary": "Easy baked egg cups that are great for make-ahead meals.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-425",
+    "title": "Potato Egg Air Fryer Egg Toast",
+    "titleEs": "Pan con huevo en air fryer de papa con huevo",
+    "summary": "Crispy air-fryer egg toast in about ten minutes.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Potato Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-426",
+    "title": "Potato Egg Egg Tostadas",
+    "titleEs": "Tostadas con huevo de papa con huevo",
+    "summary": "Crunchy tostadas topped with eggs and pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "tostadas",
+      "beans"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-427",
+    "title": "Potato Egg Egg Salsa Verde",
+    "titleEs": "Huevo en salsa verde de papa con huevo",
+    "summary": "Eggs simmered in salsa verde for a quick Mexican-style meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-428",
+    "title": "Potato Egg Egg Veggie Stir-Fry",
+    "titleEs": "Salteado de huevo con verduras de papa con huevo",
+    "summary": "A fast veggie stir-fry finished with scrambled egg.",
+    "method": "Stove",
+    "ingredients": [
+      "Potato Egg",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-429",
+    "title": "Potato Egg Egg Loaded Potato",
+    "titleEs": "Papa cargada con huevo de papa con huevo",
+    "summary": "A loaded potato topped with eggs for extra staying power.",
+    "method": "Microwave",
+    "ingredients": [
+      "Potato Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-430",
+    "title": "Potato Egg Egg Casserole",
+    "titleEs": "Cazuela de huevo de papa con huevo",
+    "summary": "A simple baked egg casserole for breakfast-for-dinner nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Potato Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-431",
+    "title": "Bean Egg Breakfast Tacos",
+    "titleEs": "Tacos de desayuno de frijol con huevo",
+    "summary": "Fast breakfast tacos that also work for dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-432",
+    "title": "Bean Egg Breakfast Burrito",
+    "titleEs": "Burrito de desayuno de frijol con huevo",
+    "summary": "A filling breakfast burrito with simple pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "tortillas",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-433",
+    "title": "Bean Egg Egg Rice Bowl",
+    "titleEs": "Tazón de arroz con huevo de frijol con huevo",
+    "summary": "A quick rice bowl topped with eggs and easy extras.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-434",
+    "title": "Bean Egg Breakfast Quesadilla",
+    "titleEs": "Quesadilla de desayuno de frijol con huevo",
+    "summary": "Crispy breakfast quesadillas ready in minutes.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-435",
+    "title": "Bean Egg Egg Toast Melt",
+    "titleEs": "Pan tostado con huevo de frijol con huevo",
+    "summary": "A warm egg-and-cheese toast melt for any time of day.",
+    "method": "Oven",
+    "ingredients": [
+      "Bean Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-436",
+    "title": "Bean Egg Microwave Egg Bowl",
+    "titleEs": "Tazón de huevo al microondas de frijol con huevo",
+    "summary": "A fast microwave egg bowl with almost no cleanup.",
+    "method": "Microwave",
+    "ingredients": [
+      "Bean Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-437",
+    "title": "Bean Egg Egg Potato Skillet",
+    "titleEs": "Sartén de papa con huevo de frijol con huevo",
+    "summary": "A hearty potato-and-egg skillet for breakfast or dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-438",
+    "title": "Bean Egg Breakfast Nachos",
+    "titleEs": "Nachos de desayuno de frijol con huevo",
+    "summary": "Fun breakfast nachos that kids can help assemble.",
+    "method": "Oven",
+    "ingredients": [
+      "Bean Egg",
+      "tortilla chips",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-439",
+    "title": "Bean Egg Egg Fried Rice",
+    "titleEs": "Arroz frito con huevo de frijol con huevo",
+    "summary": "A quick fried-rice meal that is perfect for leftover rice.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-440",
+    "title": "Bean Egg Breakfast Pizza",
+    "titleEs": "Pizza de desayuno de frijol con huevo",
+    "summary": "A fun flatbread breakfast pizza for the whole family.",
+    "method": "Oven",
+    "ingredients": [
+      "Bean Egg",
+      "flatbread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-441",
+    "title": "Bean Egg Egg Bean Bowl",
+    "titleEs": "Tazón de huevo con frijoles de frijol con huevo",
+    "summary": "A protein-packed bowl made from simple staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "beans",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-442",
+    "title": "Bean Egg Egg Fajita Wrap",
+    "titleEs": "Wrap de fajita con huevo de frijol con huevo",
+    "summary": "Eggs, peppers and onions wrapped into an easy meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-443",
+    "title": "Bean Egg Egg Pasta",
+    "titleEs": "Pasta con huevo de frijol con huevo",
+    "summary": "A simple savory egg pasta for a quick family meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "pasta"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-444",
+    "title": "Bean Egg Baked Egg Cups",
+    "titleEs": "Huevitos al horno de frijol con huevo",
+    "summary": "Easy baked egg cups that are great for make-ahead meals.",
+    "method": "Oven",
+    "ingredients": [
+      "Bean Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-445",
+    "title": "Bean Egg Air Fryer Egg Toast",
+    "titleEs": "Pan con huevo en air fryer de frijol con huevo",
+    "summary": "Crispy air-fryer egg toast in about ten minutes.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Bean Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-446",
+    "title": "Bean Egg Egg Tostadas",
+    "titleEs": "Tostadas con huevo de frijol con huevo",
+    "summary": "Crunchy tostadas topped with eggs and pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "tostadas",
+      "beans"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-447",
+    "title": "Bean Egg Egg Salsa Verde",
+    "titleEs": "Huevo en salsa verde de frijol con huevo",
+    "summary": "Eggs simmered in salsa verde for a quick Mexican-style meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-448",
+    "title": "Bean Egg Egg Veggie Stir-Fry",
+    "titleEs": "Salteado de huevo con verduras de frijol con huevo",
+    "summary": "A fast veggie stir-fry finished with scrambled egg.",
+    "method": "Stove",
+    "ingredients": [
+      "Bean Egg",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-449",
+    "title": "Bean Egg Egg Loaded Potato",
+    "titleEs": "Papa cargada con huevo de frijol con huevo",
+    "summary": "A loaded potato topped with eggs for extra staying power.",
+    "method": "Microwave",
+    "ingredients": [
+      "Bean Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-450",
+    "title": "Bean Egg Egg Casserole",
+    "titleEs": "Cazuela de huevo de frijol con huevo",
+    "summary": "A simple baked egg casserole for breakfast-for-dinner nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Bean Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-451",
+    "title": "Veggie Egg Breakfast Tacos",
+    "titleEs": "Tacos de desayuno de huevo con verduras",
+    "summary": "Fast breakfast tacos that also work for dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-452",
+    "title": "Veggie Egg Breakfast Burrito",
+    "titleEs": "Burrito de desayuno de huevo con verduras",
+    "summary": "A filling breakfast burrito with simple pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "tortillas",
+      "potatoes"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-453",
+    "title": "Veggie Egg Egg Rice Bowl",
+    "titleEs": "Tazón de arroz con huevo de huevo con verduras",
+    "summary": "A quick rice bowl topped with eggs and easy extras.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-454",
+    "title": "Veggie Egg Breakfast Quesadilla",
+    "titleEs": "Quesadilla de desayuno de huevo con verduras",
+    "summary": "Crispy breakfast quesadillas ready in minutes.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "tortillas",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil"
+    ]
+  },
+  {
+    "id": "local-455",
+    "title": "Veggie Egg Egg Toast Melt",
+    "titleEs": "Pan tostado con huevo de huevo con verduras",
+    "summary": "A warm egg-and-cheese toast melt for any time of day.",
+    "method": "Oven",
+    "ingredients": [
+      "Veggie Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-456",
+    "title": "Veggie Egg Microwave Egg Bowl",
+    "titleEs": "Tazón de huevo al microondas de huevo con verduras",
+    "summary": "A fast microwave egg bowl with almost no cleanup.",
+    "method": "Microwave",
+    "ingredients": [
+      "Veggie Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-457",
+    "title": "Veggie Egg Egg Potato Skillet",
+    "titleEs": "Sartén de papa con huevo de huevo con verduras",
+    "summary": "A hearty potato-and-egg skillet for breakfast or dinner.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "potatoes",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-458",
+    "title": "Veggie Egg Breakfast Nachos",
+    "titleEs": "Nachos de desayuno de huevo con verduras",
+    "summary": "Fun breakfast nachos that kids can help assemble.",
+    "method": "Oven",
+    "ingredients": [
+      "Veggie Egg",
+      "tortilla chips",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt"
+    ]
+  },
+  {
+    "id": "local-459",
+    "title": "Veggie Egg Egg Fried Rice",
+    "titleEs": "Arroz frito con huevo de huevo con verduras",
+    "summary": "A quick fried-rice meal that is perfect for leftover rice.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "rice",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-460",
+    "title": "Veggie Egg Breakfast Pizza",
+    "titleEs": "Pizza de desayuno de huevo con verduras",
+    "summary": "A fun flatbread breakfast pizza for the whole family.",
+    "method": "Oven",
+    "ingredients": [
+      "Veggie Egg",
+      "flatbread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-461",
+    "title": "Veggie Egg Egg Bean Bowl",
+    "titleEs": "Tazón de huevo con frijoles de huevo con verduras",
+    "summary": "A protein-packed bowl made from simple staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "beans",
+      "rice"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-462",
+    "title": "Veggie Egg Egg Fajita Wrap",
+    "titleEs": "Wrap de fajita con huevo de huevo con verduras",
+    "summary": "Eggs, peppers and onions wrapped into an easy meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "bell pepper",
+      "onion",
+      "tortillas"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-463",
+    "title": "Veggie Egg Egg Pasta",
+    "titleEs": "Pasta con huevo de huevo con verduras",
+    "summary": "A simple savory egg pasta for a quick family meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "pasta"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper",
+      "garlic"
+    ]
+  },
+  {
+    "id": "local-464",
+    "title": "Veggie Egg Baked Egg Cups",
+    "titleEs": "Huevitos al horno de huevo con verduras",
+    "summary": "Easy baked egg cups that are great for make-ahead meals.",
+    "method": "Oven",
+    "ingredients": [
+      "Veggie Egg",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-465",
+    "title": "Veggie Egg Air Fryer Egg Toast",
+    "titleEs": "Pan con huevo en air fryer de huevo con verduras",
+    "summary": "Crispy air-fryer egg toast in about ten minutes.",
+    "method": "Air Fryer",
+    "ingredients": [
+      "Veggie Egg",
+      "bread",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-466",
+    "title": "Veggie Egg Egg Tostadas",
+    "titleEs": "Tostadas con huevo de huevo con verduras",
+    "summary": "Crunchy tostadas topped with eggs and pantry staples.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "tostadas",
+      "beans"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-467",
+    "title": "Veggie Egg Egg Salsa Verde",
+    "titleEs": "Huevo en salsa verde de huevo con verduras",
+    "summary": "Eggs simmered in salsa verde for a quick Mexican-style meal.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "salsa verde",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt"
+    ]
+  },
+  {
+    "id": "local-468",
+    "title": "Veggie Egg Egg Veggie Stir-Fry",
+    "titleEs": "Salteado de huevo con verduras de huevo con verduras",
+    "summary": "A fast veggie stir-fry finished with scrambled egg.",
+    "method": "Stove",
+    "ingredients": [
+      "Veggie Egg",
+      "broccoli",
+      "carrot",
+      "onion"
+    ],
+    "pantryBasics": [
+      "oil",
+      "soy sauce"
+    ]
+  },
+  {
+    "id": "local-469",
+    "title": "Veggie Egg Egg Loaded Potato",
+    "titleEs": "Papa cargada con huevo de huevo con verduras",
+    "summary": "A loaded potato topped with eggs for extra staying power.",
+    "method": "Microwave",
+    "ingredients": [
+      "Veggie Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "salt",
+      "pepper"
+    ]
+  },
+  {
+    "id": "local-470",
+    "title": "Veggie Egg Egg Casserole",
+    "titleEs": "Cazuela de huevo de huevo con verduras",
+    "summary": "A simple baked egg casserole for breakfast-for-dinner nights.",
+    "method": "Oven",
+    "ingredients": [
+      "Veggie Egg",
+      "potatoes",
+      "cheese"
+    ],
+    "pantryBasics": [
+      "oil",
+      "salt",
+      "pepper"
+    ]
+  }
+]
