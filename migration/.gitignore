@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.*
+.DS_Store
+public/recipe-images/quota.sqlite*
+public/recipe-images/*.png
+public/recipe-images/*.tmp

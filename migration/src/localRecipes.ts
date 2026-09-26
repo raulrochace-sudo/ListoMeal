@@ -1,3 +1,4 @@
+import { estimateNutrition, type Nutrition } from './nutrition';
 export type LocalRecipe = {
   id: string;
   title: string;
@@ -9,10 +10,13 @@ export type LocalRecipe = {
   optionalExtras: string[];
   steps: string[];
   kidTip: string;
+  nutrition?: Nutrition;
 };
 
 type Lang = 'en' | 'es';
 type ProfileLike = { avoid: string; dislikes: string; diet: string; };
+type Family = { en: string; es: string; ingredients: string[]; vegetarian?: boolean; vegan?: boolean };
+type Style = { en: string; es: string; method: string; minutes: number; extras: string[]; pantry: string[]; optional: string[]; summaryEn: string; summaryEs: string };
 const proteinFamilies: Family[] = [
   { en: 'Chicken', es: 'Pollo', ingredients: ['chicken'] },
   { en: 'Ground Beef', es: 'Carne molida', ingredients: ['ground beef'] },
@@ -103,14 +107,6 @@ const extraEs: Record<string, string> = {
 function localize(item: string, lang: Lang) { return lang === 'es' ? (extraEs[item] || item) : item; }
 function normalize(value: string) { return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim(); }
 function splitTerms(value: string) { return value.split(/[,;\n]/).map(normalize).filter(Boolean); }
-function joinList(items: string[], lang: Lang) {
-  const clean = items.filter(Boolean);
-  if (clean.length === 0) return '';
-  if (clean.length === 1) return clean[0];
-  const head = clean.slice(0, -1).join(', ');
-  const last = clean[clean.length - 1];
-  return lang === 'en' ? `${head} and ${last}` : `${head} y ${last}`;
-}
 function buildSteps(family: Family, style: Style, lang: Lang): string[] {
   const protein = lang === 'es' ? family.es.toLowerCase() : family.en.toLowerCase();
   const additions = style.extras.join(', ');
@@ -147,6 +143,7 @@ function buildRecipe(family: Family, style: Style, index: number, lang: Lang): L
     id: `local-${index}`, title, summary: lang === 'en' ? style.summaryEn : style.summaryEs, minutes: style.minutes, method: style.method, ingredients,
     pantryBasics: style.pantry.map(p => localize(p, lang)), optionalExtras: style.optional.map(o => localize(o, lang)),
     steps: buildSteps(family, style, lang),
+    nutrition: estimateNutrition(family.ingredients, style.extras, style.pantry),
     kidTip: lang === 'en' ? 'Keep sauces and toppings on the side so kids can build their own plate.' : 'Sirve salsas y toppings aparte para que los niños armen su propio plato.',
   };
 }
@@ -161,13 +158,15 @@ function library(lang: Lang) {
   for (const family of breakfastFamilies) for (const style of breakfastStyles) recipes.push(buildRecipe(family, style, index++, lang));
   return recipes;
 }
-export function getLocalMeals(args: { lang: Lang; ingredients: string[]; time: string; method: string; profile: ProfileLike; recentTitles: string[]; }) {
-  const { lang, ingredients, time, method, profile, recentTitles } = args;
+export function getLocalMeals(args: { lang: Lang; ingredients: string[]; time: string; method: string; profile: ProfileLike; recentTitles: string[]; nutritionGoal?: 'none' | 'lowCarb' | 'highProtein'; }) {
+  const { lang, ingredients, time, method, profile, recentTitles, nutritionGoal = 'none' } = args;
   const have = ingredients.map(normalize), avoid = splitTerms(profile.avoid), dislikes = splitTerms(profile.dislikes), diet = normalize(profile.diet), recent = new Set(recentTitles.map(normalize));
   const maxMinutes = time === '60' ? 999 : Number(time || 20);
   const scored = library(lang).map((recipe, index) => {
     const searchable = normalize([recipe.title, ...recipe.ingredients, ...recipe.pantryBasics, ...recipe.optionalExtras].join(' '));
     const forbidden = [...avoid, ...dislikes].some(term => term && searchable.includes(term)); if (forbidden) return { recipe, score: -10000 };
+    if (nutritionGoal === 'lowCarb' && (!recipe.nutrition || recipe.nutrition.carbs > 30)) return { recipe, score: -10000 };
+    if (nutritionGoal === 'highProtein' && (!recipe.nutrition || recipe.nutrition.protein < 25)) return { recipe, score: -10000 };
     const isMeat = ['chicken','beef','steak','pork','turkey','salmon','shrimp','tuna','sausage','ham','pollo','carne','bistec','cerdo','pavo','salmon','camar','atun','salchicha','jamon'].some(term => searchable.includes(term));
     if ((diet.includes('vegetarian') || diet.includes('vegetar')) && isMeat) return { recipe, score: -10000 };
     if ((diet.includes('vegan') || diet.includes('vegano')) && (isMeat || searchable.includes('egg') || searchable.includes('huevo') || searchable.includes('cheese') || searchable.includes('queso'))) return { recipe, score: -10000 };
@@ -178,5 +177,6 @@ export function getLocalMeals(args: { lang: Lang; ingredients: string[]; time: s
   });
   const eligible = scored.filter(item => item.score > -1000).sort((a,b) => b.score - a.score); const top = eligible.slice(0,3).map(item => item.recipe);
   if (top.length === 3) return top;
-  return library(lang).filter(recipe => !top.some(item => item.id === recipe.id)).slice(0, 3 - top.length).concat(top).slice(0,3);
+  // Never fill a short list with recipes that violate the chosen nutrition goal or allergies.
+  return top;
 }

@@ -5,6 +5,7 @@ const api = { post: async (path: string, body: unknown) => {
   return { data: await response.json() };
 } };
 import { getLocalMeals } from './localRecipes';
+import type { Nutrition } from './nutrition';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import { createWorker } from 'tesseract.js';
@@ -44,6 +45,7 @@ type Recipe = {
   optionalExtras: string[];
   steps: string[];
   kidTip: string;
+  nutrition?: Nutrition;
 };
 
 type Profile = {
@@ -218,7 +220,7 @@ const copy = {
     scanButton: 'Choose photo', visible: 'I found', scanError: 'I couldn’t read that photo. Try another one or type the ingredients.', error: 'Something went wrong. Please try again.', saved: 'Saved', profileSaved: 'Family profile saved.',
     noPhoto: 'Generated images are illustrations of the recipe, not photos of a prepared dish.', newRecipe: 'Start New Recipe',
     surprise: 'Surprise me', tryAnother: 'Try another', share: 'Share', shopping: 'Shopping list', have: 'You have', needToBuy: 'Pick up', copyList: 'Copy list', listCopied: 'List copied',
-    nutritionLabel: 'Nutrition goals', lowCarb: 'Low carb', highProtein: 'High protein', kcal: 'kcal', proteinShort: 'protein', carbsShort: 'carbs', estimateNote: 'Estimated values — not exact.',
+    nutritionLabel: 'Nutrition goal', lowCarb: 'Lower carb', highProtein: 'Higher protein', kcal: 'kcal', proteinShort: 'protein', carbsShort: 'carbs', estimateNote: 'Approx. per adult serving; actual amounts depend on portions and ingredients.',
   },
   es: {
     tagline: '¿Cena? Listo.', subtitle: 'Convierte lo que ya tienes en una comida para la familia.', type: 'Escribir', pick: 'Elegir', scan: 'Escanear', ingredients: '¿Qué tienes?',
@@ -229,7 +231,7 @@ const copy = {
     scanHelp: 'Toma o elige una foto clara de tu refri, despensa o compras. Deep Scan combina dos modelos de visión, escaneo 3x3 y lectura de etiquetas en tu dispositivo. El primer escaneo puede tardar más y no usa créditos de IA.', scanButton: 'Elegir foto', visible: 'Encontré',
     scanError: 'No pude leer esa foto. Intenta otra o escribe los ingredientes.', error: 'Algo salió mal. Intenta de nuevo.', saved: 'Guardado', profileSaved: 'Perfil familiar guardado.', noPhoto: 'Las imágenes generadas ilustran la receta; no son fotos del platillo preparado.', newRecipe: 'Comenzar receta nueva',
     surprise: 'Sorpréndeme', tryAnother: 'Cambiar esta', share: 'Compartir', shopping: 'Lista de compras', have: 'Ya tienes', needToBuy: 'Falta comprar', copyList: 'Copiar lista', listCopied: 'Lista copiada',
-    nutritionLabel: 'Objetivo nutricional', lowCarb: 'Low carb', highProtein: 'Alta en proteína', kcal: 'kcal', proteinShort: 'proteína', carbsShort: 'carbs', estimateNote: 'Valores estimados, no exactos.',
+    nutritionLabel: 'Objetivo nutricional', lowCarb: 'Menos carbohidratos', highProtein: 'Más proteína', kcal: 'kcal', proteinShort: 'proteína', carbsShort: 'carbohidratos', estimateNote: 'Aprox. por porción de adulto; los valores cambian según cantidades e ingredientes.',
   },
 };
 
@@ -290,6 +292,7 @@ function App() {
   const [picked, setPicked] = useState<string[]>([]);
   const [time, setTime] = useState('20');
   const [method, setMethod] = useState('Easiest');
+  const [nutritionGoal, setNutritionGoal] = useState<'none' | 'lowCarb' | 'highProtein'>('none');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(false);
   const [scanLoading, setScanLoading] = useState(false);
@@ -335,19 +338,19 @@ function App() {
       return;
     }
     setLoading(true); setErrorMsg('');
-    const next = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, recentTitles: history.slice(0, 8).map(h => h.recipe.title) }) as Recipe[];
-    setRecipes(next); setLoading(false); window.scrollTo({ top: 0, behavior: 'smooth' });
+    const next = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: history.slice(0, 8).map(h => h.recipe.title) }) as Recipe[];
+    setRecipes(next); if (!next.length) setErrorMsg(lang === 'en' ? 'No meals match this goal. Try another goal or change ingredients.' : 'No hay recetas para ese objetivo. Prueba otro objetivo o cambia los ingredientes.'); setLoading(false); window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function surpriseMe() {
     setErrorMsg(''); setLoading(true);
-    const next = getLocalMeals({ lang, ingredients: [], time, method, profile, recentTitles: history.slice(0, 8).map(h => h.recipe.title) }) as Recipe[];
+    const next = getLocalMeals({ lang, ingredients: [], time, method, profile, nutritionGoal, recentTitles: history.slice(0, 8).map(h => h.recipe.title) }) as Recipe[];
     setRecipes(next); setLoading(false); setTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function swapRecipe(index: number) {
     const exclude = [...recipes.map(r => r.title), ...history.slice(0, 8).map(h => h.recipe.title)];
-    const pool = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, recentTitles: exclude }) as Recipe[];
+    const pool = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: exclude }) as Recipe[];
     const replacement = pool.find(r => !recipes.some(existing => existing.id === r.id));
     if (!replacement) { flash(lang === 'en' ? 'No other match right now' : 'No hay otra opción por ahora'); return; }
     setRecipes(prev => prev.map((r, i) => (i === index ? replacement : r)));
@@ -482,6 +485,7 @@ function App() {
                   { value: 'Air Fryer', kind: 'airfryer' as const, en: 'Air Fryer', es: 'Air Fryer' },
                   { value: 'Microwave', kind: 'microwave' as const, en: 'Microwave', es: 'Microondas' },
                 ].map(option => <button key={option.value} type="button" className={`method-choice ${method === option.value ? 'selected' : ''}`} onClick={() => setMethod(option.value)}><ApplianceVisual kind={option.kind} label={lang === 'en' ? option.en : option.es} /><span className="method-name">{lang === 'en' ? option.en : option.es}</span></button>)}</div></div>
+                <div><label className="label"><Heart size={16} />{t.nutritionLabel}</label><div className="grid grid-cols-3 gap-2">{([{value:'none',label:lang==='en'?'Any':'Cualquiera'},{value:'lowCarb',label:t.lowCarb},{value:'highProtein',label:t.highProtein}] as const).map(option=><button key={option.value} type="button" className={`choice ${nutritionGoal===option.value?'selected':''}`} onClick={()=>setNutritionGoal(option.value)}>{option.label}</button>)}</div><p className="mt-2 text-xs text-slate-500">{t.estimateNote}</p></div>
 
               </div>
               {errorMsg && <div className="mt-4 rounded-2xl bg-red-50 p-3 text-sm font-semibold text-red-700">{errorMsg}</div>}
@@ -515,7 +519,7 @@ function ApplianceVisual({ kind, label }: { kind: 'easy' | 'stove' | 'oven' | 'a
 }
 
 function RecipeCard({ recipe, t, lang, favorite, onFavorite, onCook, onShare, onSwap }: { recipe: Recipe; t: typeof copy.en; lang: Lang; favorite: boolean; onFavorite: () => void; onCook: () => void; onShare?: () => void; onSwap?: () => void; }) {
-  return <article className="group overflow-hidden rounded-[2rem] border border-orange-100 bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-cardHover"><div className="relative h-40 overflow-hidden bg-gradient-to-br from-amber-100 via-orange-50 to-emerald-50"><RecipePhoto recipe={recipe} fallback={t.coming} /><div className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/55 px-2.5 py-1 text-[11px] font-extrabold text-white backdrop-blur-sm"><Clock3 size={12} />{recipe.minutes} min · {recipe.method}</div><div className="absolute right-3 top-3 flex gap-2">{onShare && <button aria-label={t.share} onClick={onShare} className="grid h-10 w-10 place-items-center rounded-full bg-white text-slate-500 shadow transition duration-200 hover:scale-110 hover:text-orange-500"><Share2 size={18} /></button>}<button aria-label={t.favorite} onClick={onFavorite} className={`grid h-10 w-10 place-items-center rounded-full bg-white shadow transition duration-200 hover:scale-110 ${favorite ? 'text-red-500' : 'text-slate-400'}`}><Heart size={20} fill={favorite ? 'currentColor' : 'none'} /></button></div></div><div className="p-5"><h3 className="font-display text-xl font-semibold leading-tight text-[#1f2d26]">{recipe.title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{recipe.summary}</p><div className="mt-4 flex flex-wrap gap-1.5">{recipe.ingredients.slice(0,5).map(i => <span key={i} className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-800">{i}</span>)}</div><p className="mt-4 text-xs text-slate-500">{t.noPhoto}</p><div className="mt-4 flex gap-2"><button className="primary-btn flex-1 justify-center" onClick={onCook}><ChefHat size={18} />{t.cook}</button>{onSwap && <button aria-label={t.tryAnother} title={t.tryAnother} onClick={onSwap} className="inline-flex items-center justify-center rounded-2xl border border-orange-100 bg-white px-3 text-slate-600 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200"><Shuffle size={16} /></button>}</div>{recipe.kidTip && <div className="mt-3 rounded-2xl bg-amber-50 p-3 text-xs leading-5 text-amber-900"><strong>{lang === 'en' ? 'Kid tip:' : 'Tip para niños:'}</strong> {recipe.kidTip}</div>}</div></article>;
+  return <article className="group overflow-hidden rounded-[2rem] border border-orange-100 bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-cardHover"><div className="relative h-40 overflow-hidden bg-gradient-to-br from-amber-100 via-orange-50 to-emerald-50"><RecipePhoto recipe={recipe} fallback={t.coming} /><div className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/55 px-2.5 py-1 text-[11px] font-extrabold text-white backdrop-blur-sm"><Clock3 size={12} />{recipe.minutes} min · {recipe.method}</div><div className="absolute right-3 top-3 flex gap-2">{onShare && <button aria-label={t.share} onClick={onShare} className="grid h-10 w-10 place-items-center rounded-full bg-white text-slate-500 shadow transition duration-200 hover:scale-110 hover:text-orange-500"><Share2 size={18} /></button>}<button aria-label={t.favorite} onClick={onFavorite} className={`grid h-10 w-10 place-items-center rounded-full bg-white shadow transition duration-200 hover:scale-110 ${favorite ? 'text-red-500' : 'text-slate-400'}`}><Heart size={20} fill={favorite ? 'currentColor' : 'none'} /></button></div></div><div className="p-5"><h3 className="font-display text-xl font-semibold leading-tight text-[#1f2d26]">{recipe.title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{recipe.summary}</p><div className="mt-4 flex flex-wrap gap-1.5">{recipe.ingredients.slice(0,5).map(i => <span key={i} className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-800">{i}</span>)}</div>{recipe.nutrition && <div className="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-xs font-bold text-emerald-900"><span>≈ {recipe.nutrition.kcal} {t.kcal}</span><span className="mx-2">·</span><span>{recipe.nutrition.protein}g {t.proteinShort}</span><span className="mx-2">·</span><span>{recipe.nutrition.carbs}g {t.carbsShort}</span><p className="mt-1 font-normal text-slate-600">{t.estimateNote}</p></div>}<div className="mt-4 flex gap-2"><button className="primary-btn flex-1 justify-center" onClick={onCook}><ChefHat size={18} />{t.cook}</button>{onSwap && <button aria-label={t.tryAnother} title={t.tryAnother} onClick={onSwap} className="inline-flex items-center justify-center rounded-2xl border border-orange-100 bg-white px-3 text-slate-600 transition duration-200 hover:-translate-y-0.5 hover:border-orange-200"><Shuffle size={16} /></button>}</div>{recipe.kidTip && <div className="mt-3 rounded-2xl bg-amber-50 p-3 text-xs leading-5 text-amber-900"><strong>{lang === 'en' ? 'Kid tip:' : 'Tip para niños:'}</strong> {recipe.kidTip}</div>}</div></article>;
 }
 
 function CookModal({ recipe, step, setStep, onClose, onRate, onShare, have, t, lang }: { recipe: Recipe; step: number; setStep: (n:number)=>void; onClose:()=>void; onRate:(r:HistoryItem['rating'])=>void; onShare:()=>void; have: string[]; t: typeof copy.en; lang:Lang; }) {
