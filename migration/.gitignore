@@ -1,5 +1,10 @@
 node_modules
-dist
+dist/*
+!dist/index.html
+!dist/assets/
+dist/assets/*
+!dist/assets/index-BHCulRCa.js
+!dist/assets/index-Lt8hbbnV.css
 .env
 .env.*
 .DS_Store

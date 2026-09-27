@@ -1,0 +1,10 @@
+LISTOMEAL - ESCANER DE REFRIGERADOR CON IA
+
+1. Descomprime este ZIP. Abre tu carpeta migration y copia SOBRE ella el archivo .gitignore (puede verse sin nombre), server.py y las carpetas src y dist del ZIP. Acepta reemplazar solo archivos con igual nombre. No borres carpetas enteras: dentro de dist/recipe-images estan tus fotos.
+2. Abre GitHub Desktop, sin usar la ventana negra: deben aparecer .gitignore, server.py, src/App.tsx, dist/index.html y dos archivos dist/assets. Deja SIN marcar cualquier archivo de __pycache__ o terminado en .pyc. Haz Commit to main y Push origin. Espera a que Render muestre Live.
+3. En Render abre tu servicio ListoMeal > Environment. Comprueba que OPENAI_API_KEY ya exista; NO escribas tu llave en GitHub ni la mandes por chat. Agrega SCAN_MONTHLY_LIMIT con valor 1000 y guarda. Render volvera a desplegar.
+4. Abre listomeal.com en una pestaña nueva y actualiza la pagina. En el area del escaner debe aparecer "Escaneo de alimentos con IA" (o "AI food scan"). Escanea una repisa iluminada del refrigerador. Revisa y corrige los alimentos detectados antes de pedir recetas. Puedes tomar varias fotos.
+
+5. Para agregar US$10 abre https://platform.openai.com/settings/organization/billing/overview y elige Buy credits o Add to credit balance. Revisa si tienes activada la recarga automatica y desactívala si no la deseas. Tu balance puede compartirse con otros usos del mismo proyecto o cuenta; consulta Usage para conocer el consumo real.
+
+Cada foto nueva usa la API de OpenAI. La misma foto durante una sola ejecucion usa cache. El limite SCAN_MONTHLY_LIMIT es temporal: en Render Free se reinicia cuando el servidor duerme, se reinicia o se despliega; tampoco es un limite fiable con multiples procesos. Los presupuestos por proyecto de OpenAI son avisos, no topes estrictos. El saldo prepago tampoco detiene siempre el uso de manera instantanea. Para abrir el escaner a muchos usuarios con un gasto maximo REAL, necesitamos guardar el contador en almacenamiento persistente y proteccion contra abusos. Si no agregas SCAN_MONTHLY_LIMIT, el escaner sigue usando el metodo local sin cobro por la API.
