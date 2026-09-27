@@ -9,11 +9,102 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
+from threading import Lock
 
 from flask import Flask, jsonify, request, send_from_directory
 
 ROOT = Path(__file__).resolve().parent
 app = Flask(__name__, static_folder="dist", static_url_path="")
+_scan_lock = Lock()
+_scan_month = ""
+_scan_used = 0
+_scan_cache = {}
+
+
+@app.post("/api/scan")
+def scan_food():
+    """Analyze a user-submitted fridge photo. Never expose the API key to the browser."""
+    global _scan_month, _scan_used, _scan_cache
+    key = os.getenv("OPENAI_API_KEY", "").strip()
+    try:
+        limit = max(0, int(os.getenv("SCAN_MONTHLY_LIMIT", "0")))
+    except ValueError:
+        limit = 0
+    if not key or not limit:
+        return jsonify(error="Vision scan is not configured"), 503
+    if request.content_length and request.content_length > 2_800_000:
+        return jsonify(error="Image too large"), 413
+    data = request.get_json(silent=True)
+    if not isinstance(data, dict) or not isinstance(data.get("image"), str):
+        return jsonify(error="Missing image"), 400
+    encoded = data["image"]
+    if not encoded.startswith("data:image/jpeg;base64,") or len(encoded) > 2_700_000:
+        return jsonify(error="Invalid image"), 400
+    try:
+        image = base64.b64decode(encoded.partition(",")[2], validate=True)
+    except ValueError:
+        return jsonify(error="Invalid image"), 400
+    if len(image) > 2_000_000 or not image.startswith(b"\xff\xd8\xff"):
+        return jsonify(error="Invalid JPEG"), 400
+    digest = hashlib.sha256(image).hexdigest()
+    month = datetime.now(timezone.utc).strftime("%Y-%m")
+    # Single-process quota. Render free instances lose this counter on restart;
+    # use a persistent external limiter before opening scans to unrestricted traffic.
+    with _scan_lock:
+        if month != _scan_month:
+            _scan_month, _scan_used, _scan_cache = month, 0, {}
+        if digest in _scan_cache:
+            return jsonify(foods=_scan_cache[digest], cached=True)
+        if _scan_used >= limit:
+            return jsonify(error="Scan limit reached"), 429
+        _scan_used += 1  # Reserve before issuing a potentially billable request.
+    payload = {
+        "model": "gpt-4o", "temperature": 0, "max_tokens": 450,
+        "response_format": {"type": "json_object"},
+        "messages": [{"role": "user", "content": [
+            {"type": "text", "text": (
+                "List the distinct edible ingredients visibly present in this refrigerator or pantry photograph. "
+                "Read package labels if legible, identify unpackaged foods by sight. "
+                "Never infer foods hidden inside opaque containers, behind other objects, or from generic packaging. "
+                "Ignore drinks that are only water, condiments if unclear, and household objects. "
+                "Return JSON exactly as {\"foods\":[{\"en\":\"English ingredient name\",\"es\":\"Nombre del ingrediente en español\"}]}. "
+                "Use short common grocery names, at most 16 foods, no explanations. "
+                "When uncertain omit the food; the person will review and add missing items."
+            )},
+            {"type": "image_url", "image_url": {"url": encoded, "detail": "high"}}
+        ]}]}
+    api_request = Request("https://api.openai.com/v1/chat/completions",
+                          data=json.dumps(payload).encode(), headers={
+                              "Authorization": "Bearer " + key,
+                              "Content-Type": "application/json"})
+    try:
+        with urlopen(api_request, timeout=55) as response:
+            answer = json.load(response)
+        result = json.loads(answer["choices"][0]["message"]["content"])
+        foods = result.get("foods", [])
+        if not isinstance(foods, list):
+            raise ValueError("Invalid food list")
+        cleaned = []
+        seen = set()
+        for food in foods[:16]:
+            if not isinstance(food, dict):
+                continue
+            en, es = food.get("en"), food.get("es")
+            if not all(isinstance(x, str) and 1 <= len(x.strip()) <= 45 for x in (en, es)):
+                continue
+            if en.strip().lower() not in seen:
+                cleaned.append({"en": en.strip(), "es": es.strip()})
+                seen.add(en.strip().lower())
+        with _scan_lock:
+            if len(_scan_cache) < limit:
+                _scan_cache[digest] = cleaned
+        return jsonify(foods=cleaned, cached=False)
+    except HTTPError as exc:
+        app.logger.warning("Vision request returned HTTP %s", exc.code)
+        return jsonify(error="Vision provider unavailable"), 502
+    except Exception:
+        app.logger.exception("Vision request failed")
+        return jsonify(error="Vision scan failed"), 502
 
 
 @app.get("/api/_healthcheck")
@@ -89,12 +180,8 @@ def photo():
             if db.execute("SELECT changes()").fetchone()[0] == 0:
                 return jsonify(found=False)
             db.commit()
-        prompt = ("Create exactly one photorealistic editorial food photograph of the finished dish, "
-                  "as one appetizing serving on a plate or in a bowl. Make the cooked main ingredients "
-                  "clearly visible and appropriate for the named recipe. This is a single camera shot, "
-                  "not a cooking tutorial. No collage, grid, split screen, multiple panels, before-and-after "
-                  "sequence, inset photos, or steps. No raw ingredients or utensils as the main subject. "
-                  "No unrelated dishes, text, people, logos, or watermarks. Warm natural food photography lighting. "
+        prompt = ("Realistic editorial food photograph illustrating this specific cooked recipe. "
+                  "Show its named ingredients and method, no unrelated main dish, no people, words, logos or watermarks. "
                   f"Recipe: {title}. Description: {summary}. Method: {method}. Ingredients: {', '.join(ingredients)}.")
         body = json.dumps({"model": "gpt-image-1.5", "prompt": prompt, "size": "1024x1024",
                            "quality": os.getenv("RECIPE_IMAGE_QUALITY", "medium"), "n": 1}).encode()

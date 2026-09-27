@@ -9,7 +9,7 @@ import type { Nutrition } from './nutrition';
 import { FamilyFinish } from './FamilyFinish';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import * as mobilenet from '@tensorflow-models/mobilenet';
-import { createWorker } from 'tesseract.js';
+import { createWorker, PSM } from 'tesseract.js';
 import '@tensorflow/tfjs';
 import {
   BookOpen,
@@ -79,6 +79,12 @@ const commonIngredients: { key: string; en: string; es: string }[] = [
   { key: 'onion', en: 'Onion', es: 'Cebolla' },
   { key: 'broccoli', en: 'Broccoli', es: 'Brócoli' },
 ];
+const scanReviewFoods = [
+  { en: 'Milk', es: 'Leche' }, { en: 'Yogurt', es: 'Yogur' },
+  { en: 'Eggs', es: 'Huevos' }, { en: 'Bread', es: 'Pan' },
+  { en: 'Butter', es: 'Mantequilla' }, { en: 'Mayonnaise', es: 'Mayonesa' },
+  { en: 'Sour cream', es: 'Crema agria' },
+];
 
 const localScanFoods: Record<string, { en: string; es: string }> = {
   apple: { en: 'Apple', es: 'Manzana' },
@@ -94,6 +100,9 @@ const localScanFoods: Record<string, { en: string; es: string }> = {
 };
 
 const ocrFoodLabels: Array<{ keys: string[]; en: string; es: string }> = [
+  { keys: ['greek yogurt', 'yogurt', 'yoghurt'], en: 'Yogurt', es: 'Yogur' },
+  { keys: ['mayonnaise', 'mayonesa', 'mayo'], en: 'Mayonnaise', es: 'Mayonesa' },
+  { keys: ['sour cream', 'crema agria'], en: 'Sour cream', es: 'Crema agria' },
   { keys: ['egg', 'eggs', 'huevo', 'huevos'], en: 'Eggs', es: 'Huevos' },
   { keys: ['milk', 'leche'], en: 'Milk', es: 'Leche' },
   { keys: ['cheese', 'queso', 'cheddar', 'mozzarella'], en: 'Cheese', es: 'Queso' },
@@ -113,7 +122,6 @@ const ocrFoodLabels: Array<{ keys: string[]; en: string; es: string }> = [
   { keys: ['onion', 'onions', 'cebolla'], en: 'Onion', es: 'Cebolla' },
   { keys: ['broccoli', 'brócoli'], en: 'Broccoli', es: 'Brócoli' },
   { keys: ['carrot', 'carrots', 'zanahoria'], en: 'Carrot', es: 'Zanahoria' },
-  { keys: ['yogurt', 'yoghurt'], en: 'Yogurt', es: 'Yogur' },
   { keys: ['cream', 'crema'], en: 'Cream', es: 'Crema' },
   { keys: ['butter', 'mantequilla'], en: 'Butter', es: 'Mantequilla' },
   { keys: ['avocado', 'aguacate'], en: 'Avocado', es: 'Aguacate' },
@@ -207,6 +215,21 @@ function makeScanCrops(photo: HTMLImageElement) {
     }
   }
   return crops;
+}
+function makeOcrCrops(photo: HTMLImageElement): HTMLCanvasElement[] {
+  const areas = [
+    [0.40, 0.02, 0.50, 0.44],
+    [0.04, 0.06, 0.52, 0.48],
+    [0.08, 0.43, 0.82, 0.50],
+  ];
+  return areas.flatMap(([x,y,width,height]) => {
+    const canvas=document.createElement('canvas');
+    canvas.width=Math.min(1400,Math.round(photo.naturalWidth*width*2));
+    canvas.height=Math.min(1600,Math.round(photo.naturalHeight*height*2));
+    const ctx=canvas.getContext('2d'); if (!ctx) return [];
+    ctx.drawImage(photo,photo.naturalWidth*x,photo.naturalHeight*y,photo.naturalWidth*width,photo.naturalHeight*height,0,0,canvas.width,canvas.height);
+    return [canvas];
+  });
 }
 
 const starterProfile: Profile = { name: 'My Family', adults: 2, kids: 2, ages: '', avoid: '', dislikes: '', diet: '' };
@@ -446,11 +469,34 @@ function App() {
     try {
       const photo = new Image(); photo.src = imageUrl;
       await new Promise<void>((resolve, reject) => { photo.onload = () => resolve(); photo.onerror = () => reject(new Error('Could not load photo')); });
-      const [detector, classifier] = await Promise.all([getLocalDetector(), getLocalClassifier()]);
-      const predictions = await detector.detect(photo);
+      // Resize on the device so a full fridge photo fits within the API limit.
+      const canvas = document.createElement('canvas');
+      const scale = Math.min(1, 1600 / Math.max(photo.naturalWidth, photo.naturalHeight));
+      canvas.width = Math.round(photo.naturalWidth * scale);
+      canvas.height = Math.round(photo.naturalHeight * scale);
+      canvas.getContext('2d')?.drawImage(photo, 0, 0, canvas.width, canvas.height);
+      try {
+        const image = canvas.toDataURL('image/jpeg', 0.78);
+        const response = await fetch('/api/scan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ image }) });
+        if (response.ok) {
+          const result: { foods?: { en: string; es: string }[] } = await response.json();
+          const found = (result.foods || []).map(food => food[lang]).filter((food): food is string => Boolean(food)).slice(0, 16);
+          setMode('pick'); setScanCount(n => n + 1);
+          if (found.length) {
+            setPicked(prev => Array.from(new Set([...prev, ...found])));
+            flash(`${t.visible}: ${found.join(', ')}`);
+          } else {
+            setErrorMsg(lang === 'es' ? 'No se identificaron alimentos con seguridad. Toma fotos más cercanas de cada repisa o agrégalos abajo.' : 'No foods were identified confidently. Try a closer photo of each shelf or add them below.');
+          }
+          return;
+        }
+      } catch { /* If the paid scan is unavailable, try the device-based scanner. */ }
+      finally { canvas.width = 0; canvas.height = 0; }
+      const [detectorResult, classifierResult] = await Promise.allSettled([getLocalDetector(), getLocalClassifier()]);
+      const predictions = detectorResult.status === 'fulfilled' ? await detectorResult.value.detect(photo).catch(() => []) : [];
       const detected = predictions.filter(prediction => prediction.score >= 0.32).map(prediction => localScanFoods[prediction.class]?.[lang]).filter((item): item is string => Boolean(item));
-      const scanAreas: Array<HTMLImageElement | HTMLCanvasElement> = [photo, ...makeScanCrops(photo)];
-      const classifiedGroups = await Promise.all(scanAreas.map(area => classifier.classify(area, 10)));
+      const scanAreas: Array<HTMLImageElement | HTMLCanvasElement> = classifierResult.status === 'fulfilled' ? [photo, ...makeScanCrops(photo)] : [];
+      const classifiedGroups = classifierResult.status === 'fulfilled' ? await Promise.all(scanAreas.map(area => classifierResult.value.classify(area, 10).catch(() => []))) : [];
       // ImageNet labels are broad. Require one strong match or corroboration
       // from two different regions before adding a food automatically.
       const votes = new Map<string, number>();
@@ -467,14 +513,26 @@ function App() {
       });
       classified.push(...[...votes].filter(([, count]) => count >= 2).map(([food]) => food));
       let labelMatches: string[] = [];
-      try { const worker = await getOcrWorker(); const result = await worker.recognize(photo); labelMatches = ingredientsFromOcr(result.data.text, lang); } catch { labelMatches = []; }
+      try {
+        const worker = await getOcrWorker();
+        await worker.setParameters({ tessedit_pageseg_mode: PSM.SPARSE_TEXT });
+        const first = await worker.recognize(photo);
+        labelMatches = ingredientsFromOcr(first.data.text, lang);
+        for (const crop of makeOcrCrops(photo)) {
+          const result = await worker.recognize(crop);
+          labelMatches.push(...ingredientsFromOcr(result.data.text, lang));
+          crop.width=0; crop.height=0;
+          if (labelMatches.length >= 3) break;
+        }
+      } catch { /* The image classifiers and manual review can still work. */ }
       const found = Array.from(new Set([...detected, ...classified, ...labelMatches])).slice(0, 16);
       setMode('pick');
+      setScanCount(n => n + 1);
       if (found.length === 0) {
-        setErrorMsg(lang === 'en' ? 'Deep Scan could not confidently identify food in that photo. Try a brighter photo where package labels and food are visible, or pick/type ingredients manually.' : 'Deep Scan no pudo identificar comida con suficiente seguridad. Intenta una foto más iluminada donde se vean los alimentos y las etiquetas, o elige/escribe los ingredientes manualmente.');
+        setErrorMsg(lang === 'en' ? 'The scan could not identify food reliably. Tap the items you can see below, or scan a closer view of one shelf.' : 'El escaneo no pudo identificar alimentos con seguridad. Toca los que veas abajo o escanea más de cerca una repisa.');
         return;
       }
-      setPicked(prev => Array.from(new Set([...prev, ...found]))); setScanCount(n => n + 1); flash(`${t.visible}: ${found.join(', ')}`);
+      setPicked(prev => Array.from(new Set([...prev, ...found]))); flash(`${t.visible}: ${found.join(', ')}`);
     } catch { setErrorMsg(t.scanError); } finally { URL.revokeObjectURL(imageUrl); setScanLoading(false); }
   }
 
@@ -548,7 +606,7 @@ function App() {
                 <button className={`mode-btn ${mode === 'scan' ? 'active' : ''}`} onClick={() => setMode('scan')}><Camera size={17} />{t.scan}</button>
               </div>
               {mode === 'type' && <div><label className="label">{t.ingredients}</label><textarea className="field min-h-28" value={typed} onChange={e => setTyped(e.target.value)} placeholder={t.placeholder} /></div>}
-              {mode === 'pick' && <div><label className="label">{t.ingredients}</label><div className="flex flex-wrap gap-2">{commonIngredients.map(item => { const label = lang === 'en' ? item.en : item.es; return <button key={item.key} onClick={() => setPicked(prev => prev.includes(label) ? prev.filter(x => x !== label) : [...prev, label])} className={`chip ${picked.includes(label) ? 'selected' : ''}`}>{picked.includes(label) ? <Minus size={14} /> : <Plus size={14} />} {label}</button>; })}</div>{scanCount > 0 && picked.length > 0 && <div className="mt-4 rounded-2xl bg-emerald-50 p-3"><p className="mb-2 text-sm font-bold text-emerald-900">{lang === 'es' ? 'Revisa lo detectado; toca un ingrediente incorrecto para quitarlo:' : 'Review detected foods; tap any incorrect item to remove it:'}</p><div className="flex flex-wrap gap-2">{picked.map(food => <button type="button" key={food} className="chip selected" onClick={() => setPicked(prev => prev.filter(item => item !== food))}>{food} <X size={13} /></button>)}</div></div>}{scanCount === 0 && allIngredients.length > 0 && <div className="mt-4 rounded-2xl bg-emerald-50 p-3 text-sm font-semibold text-emerald-900">{allIngredients.join(' • ')}</div>}{scanCount > 0 && <div className="mt-4 rounded-2xl border border-orange-200 bg-orange-50 p-4"><p className="mb-3 text-sm font-bold text-orange-900">{lang === 'es' ? '¿Tienes más ingredientes? Toma otra foto del refri o la despensa; sumaremos lo que encontremos a esta lista.' : 'Have more ingredients? Take another photo of your fridge or pantry; we will add what we find to this list.'}</p><label className="primary-btn inline-flex cursor-pointer"><Camera size={18}/>{scanLoading ? t.scanning : lang === 'es' ? 'Tomar otra foto' : 'Take another photo'}<input className="hidden" type="file" accept="image/*" capture="environment" disabled={scanLoading} onChange={e => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void scanPhoto(f); }} /></label><p className="mt-2 text-xs text-slate-600">{lang === 'es' ? 'Puedes corregir la lista antes de generar recetas.' : 'You can correct the list before generating recipes.'}</p></div>}</div>}
+              {mode === 'pick' && <div><label className="label">{t.ingredients}</label>{scanCount > 0 && <div className="mb-4 rounded-2xl bg-amber-50 p-3"><p className="mb-2 text-sm font-bold text-amber-900">{lang === 'en' ? 'See something the scanner missed? Tap it to add it:' : '¿Ves algo que faltó detectar? Tócalo para agregarlo:'}</p><div className="flex flex-wrap gap-2">{scanReviewFoods.map(item => { const label=lang === 'en' ? item.en : item.es; return <button type="button" key={item.en} className={`chip ${picked.includes(label) ? 'selected' : ''}`} onClick={() => setPicked(prev => prev.includes(label) ? prev.filter(food => food !== label) : [...prev,label])}>{label}</button>; })}</div></div>}<div className="flex flex-wrap gap-2">{commonIngredients.map(item => { const label = lang === 'en' ? item.en : item.es; return <button key={item.key} onClick={() => setPicked(prev => prev.includes(label) ? prev.filter(x => x !== label) : [...prev, label])} className={`chip ${picked.includes(label) ? 'selected' : ''}`}>{picked.includes(label) ? <Minus size={14} /> : <Plus size={14} />} {label}</button>; })}</div>{scanCount > 0 && picked.length > 0 && <div className="mt-4 rounded-2xl bg-emerald-50 p-3"><p className="mb-2 text-sm font-bold text-emerald-900">{lang === 'es' ? 'Revisa lo detectado; toca un ingrediente incorrecto para quitarlo:' : 'Review detected foods; tap any incorrect item to remove it:'}</p><div className="flex flex-wrap gap-2">{picked.map(food => <button type="button" key={food} className="chip selected" onClick={() => setPicked(prev => prev.filter(item => item !== food))}>{food} <X size={13} /></button>)}</div></div>}{scanCount === 0 && allIngredients.length > 0 && <div className="mt-4 rounded-2xl bg-emerald-50 p-3 text-sm font-semibold text-emerald-900">{allIngredients.join(' • ')}</div>}{scanCount > 0 && <div className="mt-4 rounded-2xl border border-orange-200 bg-orange-50 p-4"><p className="mb-3 text-sm font-bold text-orange-900">{lang === 'es' ? '¿Tienes más ingredientes? Toma otra foto del refri o la despensa; sumaremos lo que encontremos a esta lista.' : 'Have more ingredients? Take another photo of your fridge or pantry; we will add what we find to this list.'}</p><label className="primary-btn inline-flex cursor-pointer"><Camera size={18}/>{scanLoading ? t.scanning : lang === 'es' ? 'Tomar otra foto' : 'Take another photo'}<input className="hidden" type="file" accept="image/*" capture="environment" disabled={scanLoading} onChange={e => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void scanPhoto(f); }} /></label><p className="mt-2 text-xs text-slate-600">{lang === 'es' ? 'Puedes corregir la lista antes de generar recetas.' : 'You can correct the list before generating recipes.'}</p></div>}</div>}
               {mode === 'scan' && <div className="rounded-3xl border-2 border-dashed border-orange-200 bg-orange-50/60 p-7 text-center"><Camera className="mx-auto mb-3 text-orange-500" size={42} /><p className="mx-auto mb-4 max-w-md text-sm text-slate-600">{t.scanHelp}</p><label className="primary-btn inline-flex cursor-pointer"><Camera size={18} />{scanLoading ? t.scanning : t.scanButton}<input className="hidden" type="file" accept="image/*" capture="environment" disabled={scanLoading} onChange={e => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void scanPhoto(f); }} /></label></div>}
               <div className="mt-6 space-y-5">
                 <div><label className="label"><Clock3 size={16} />{t.time}</label><div className="grid grid-cols-4 gap-2">{['10','20','30','60'].map(v => <button key={v} className={`choice ${time === v ? 'selected' : ''}`} onClick={() => setTime(v)}>{v === '60' ? (lang === 'en' ? 'No rush' : 'Sin prisa') : `${v}m`}</button>)}</div></div>
