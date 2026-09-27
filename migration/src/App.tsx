@@ -305,6 +305,8 @@ function App() {
   const [method, setMethod] = useState('Easiest');
   const [nutritionGoal, setNutritionGoal] = useState<'none' | 'lowCarb' | 'highProtein'>('none');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [recipeQuery, setRecipeQuery] = useState<string[]>([]);
+  const seenRecipeIds = useRef<Set<string>>(new Set());
   const [loading, setLoading] = useState(false);
   const [scanLoading, setScanLoading] = useState(false);
   const [scanCount, setScanCount] = useState(0);
@@ -324,19 +326,38 @@ function App() {
   const [feedbackSending, setFeedbackSending] = useState(false);
   const t = copy[lang];
   const streak = useMemo(() => streakFromHistory(history), [history]);
-  const [musicOn, setMusicOn] = useState(() => readLocal('listomeal-music', false));
+  const [musicOn, setMusicOn] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const musicMuted = useRef(readLocal('listomeal-music-muted', false));
+  const musicStarting = useRef(false);
 
   useEffect(() => localStorage.setItem('listomeal-lang', JSON.stringify(lang)), [lang]);
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
   useEffect(() => localStorage.setItem('listomeal-favorites', JSON.stringify(favorites)), [favorites]);
   useEffect(() => localStorage.setItem('listomeal-history', JSON.stringify(history)), [history]);
   useEffect(() => localStorage.setItem('listomeal-recent-ideas', JSON.stringify(recentSuggestions)), [recentSuggestions]);
-  useEffect(() => localStorage.setItem('listomeal-music', JSON.stringify(musicOn)), [musicOn]);
   useEffect(() => {
-    const audio = audioRef.current; if (!audio) return;
-    if (musicOn) { audio.volume = 0.35; void audio.play().catch(() => setMusicOn(false)); } else audio.pause();
-  }, [musicOn]);
+    if (musicOn) return;
+    // An audible track needs a user gesture on most mobile browsers.
+    const startOnInteraction = (event: Event) => {
+      if (event instanceof KeyboardEvent && event.key !== 'Enter' && event.key !== ' ') return;
+      if (musicMuted.current || musicStarting.current || (event.target instanceof Element && event.target.closest('[data-music-toggle]'))) return;
+      const audio=audioRef.current; if (!audio) return;
+      musicStarting.current=true; audio.volume=0.18;
+      void audio.play().then(() => {
+        if (musicMuted.current) audio.pause(); else setMusicOn(true);
+      }).catch(() => undefined).finally(() => { musicStarting.current=false; });
+    };
+    document.addEventListener('click',startOnInteraction,true);
+    document.addEventListener('keydown',startOnInteraction,true);
+    return () => { document.removeEventListener('click',startOnInteraction,true); document.removeEventListener('keydown',startOnInteraction,true); };
+  },[musicOn]);
+  function toggleMusic() {
+    if (musicOn) { musicMuted.current=true; localStorage.setItem('listomeal-music-muted',JSON.stringify(true)); audioRef.current?.pause(); setMusicOn(false); return; }
+    musicMuted.current=false; localStorage.setItem('listomeal-music-muted',JSON.stringify(false));
+    const audio=audioRef.current; if (!audio) return; audio.volume=0.18;
+    void audio.play().then(() => setMusicOn(true)).catch(() => setMusicOn(false));
+  }
 
   const allIngredients = useMemo(() => {
     const typedList = typed.split(/[,\n]/).map(x => x.trim()).filter(Boolean);
@@ -352,20 +373,35 @@ function App() {
     }
     setLoading(true); setErrorMsg('');
     const next = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: [...recentSuggestions, ...history.slice(0, 8).map(h => h.recipe.title)] }) as Recipe[];
+    setRecipeQuery(allIngredients);
+    seenRecipeIds.current = new Set(next.map(recipe => recipe.id));
     setRecipes(next); setRecentSuggestions(prev => [...next.map(r => r.title), ...prev].slice(0, 36)); if (!next.length) setErrorMsg(lang === 'en' ? 'No meals match this goal. Try another goal or change ingredients.' : 'No hay recetas para ese objetivo. Prueba otro objetivo o cambia los ingredientes.'); setLoading(false); window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function surpriseMe() {
     setErrorMsg(''); setLoading(true);
     const next = getLocalMeals({ lang, ingredients: [], time, method, profile, nutritionGoal, recentTitles: [...recentSuggestions, ...history.slice(0, 8).map(h => h.recipe.title)] }) as Recipe[];
+    setRecipeQuery([]);
+    seenRecipeIds.current = new Set(next.map(recipe => recipe.id));
     setRecipes(next); setRecentSuggestions(prev => [...next.map(r => r.title), ...prev].slice(0, 36)); setLoading(false); setTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function refreshRecipes() {
+    const pool = getLocalMeals({ lang, ingredients: recipeQuery, time, method, profile, nutritionGoal, recentTitles: [...recentSuggestions, ...history.slice(0, 8).map(h => h.recipe.title)], limit: 200 }) as Recipe[];
+    const next = pool.filter(recipe => !seenRecipeIds.current.has(recipe.id)).slice(0, 3);
+    if (!next.length) { flash(lang === 'en' ? 'No more new matches for these ingredients. Try changing them.' : 'No hay más recetas nuevas con estos ingredientes. Prueba cambiar alguno.'); return; }
+    next.forEach(recipe => seenRecipeIds.current.add(recipe.id));
+    setRecipes(next);
+    setRecentSuggestions(prev => [...next.map(recipe => recipe.title), ...prev].slice(0, 36));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function swapRecipe(index: number) {
     const exclude = [...recipes.map(r => r.title), ...recentSuggestions, ...history.slice(0, 8).map(h => h.recipe.title)];
-    const pool = getLocalMeals({ lang, ingredients: allIngredients, time, method, profile, nutritionGoal, recentTitles: exclude, limit: 25 }) as Recipe[];
-    const replacement = pool.find(r => !recipes.some(existing => existing.id === r.id));
+    const pool = getLocalMeals({ lang, ingredients: recipeQuery, time, method, profile, nutritionGoal, recentTitles: exclude, limit: 200 }) as Recipe[];
+    const replacement = pool.find(r => !seenRecipeIds.current.has(r.id));
     if (!replacement) { flash(lang === 'en' ? 'No other match right now' : 'No hay otra opción por ahora'); return; }
+    seenRecipeIds.current.add(replacement.id);
     setRecipes(prev => prev.map((r, i) => (i === index ? replacement : r)));
     setRecentSuggestions(prev => [replacement.title, ...prev].slice(0, 36));
     flash(lang === 'en' ? 'Swapped for a new idea' : 'Cambiado por una idea nueva');
@@ -448,6 +484,7 @@ function App() {
     } catch { flash(lang === 'en' ? 'Could not send feedback. Try again.' : 'No se pudo enviar. Intenta de nuevo.'); } finally { setFeedbackSending(false); }
   }
   function startNewRecipe() {
+    seenRecipeIds.current.clear(); setRecipeQuery([]);
     setRecipes([]); setTyped(''); setPicked([]); setScanCount(0); setMode('type'); setTime('20'); setMethod('Easiest'); setErrorMsg(''); setCookRecipe(null); setCookStep(0); setTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   const nav = [
@@ -479,7 +516,7 @@ function App() {
             <span className="logo-shine rounded-xl"><img src="/resources/listomeal-logo.jpg" alt="ListoMeal — Dinner? Listo." loading="eager" className="h-12 w-auto max-w-[190px] rounded-xl object-contain" /></span>
           </button>
           <div className="flex items-center gap-2">
-            <button className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-bold shadow-sm transition duration-200 ${musicOn ? 'border-orange-300 bg-orange-50 text-orange-600' : 'border-orange-200 bg-white'}`} onClick={() => setMusicOn(m => !m)} aria-label={musicOn ? (lang === 'en' ? 'Mute kitchen music' : 'Silenciar música') : (lang === 'en' ? 'Play kitchen music' : 'Reproducir música')}>{musicOn ? <Music size={16} /> : <VolumeX size={16} />}</button>
+            <button className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-bold shadow-sm transition duration-200 ${musicOn ? 'border-orange-300 bg-orange-50 text-orange-600' : 'border-orange-200 bg-white'}`} data-music-toggle onClick={toggleMusic} aria-label={musicOn ? (lang === 'en' ? 'Mute kitchen music' : 'Silenciar música') : (lang === 'en' ? 'Play kitchen music' : 'Reproducir música')}>{musicOn ? <Music size={16} /> : <VolumeX size={16} />}</button>
             <button className="flex items-center gap-2 rounded-full border border-orange-200 bg-white px-3 py-2 text-sm font-bold shadow-sm" onClick={() => { const next = lang === 'en' ? 'es' : 'en'; localStorage.setItem('listomeal-lang-choice', JSON.stringify(next)); setLang(next); }}><Languages size={16} /> {lang === 'en' ? 'ES' : 'EN'}</button>
           </div>
         </div>
@@ -520,7 +557,7 @@ function App() {
             </div>
           </section>
         ) : (
-          <section><div className="mb-5 flex flex-wrap items-end justify-between gap-3"><div><p className="text-sm font-bold uppercase tracking-wider text-orange-500">ListoMeal</p><h2 className="font-display text-3xl font-semibold">{t.results}</h2></div><button className="secondary-btn" onClick={() => setRecipes([])}>{t.change}</button></div>{allIngredients.length > 1 && <p className="mb-4 rounded-2xl bg-emerald-50 p-4 text-sm font-semibold text-emerald-900">{lang === 'en' ? 'Meals using all your selected ingredients come first. If there are not enough, we show the closest alternatives and label what is missing.' : 'Primero mostramos recetas que usan todos los ingredientes que elegiste. Si no hay suficientes, mostramos alternativas y señalamos qué ingrediente no incluyen.'}</p>}<div className="grid gap-5 lg:grid-cols-3">{recipes.map((recipe, i) => <div key={recipe.id} className={`rise-in ${i === 1 ? 'rise-in-2' : i === 2 ? 'rise-in-3' : 'rise-in-1'}`}>{allIngredients.length > 1 && matchedIngredients(recipe.ingredients, allIngredients).length < allIngredients.length && <p className="mb-2 rounded-xl bg-amber-50 p-2 text-xs font-bold text-amber-900">{lang === 'en' ? 'Closest match · Does not use: ' : 'Opción parecida · No incluye: '}{allIngredients.filter(item => !matchedIngredients(recipe.ingredients, [item]).length).join(', ')}</p>}<RecipeCard recipe={recipe} t={t} lang={lang} favorite={favorites.some(r => r.id === recipe.id)} onFavorite={() => toggleFavorite(recipe)} onCook={() => { setCookRecipe(recipe); setCookStep(0); }} onShare={() => shareRecipe(recipe)} onSwap={() => swapRecipe(i)} /></div>)}</div><div className="mt-7 flex justify-center"><button className="primary-btn w-full max-w-md justify-center py-4 text-base" onClick={startNewRecipe}><Plus size={19} />{t.newRecipe}</button></div></section>
+          <section><div className="mb-5 flex flex-wrap items-end justify-between gap-3"><div><p className="text-sm font-bold uppercase tracking-wider text-orange-500">ListoMeal</p><h2 className="font-display text-3xl font-semibold">{t.results}</h2></div><button className="secondary-btn" onClick={() => setRecipes([])}>{t.change}</button></div>{recipeQuery.length > 1 && <p className="mb-4 rounded-2xl bg-emerald-50 p-4 text-sm font-semibold text-emerald-900">{lang === 'en' ? 'Meals using all your selected ingredients come first. If there are not enough, we show the closest alternatives and label what is missing.' : 'Primero mostramos recetas que usan todos los ingredientes que elegiste. Si no hay suficientes, mostramos alternativas y señalamos qué ingrediente no incluyen.'}</p>}<div className="grid gap-5 lg:grid-cols-3">{recipes.map((recipe, i) => <div key={recipe.id} className={`rise-in ${i === 1 ? 'rise-in-2' : i === 2 ? 'rise-in-3' : 'rise-in-1'}`}>{recipeQuery.length > 1 && matchedIngredients(recipe.ingredients, recipeQuery).length < allIngredients.length && <p className="mb-2 rounded-xl bg-amber-50 p-2 text-xs font-bold text-amber-900">{lang === 'en' ? 'Closest match · Does not use: ' : 'Opción parecida · No incluye: '}{recipeQuery.filter(item => !matchedIngredients(recipe.ingredients, [item]).length).join(', ')}</p>}<RecipeCard recipe={recipe} t={t} lang={lang} favorite={favorites.some(r => r.id === recipe.id)} onFavorite={() => toggleFavorite(recipe)} onCook={() => { setCookRecipe(recipe); setCookStep(0); }} onShare={() => shareRecipe(recipe)} onSwap={() => swapRecipe(i)} /></div>)}</div><div className="mt-7 flex flex-col items-center gap-3"><button type="button" className="secondary-btn w-full max-w-md justify-center py-4 text-base" onClick={refreshRecipes}><Shuffle size={19} />{lang === 'en' ? 'Show more recipes' : 'Mostrar más recetas'}</button><button className="primary-btn w-full max-w-md justify-center py-4 text-base" onClick={startNewRecipe}><Plus size={19} />{t.newRecipe}</button></div></section>
         )}</>}
         {tab === 'favorites' && <section><h2 className="page-title"><Heart className="text-orange-500" /> {t.favorites}</h2>{favorites.length === 0 ? <Empty text={t.noFav} /> : <div className="grid gap-5 lg:grid-cols-3">{favorites.map(r => <RecipeCard key={r.id} recipe={r} t={t} lang={lang} favorite onFavorite={() => toggleFavorite(r)} onCook={() => { setCookRecipe(r); setCookStep(0); }} onShare={() => shareRecipe(r)} />)}</div>}</section>}
         {tab === 'history' && <section><h2 className="page-title"><History className="text-orange-500" /> {t.history}</h2>{history.length === 0 ? <Empty text={t.noHistory} /> : <div className="space-y-3">{history.map(h => <button key={`${h.recipe.id}-${h.at}`} onClick={() => { setCookRecipe(h.recipe); setCookStep(0); }} className="flex w-full items-center justify-between rounded-3xl border border-orange-100 bg-white p-4 text-left shadow-sm"><div><div className="font-extrabold">{h.recipe.title}</div><div className="mt-1 text-xs text-slate-500">{new Date(h.at).toLocaleDateString()} • {h.recipe.minutes} min</div></div><span className="rounded-full bg-orange-50 px-3 py-1 text-sm font-bold text-orange-600">{h.rating === 'loved' ? '♥ Loved' : h.rating}</span></button>)}</div>}</section>}
