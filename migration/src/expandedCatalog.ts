@@ -193,7 +193,7 @@ export const expandedDishes: CuratedDish[] = [rows,moreRows,finalRows].flatMap(g
  const safe=safeFinish(food);
  return {id:`local-${497+index}`,en,es,food,foodEs,method,minutes:Number(rawMinutes),pantry,pantryEs,
   nutritionKeys:food,
-  stepsEn:[`Gather ${food.join(', ')}; rinse produce, and keep raw meat or fish away from other ingredients.`,methodSteps[method][0],cookEn,finishEn,safe[0]],
-  stepsEs:[`Reúne ${foodEs.join(', ')}; lava las verduras y separa la carne o pescado crudos de los demás ingredientes.`,methodSteps[method][1],cookEs,finishEs,safe[1]]
+  stepsEn:[`Gather ${food.join(', ')} and check what you already have.`,`Rinse produce before cutting it; keep raw meat or fish and their utensils separate from ready-to-eat ingredients.`,methodSteps[method][0],cookEn,finishEn,safe[0]],
+  stepsEs:[`Reúne ${foodEs.join(', ')} y revisa cuáles ingredientes ya tienes.`,`Lava las verduras antes de cortarlas; separa la carne o pescado crudos y sus utensilios de los alimentos listos para comer.`,methodSteps[method][1],cookEs,finishEs,safe[1]]
  };
 });

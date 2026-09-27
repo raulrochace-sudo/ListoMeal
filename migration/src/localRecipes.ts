@@ -20,6 +20,19 @@ const matchesIngredient = (a: string, b: string) => {
   const right = normalize(b).split(/[^a-z0-9]+/).filter(Boolean).map(singular);
   return left.length > 0 && right.length > 0 && (left.every(word => right.includes(word)) || right.every(word => left.includes(word)));
 };
+export function matchedIngredients(recipeIngredients: string[], selectedIngredients: string[]): string[] {
+  return selectedIngredients.filter(selected => recipeIngredients.some(food => matchesIngredient(food, selected)));
+}
+function clearerSteps(steps: string[]): string[] {
+  // Divide one combined preparation action into two steps without changing the dish.
+  const index = steps.findIndex(step => {
+    const parts = step.split(';');
+    return parts.length === 2 && parts.every(part => part.trim().length >= 25);
+  });
+  if (index < 0) return steps;
+  const [first, second] = steps[index].split(';').map(part => part.trim());
+  return [...steps.slice(0, index), `${first.replace(/[.,]$/, '')}.`, `${second[0].toUpperCase()}${second.slice(1)}`, ...steps.slice(index + 1)];
+}
 const category = (title: string) => {
   if (/quesadilla/i.test(title)) return 'quesadilla';
   if (/nachos/i.test(title)) return 'nachos';
@@ -44,7 +57,7 @@ function recipeFromDish(dish: CuratedDish, lang: Lang): LocalRecipe {
     minutes: dish.minutes, method: dish.method,
     ingredients: lang === 'es' ? dish.foodEs : dish.food,
     pantryBasics: lang === 'es' ? dish.pantryEs : dish.pantry,
-    optionalExtras: [], steps: lang === 'es' ? dish.stepsEs : dish.stepsEn,
+    optionalExtras: [], steps: clearerSteps(lang === 'es' ? dish.stepsEs : dish.stepsEn),
     kidTip: lang === 'es' ? 'Sirve las salsas aparte para que cada quien ajuste su plato.' : 'Serve sauces on the side so everyone can adjust their plate.',
     nutrition: estimateNutrition(dish.nutritionKeys, [], dish.pantry),
     styleKey: category(dish.en), familyKey: dish.food[0],
@@ -69,21 +82,26 @@ export function getLocalMeals(args: {lang:Lang;ingredients:string[];time:string;
     if (nutritionGoal === 'highProtein' && (!recipe.nutrition || recipe.nutrition.protein < 25)) return [];
     const food = [...dish.food,...dish.foodEs].map(normalize);
     const main = [dish.food[0],dish.foodEs[0]].map(normalize);
-    const matches = have.filter(item => food.some(name => matchesIngredient(name,item))).length;
+    const matches = matchedIngredients(food, have).length;
     if (have.length > 0 && matches === 0) return [];
     const mainMatch = have.some(item => main.some(name => matchesIngredient(name,item)));
     const score = matches * 14 + (mainMatch ? 20 : have.length ? -12 : 0)
       + (dish.minutes <= maxMinutes ? 5 : -Math.min(22,dish.minutes-maxMinutes))
       + (method === 'Easiest' ? dish.minutes <= 20 ? 5 : 0 : dish.method === method ? 10 : -6)
       - (recent.has(normalize(recipe.title)) ? 60 : 0) - index * 0.0001;
-    return [{recipe,score}];
-  }).sort((a,b) => b.score-a.score);
+    return [{recipe,score,matches}];
+  }).sort((a,b) => b.matches-a.matches || b.score-a.score);
   const result:LocalRecipe[] = []; const used = new Set<string>();
-  for (const choose of [false,true]) for (const {recipe} of allowed) {
-    if (result.length === limit) return result;
-    if (!choose && recent.has(normalize(recipe.title))) continue;
-    if (used.has(recipe.styleKey || '')) continue;
-    result.push(recipe); used.add(recipe.styleKey || '');
+  for (const matchCount of [...new Set(allowed.map(item => item.matches))].sort((a,b) => b-a)) {
+    const candidates = allowed.filter(item => item.matches === matchCount);
+    // Variety and recent history decide ties, never whether selected foods get ignored.
+    for (const allowRecent of [false,true]) for (const allowSameStyle of [false,true]) for (const {recipe} of candidates) {
+      if (result.length === limit) return result;
+      if (!allowRecent && recent.has(normalize(recipe.title))) continue;
+      if (!allowSameStyle && used.has(recipe.styleKey || '')) continue;
+      if (result.some(selected => selected.id === recipe.id)) continue;
+      result.push(recipe); used.add(recipe.styleKey || '');
+    }
   }
   return result;
 }
