@@ -1,0 +1,10 @@
+LISTOMEAL — FIRMA ROCHA DIGITAL
+
+Agrega una firma discreta al pie de la aplicación: «Creado por Rocha Digital» en español y «Created by Rocha Digital» en inglés. También incluye las portadas sin botones falsos del ZIP anterior.
+
+1. Descomprime este ZIP en una carpeta nueva.
+2. Copia TODO su contenido a tu carpeta local de ListoMeal. Acepta reemplazar y conserva las carpetas.
+3. En GitHub Desktop verifica que aparezcan .gitignore, src/App.tsx, dist/index.html, los archivos nuevos dist/assets y dos fotos nuevas en public/resources.
+4. Mensaje de commit: Add Rocha Digital credit
+5. Presiona Commit to main, luego Push origin. Espera hasta que Render marque Live.
+6. Recarga listomeal.com, desplázate hasta abajo de la página y cambia entre inglés y español para comprobar la firma.

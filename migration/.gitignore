@@ -3,8 +3,12 @@ dist/*
 !dist/index.html
 !dist/assets/
 dist/assets/*
-!dist/assets/index-D711RCJI.js
-!dist/assets/index-Czvq28Sb.css
+!dist/assets/index-DH6Gn_vc.js
+!dist/assets/index-ls8BWeL6.css
+!dist/resources/
+dist/resources/*
+!dist/resources/hero-banner-clean-en.png
+!dist/resources/hero-banner-clean-es.png
 !dist/recipe-images/
 dist/recipe-images/*
 !dist/recipe-images/53d55d89dab9c3c7c0377b545b6982b3d6741be376210698b85303f963b12646.webp
