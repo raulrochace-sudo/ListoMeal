@@ -95,8 +95,12 @@ export function getLocalMeals(args: {lang:Lang;ingredients:string[];time:string;
     const missing = missingIngredients(food.slice(0, dish.food.length), have).length;
     return [{recipe,score,matches,missing}];
   }).sort((a,b) => a.missing-b.missing || b.matches-a.matches || b.score-a.score);
+  // Once at least one complete meal exists, do not fill the remaining cards
+  // with meals requiring food that the user has not confirmed.
+  const complete = have.length > 0 && allowed.some(item => item.missing === 0);
   const result:LocalRecipe[] = []; const used = new Set<string>();
   for (const missingCount of [...new Set(allowed.map(item => item.missing))].sort((a,b) => a-b)) {
+    if (complete && missingCount > 0) break;
     const candidates = allowed.filter(item => item.missing === missingCount);
     // Variety and recent history decide ties, never whether selected foods get ignored.
     for (const allowRecent of [false,true]) for (const allowSameStyle of [false,true]) for (const {recipe} of candidates) {

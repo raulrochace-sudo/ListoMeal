@@ -3,8 +3,13 @@ dist/*
 !dist/index.html
 !dist/assets/
 dist/assets/*
-!dist/assets/index-cIVgpzCS.js
+!dist/assets/index-D711RCJI.js
 !dist/assets/index-Czvq28Sb.css
+!dist/recipe-images/
+dist/recipe-images/*
+!dist/recipe-images/53d55d89dab9c3c7c0377b545b6982b3d6741be376210698b85303f963b12646.webp
+!dist/recipe-images/dbbdc8f9fbea43ec440218a59f231dec7ec16a1033653d478f772d0d4583f28d.webp
+!dist/recipe-images/07fb3314daf01952f6e3250560d49895ae87b034b8f0c78254916c802e60e75f.webp
 .env
 .env.*
 .DS_Store

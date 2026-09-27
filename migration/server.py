@@ -124,7 +124,7 @@ def settings():
 
 def recipe_digest(data):
     recipe_id = str(data.get("id") or "")
-    if re.fullmatch(r"local-[1-9]\d*", recipe_id):
+    if re.fullmatch(r"local-[1-9]\d*|scan-[a-z0-9-]+", recipe_id):
         return hashlib.sha256(("local:" + recipe_id).encode()).hexdigest()
     return hashlib.sha256(json.dumps(
         [data.get("title"), data.get("summary"), data.get("method"), data.get("ingredients")],

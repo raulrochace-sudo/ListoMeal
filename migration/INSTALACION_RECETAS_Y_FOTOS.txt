@@ -1,0 +1,12 @@
+LISTOMEAL — RECETAS Y FOTOS CORREGIDAS
+
+1. Descomprime el ZIP en una carpeta nueva.
+2. Copia todas las carpetas y archivos del ZIP a tu carpeta local de ListoMeal; acepta reemplazar los existentes y conserva exactamente las rutas.
+3. En GitHub Desktop verifica que aparezcan cambios en server.py, src/localRecipes.ts, .gitignore, dist/index.html, dist/assets y tres imágenes nuevas en dist/recipe-images.
+4. Mensaje del commit: Show only available meals and their photos
+5. Pulsa Commit to main y después Push origin.
+6. Espera a que el último deploy de Render indique Live. Abre listomeal.com y recarga una vez.
+
+Verificación: escanea o selecciona tus ingredientes, confirma la lista y pulsa Find meals. Si hay dos comidas completas disponibles, verás dos; no debería agregarse la fritata de brócoli para llenar la tercera tarjeta. Las tres recetas nuevas de huevo tienen imágenes guardadas en el ZIP y no requieren gastar saldo en API cada vez que se vean.
+
+Las imágenes son ilustraciones generadas de cada receta, no fotos de comidas hechas por usuarios.
