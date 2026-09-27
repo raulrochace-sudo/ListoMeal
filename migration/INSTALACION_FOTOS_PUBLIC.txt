@@ -1,0 +1,14 @@
+LISTOMEAL — FOTOS QUE SOBREVIVEN AL DESPLIEGUE
+
+El ZIP anterior incluía fotos solo en dist/recipe-images. Render reconstruye dist durante el despliegue, por eso se perdían. Este ZIP también las incluye en public/recipe-images, la carpeta fuente que Vite copia a dist.
+
+1. Descomprime el ZIP en una carpeta nueva.
+2. Copia TODAS las carpetas del ZIP a la carpeta del proyecto ListoMeal. Comprueba especialmente que se hayan copiado tres archivos .webp a public/recipe-images. Si no existía esa carpeta, permite crearla.
+3. En GitHub Desktop, comprueba que aparezcan tres archivos nuevos public/recipe-images/*.webp marcados para commit. Si esos tres archivos no aparecen, detente: todavía no llegaron al repositorio.
+4. Escribe como mensaje: Keep recipe photos after deployment
+5. Pulsa Commit to main y Push origin. Espera a Render Live.
+6. Abre este enlace para verificar que sale una foto y no un error 404:
+https://listomeal.com/recipe-images/dbbdc8f9fbea43ec440218a59f231dec7ec16a1033653d478f772d0d4583f28d.webp
+7. Luego recarga ListoMeal y prueba las recetas.
+
+En una compilación limpia local se comprobó que los tres archivos se copiaron a dist y que la foto respondió HTTP 200.
