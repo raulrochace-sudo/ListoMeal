@@ -23,6 +23,9 @@ const matchesIngredient = (a: string, b: string) => {
 export function matchedIngredients(recipeIngredients: string[], selectedIngredients: string[]): string[] {
   return selectedIngredients.filter(selected => recipeIngredients.some(food => matchesIngredient(food, selected)));
 }
+export function missingIngredients(recipeIngredients: string[], selectedIngredients: string[]): string[] {
+  return recipeIngredients.filter(food => !selectedIngredients.some(selected => matchesIngredient(food, selected)));
+}
 function clearerSteps(steps: string[]): string[] {
   // Divide one combined preparation action into two steps without changing the dish.
   const index = steps.findIndex(step => {
@@ -89,11 +92,12 @@ export function getLocalMeals(args: {lang:Lang;ingredients:string[];time:string;
       + (dish.minutes <= maxMinutes ? 5 : -Math.min(22,dish.minutes-maxMinutes))
       + (method === 'Easiest' ? dish.minutes <= 20 ? 5 : 0 : dish.method === method ? 10 : -6)
       - (recent.has(normalize(recipe.title)) ? 60 : 0) - index * 0.0001;
-    return [{recipe,score,matches}];
-  }).sort((a,b) => b.matches-a.matches || b.score-a.score);
+    const missing = missingIngredients(food.slice(0, dish.food.length), have).length;
+    return [{recipe,score,matches,missing}];
+  }).sort((a,b) => a.missing-b.missing || b.matches-a.matches || b.score-a.score);
   const result:LocalRecipe[] = []; const used = new Set<string>();
-  for (const matchCount of [...new Set(allowed.map(item => item.matches))].sort((a,b) => b-a)) {
-    const candidates = allowed.filter(item => item.matches === matchCount);
+  for (const missingCount of [...new Set(allowed.map(item => item.missing))].sort((a,b) => a-b)) {
+    const candidates = allowed.filter(item => item.missing === missingCount);
     // Variety and recent history decide ties, never whether selected foods get ignored.
     for (const allowRecent of [false,true]) for (const allowSameStyle of [false,true]) for (const {recipe} of candidates) {
       if (result.length === limit) return result;

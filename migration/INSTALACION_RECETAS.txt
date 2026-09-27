@@ -1,0 +1,10 @@
+LISTOMEAL — ACTUALIZACIÓN DE RECETAS
+
+1. Descomprime este ZIP en una carpeta nueva de tu computadora.
+2. Copia su contenido a tu carpeta local del proyecto ListoMeal. Acepta reemplazar los archivos existentes y conserva la estructura de carpetas.
+3. Abre GitHub Desktop: confirma que los cambios incluyen src/localRecipes.ts, src/App.tsx, .gitignore, dist/index.html y los dos archivos nuevos de dist/assets.
+4. Escribe como mensaje del commit: Prioritize recipes with available ingredients
+5. Presiona Commit to main y luego Push origin. Render desplegará el commit automáticamente si Auto Deploy sigue activado.
+6. Cuando Render muestre Live, actualiza listomeal.com. Si aún ves la pantalla antigua, recarga la página una vez más.
+
+Los archivos de imágenes y el resto del proyecto se conservan: este ZIP solo actualiza los archivos indicados.
