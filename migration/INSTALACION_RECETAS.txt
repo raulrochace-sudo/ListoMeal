@@ -1,10 +1,12 @@
-LISTOMEAL — ACTUALIZACIÓN DE RECETAS
+LISTOMEAL — RECETAS CON INGREDIENTES DISPONIBLES
 
-1. Descomprime este ZIP en una carpeta nueva de tu computadora.
-2. Copia su contenido a tu carpeta local del proyecto ListoMeal. Acepta reemplazar los archivos existentes y conserva la estructura de carpetas.
-3. Abre GitHub Desktop: confirma que los cambios incluyen src/localRecipes.ts, src/App.tsx, .gitignore, dist/index.html y los dos archivos nuevos de dist/assets.
-4. Escribe como mensaje del commit: Prioritize recipes with available ingredients
-5. Presiona Commit to main y luego Push origin. Render desplegará el commit automáticamente si Auto Deploy sigue activado.
-6. Cuando Render muestre Live, actualiza listomeal.com. Si aún ves la pantalla antigua, recarga la página una vez más.
+1. Descomprime el ZIP en una carpeta nueva.
+2. Copia todo su contenido a la carpeta local de tu proyecto ListoMeal; acepta reemplazar archivos y conserva las carpetas.
+3. En GitHub Desktop comprueba que se incluyen src/curatedCatalog.ts, src/localRecipes.ts, src/App.tsx, .gitignore, dist/index.html y dos archivos dist/assets.
+4. Escribe el commit: Add meals using available ingredients
+5. Presiona Commit to main y luego Push origin.
+6. Espera a que Render indique Live y vuelve a cargar listomeal.com.
 
-Los archivos de imágenes y el resto del proyecto se conservan: este ZIP solo actualiza los archivos indicados.
+Prueba: marca milk, yogurt, cheese, tortillas, eggs, sour cream y hot dogs. Entre las tres primeras recetas deben aparecer burritos de huevo con salchicha, quesadillas de huevo con queso y huevos con queso en taza, sin ingredientes faltantes.
+
+Este ZIP no contiene imágenes nuevas para las tres recetas; no se ha cobrado ninguna generación adicional.

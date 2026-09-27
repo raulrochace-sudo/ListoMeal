@@ -3,7 +3,7 @@ dist/*
 !dist/index.html
 !dist/assets/
 dist/assets/*
-!dist/assets/index-DiqLBIeZ.js
+!dist/assets/index-cIVgpzCS.js
 !dist/assets/index-Czvq28Sb.css
 .env
 .env.*
